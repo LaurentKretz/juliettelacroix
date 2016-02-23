@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222174659) do
+ActiveRecord::Schema.define(version: 20160223101330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,13 +35,14 @@ ActiveRecord::Schema.define(version: 20160222174659) do
   create_table "order_items", force: :cascade do |t|
     t.integer  "quantity"
     t.integer  "order_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "product_id"
+    t.string   "product_type"
   end
 
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
-  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id", using: :btree
+  add_index "order_items", ["product_type", "product_id"], name: "index_order_items_on_product_type_and_product_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
@@ -57,17 +58,6 @@ ActiveRecord::Schema.define(version: 20160222174659) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  create_table "products", force: :cascade do |t|
-    t.string   "type"
-    t.integer  "perfume_id"
-    t.integer  "kit_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "products", ["kit_id"], name: "index_products_on_kit_id", using: :btree
-  add_index "products", ["perfume_id"], name: "index_products_on_perfume_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "grade1"
@@ -106,6 +96,10 @@ ActiveRecord::Schema.define(version: 20160222174659) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "address_details"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -113,10 +107,7 @@ ActiveRecord::Schema.define(version: 20160222174659) do
 
   add_foreign_key "coupons", "users"
   add_foreign_key "order_items", "orders"
-  add_foreign_key "order_items", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "products", "kits"
-  add_foreign_key "products", "perfumes"
   add_foreign_key "reviews", "perfumes"
   add_foreign_key "reviews", "users"
   add_foreign_key "samples", "kits"
