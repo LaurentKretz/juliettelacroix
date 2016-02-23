@@ -1,0 +1,69 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 60vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.arrow {
+color: white;
+font-size: 50px;
+margin-top: 200px;
+}
+
+.hpsearch {
+  background-color: transparent;
+  color: white;
+  border-bottom: 2px solid rgba(250, 250, 250, .5);
+}
+
+input {
+  outline: none;
+  border: 0px inset;
+  width: 232px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #DBC293;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #DBC293;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #DBC293;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #DBC293;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color:    #DBC293;
+}
+
+.form-group {
+margin-right: 40px;
+}
+
+.cta {
+border: 2px solid;
+border-color: rgba(250, 250, 250, .5);
+padding: 30px 30px;
+margin: 10px 10px;
+}
+

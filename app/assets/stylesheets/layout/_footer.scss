@@ -1,1 +1,18 @@
 // Your footer style
+#footer{
+  margin-top:100px;
+  padding:30px;
+  color:$gray-lighter;
+  background: $gray-dark;
+ a{
+    color: $greenish;
+  };
+  a:hover{
+    color:$blueish;
+  };
+  .container{
+    padding:10px;
+  }
+
+}
+
