@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   end
   # resources :coupons, except: [:index]
   # resources :kits, except: [:show]
+  end
 end
