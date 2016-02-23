@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "hello world"
+  account:
+    dashboards:
+      show:
+        hello: "Welcome %{name} in your Dashboard"
+        method: "Juliette's method for a successful essences sampling"
+        sample_test: "Your last samples to test"
+        all_my_kits: "My tests in other collections"

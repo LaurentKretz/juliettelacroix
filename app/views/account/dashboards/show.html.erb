@@ -1,0 +1,27 @@
+<div class="container text-center">
+  <h1><%= t('.hello', name:@user.first_name) %></h1>
+  <div class="small-padded"></div>
+  <h3><%= t('.method')%></h3>
+  <%= image_tag('http://placehold.it/650x400') %>
+</div>
+<div class="padded"></div>
+<div class="container text-center" id="samples">
+  <h2><%=t('.sample_test')%></h2>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= render 'shared/perfume_pic' %>
+    </div>
+  </div>
+  <ul class="list-unstyled">
+    <% @perfumes.each do |perfume| %>
+    <li><h3><%=perfume.name%></h3></li>
+    <li><%=perfume.description%></li>
+    <%end%>
+  </ul>
+  <h3><%=link_to t('.all_my_kits'), ""%></h3>
+</div>
+<div class="padded"></div>
+
+
+
+
