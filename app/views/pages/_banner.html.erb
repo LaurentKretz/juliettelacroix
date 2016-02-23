@@ -1,22 +1,22 @@
 <div class="banner" id="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/6404/woman-girl-young-beauty.jpg');">
   <div class="banner-content">
-    <h1>Unique and exclusive fragrances made in Paris</h1>
-    <p>Limited editions available online and
-    for members only.</p>
+    <h1><%= t('.tagline') %></h1>
+    <p><%= t('.sub_tagline') %></p>
     <div class="cta">
       <p>
         <form class="form-inline">
               <div class="form-group">
-                <input type="text" class="hpsearch" placeholder="Enter your invitation code here" name="where">
+                <input type="text" class="hpsearch" placeholder="<%= t('.invitation_text') %>" name="where">
               </div>
-          <button type="submit" class="btn btn-success">Activate</button>
+          <button type="submit" class="btn btn-success"><%= t('.invitation_button') %></button>
           </form>
       </p>
     </div>
       <p>
-        <a href="#experience">Indulge in a unique sensory experience
-        </a><br>
-        <i class="fa fa-spinner fa-pulse"></i>
+        <a href="#experience"><%= t('.cta_text') %></a>
+        <a href="#">
+          <i class="fa fa-angle-down pulse arrow"></i>
+        </a>
       </p>
   </div>
 </div>
