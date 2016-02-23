@@ -20,4 +20,23 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  pages:
+    home:
+      discovery: "What you will discover"
+      experience: "What you will experience"
+      title: "Unique and exclusive fragrances made in Paris"
+      subtagline: "Limited editions available online and for members only."
+      invitation_text: "Enter your invitation code here"
+      invitation_button: "Activate"
+      cta_text: "Enjoy a unique experience"
+  shared:
+    footer:
+      about: "About us"
+      press: "Press"
+      blog: "Blog"
+      nl_title: "Suscribe to the newsletter"
+      nl_subtitle: "Get perfumes tips once a week in your inbox."
+      nl_button: "Subscribe"
+      terms: "Terms"
+      privacy: "Privacy"
+      paris: "Made in Paris"
