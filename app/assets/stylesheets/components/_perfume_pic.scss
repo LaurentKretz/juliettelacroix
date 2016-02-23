@@ -1,0 +1,30 @@
+.perfume-pic{
+
+  position: relative;
+  width: 172px;
+  margin:0;
+  padding:0;
+  img{
+  opacity: 0.3;
+  }
+  img:hover{
+    opacity: 1;
+  }
+  img.tested{
+    opacity: 0.8;
+  }
+  img.tested:hover{
+    opacity: 1;
+  }
+  .card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right:0;
+  left:0;
+  width: 172px;
+  background: black;
+  opacity: 0;
+}
+
+}

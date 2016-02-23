@@ -4,3 +4,7 @@ fr:
     dashboards:
       show:
         hello: "Bienvenue %{name} dans votre espace personnel"
+        method: "La méthode de Juliette pour essayer les parfums"
+        sample_test: "Vos derniers échantillons à tester"
+        all_my_kits: "Mes tests dans les autres gammes"
+
