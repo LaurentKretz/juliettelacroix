@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'country_select'
 gem 'autoprefixer-rails'
 gem "rails-i18n"
 gem 'devise-i18n'
