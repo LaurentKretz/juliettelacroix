@@ -1,0 +1,16 @@
+<h1>Define a new delivery address</h1>
+
+  <%= simple_form_for(@address, url: checkout_address_path, html: { class: "checkout-form" }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group string optional disabled address_street">
+    <%= text_field_tag :address, "", :id => "user_input_autocomplete_address", :placeholder => "Start typing your address...", class: "form-control" %>
+  </div>
+
+  <%= f.input :street, :input_html => { "data-autocomplete" => "street" }, :as => :hidden %>
+  <%= f.input :zip_code, :input_html => { "data-autocomplete" => "postal_code" }, :as => :hidden %>
+  <%= f.input :city, :input_html => { "data-autocomplete" => "locality" }, :as => :hidden %>
+  <%= f.input :country_code, :input_html => { "data-autocomplete" => "country" }, label: "Country", :as => :hidden %>
+
+  <%= f.button :submit,'Update this address' %>
+ <% end %>

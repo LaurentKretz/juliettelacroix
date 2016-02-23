@@ -40,3 +40,10 @@ en:
       terms: "Terms"
       privacy: "Privacy"
       paris: "Made in Paris"
+  account:
+    dashboards:
+      show:
+        hello: "Welcome %{name} in your Dashboard"
+        method: "Juliette's method for a successful essences sampling"
+        sample_test: "Your last samples to test"
+        all_my_kits: "My tests in other collections"

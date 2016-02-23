@@ -53,6 +53,13 @@ GEM
     byebug (8.2.2)
     coderay (1.1.1)
     concurrent-ruby (1.0.0)
+    countries (1.2.5)
+      currencies (~> 0.4.2)
+      i18n_data (~> 0.7.0)
+    country_select (2.5.1)
+      countries (~> 1.2.0)
+      sort_alphabetical (~> 1.0)
+    currencies (0.4.2)
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -72,6 +79,7 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    i18n_data (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -157,6 +165,8 @@ GEM
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     slop (3.6.0)
+    sort_alphabetical (1.0.2)
+      unicode_utils (>= 1.2.2)
     spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -173,6 +183,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode_utils (1.4.0)
     warden (1.2.6)
       rack (>= 1.0)
 
@@ -184,6 +195,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  country_select
   devise
   devise-i18n
   devise-i18n-views
