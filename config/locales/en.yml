@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "hello world"
+  account:
+    dashboards:
+      show:
+        hello: "Welcome %{name} in your Dashboard"

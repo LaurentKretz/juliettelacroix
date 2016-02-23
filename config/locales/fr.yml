@@ -1,2 +1,6 @@
 fr:
   hello: "Hello world"
+  account:
+    dashboards:
+      show:
+        hello: "Bienvenue %{name} dans votre espace personnel"
