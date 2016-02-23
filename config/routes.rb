@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'pages#home'
+  scope '(:locale)', locale: /en/ do
+    devise_for :users
+    root to: 'pages#home'
 
   # resources :perfumes, only: [:show, :index]
   # resources :kits, only: [:index, :show]
   resources :orders, only: [:create]
-
   namespace :checkout do
     resource :address, only: [:edit, :update]
     resource :payment, only: [:new, :create]
@@ -21,9 +21,6 @@ Rails.application.routes.draw do
       resources :reviews, only: [:create, :update]
     end
   end
-
   # resources :coupons, except: [:index]
   # resources :kits, except: [:show]
-
-
 end
