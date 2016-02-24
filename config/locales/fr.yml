@@ -26,11 +26,11 @@ fr:
         method: "La méthode de Juliette pour essayer les parfums"
         sample_test: "Vos derniers échantillons à tester"
         all_my_kits: "Mes tests dans les autres gammes"
+         introduction: "Vous allez bientôt recevoir votre box d'essences. Avant tout, regardez la video de Juliette expliquant comment les tester"
   checkout:
     addresses:
       edit:
-        title: "Définir une nouvelle addresse"
-
+        title: "Définir une nouvelle adresse"
         placeholder_address: "Saisissez votre addresse"
         submit: "Valider"
     confirmations:
