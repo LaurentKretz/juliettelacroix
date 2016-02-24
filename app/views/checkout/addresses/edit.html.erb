@@ -1,16 +1,20 @@
-<h1><%= t('.title')%></h1>
+<div class="container">
+<div class="row wapper-grey container padded col-xs-12 col-sm-offset-2 col-sm-8">
+    <h1><%= t('.title')%></h1>
 
-<%= simple_form_for(@address, url: checkout_address_path, method: :put, html: { class: "checkout-form" }) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(@address, url: checkout_address_path, method: :put, html: { class: "checkout-form" }) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-group string optional disabled address_street">
-    <%= text_field_tag :full_address, @address.full_address, :id => "user_input_autocomplete_address", placeholder: t('.placeholder_address'), class: "form-control" %>
+      <div class="form-group string optional disabled address_street simple_form">
+        <%= text_field_tag :full_address, @address.full_address, :id => "user_input_autocomplete_address", placeholder: t('.placeholder_address'), class: "form-control" %>
+      </div>
+
+      <%= f.input :street, :input_html => { "data-autocomplete" => "street" }, :as => :hidden %>
+      <%= f.input :zip_code, :input_html => { "data-autocomplete" => "postal_code" }, :as => :hidden %>
+      <%= f.input :city, :input_html => { "data-autocomplete" => "locality" }, :as => :hidden %>
+      <%= f.input :country_code, :input_html => { "data-autocomplete" => "country" }, label: "Country", :as => :hidden %>
+
+      <%= f.button :submit, t('.submit'), html: { class: "checkout-form" }%>
+    <% end %>
   </div>
-
-  <%= f.input :street, :input_html => { "data-autocomplete" => "street" }, :as => :hidden %>
-  <%= f.input :zip_code, :input_html => { "data-autocomplete" => "postal_code" }, :as => :hidden %>
-  <%= f.input :city, :input_html => { "data-autocomplete" => "locality" }, :as => :hidden %>
-  <%= f.input :country_code, :input_html => { "data-autocomplete" => "country" }, label: "Country", :as => :hidden %>
-
-  <%= f.button :submit, t('.submit')%>
- <% end %>
+</div>

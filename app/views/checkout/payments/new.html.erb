@@ -1,24 +1,27 @@
-<h1><%= t('.title')%></h1>
+<div class="container">
+  <div class="row wapper-grey container padded col-xs-12 col-sm-offset-2 col-sm-8">
+    <h1><%= t('.title')%></h1>
 
-<h2><%= t('.delivery_address')%></h2>
+    <h2><%= t('.delivery_address')%></h2>
 
-<%= link_to(t(".edit"), edit_checkout_address_path)%>
+    <%= link_to(t(".edit"), edit_checkout_address_path)%>
 
-<h2><%= t('.payment')%></h2>
-<%= form_tag checkout_payment_path, method: :post do %>
-  <label for="card_number">Card number: </label>
-  <input type="integer" class="form-control" id="card_number">
+    <h2><%= t('.payment')%></h2>
+    <%= form_tag checkout_payment_path, method: :post do %>
+      <label for="card_number">Card number: </label>
+      <input type="integer" class="form-control" id="card_number">
 
-  <label for="validity">Validity: </label>
-  <input type="integer"  class="form-control" id="validity">
+      <label for="validity">Validity: </label>
+      <input type="integer"  class="form-control" id="validity">
 
-  <label for="CSV">CSV: </label>
-  <input type="integer"  class="form-control" id="CSV">
+      <label for="CSV">CSV: </label>
+      <input type="integer"  class="form-control" id="CSV">
 
-   <label for="Card owner name">Card owner name: </label>
-  <input type="text"  class="form-control" id="Card-owner-name">
+       <label for="Card owner name">Card owner name: </label>
+      <input type="text"  class="form-control" id="Card-owner-name">
 
-  <input type="submit">
-<% end %>
-
+      <input type="submit">
+    <% end %>
+  </div>
+</div>
 
