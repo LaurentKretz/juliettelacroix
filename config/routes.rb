@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'orders/create'
 
-  scope '(:locale)', locale: /en/ do
+  scope '(:locale)', locale: /en|fr/ do
     devise_for :users
     root to: 'pages#home'
 

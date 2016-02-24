@@ -44,13 +44,16 @@
 
     <% else %>
 
+    <!-- Button (call-to-action) -->
+    <%= link_to t(".top_call_to_action", default: "Démarrer l'expérience"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% end %>
 
-    <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Démarrer l'expérience"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

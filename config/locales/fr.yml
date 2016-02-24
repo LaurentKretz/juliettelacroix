@@ -3,8 +3,7 @@ fr:
     home:
       discovery: "Ce que vous allez découvrir"
       experience: "Ce que vous allez ressentir"
-      title: "Des parfums d'exception créés par Juliette"
-      subtagline: "Editions limités disponibles uniquement sur invitation."
+      title: "Edition limitée disponible seulement sur invitation."
       invitation_text: "Entrer votre code invitation"
       invitation_button: "Activer"
       cta_text: "Vivez une expérience sensorielle unique"

@@ -24,11 +24,10 @@ en:
     home:
       discovery: "What you will discover"
       experience: "What you will experience"
-      title: "Unique and exclusive fragrances made in Paris"
-      subtagline: "Limited editions available online and for members only."
-      invitation_text: "Enter your invitation code here"
+      title: "Limited editions for members only."
+      invitation_text: "Enter your invitation code"
       invitation_button: "Activate"
-      cta_text: "Enjoy a unique experience"
+      cta_text: "Enjoy a unique sensory experience"
   shared:
     footer:
       about: "About us"
