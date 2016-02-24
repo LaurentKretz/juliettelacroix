@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   get 'orders/create'
 
   scope '(:locale)', locale: /en/ do

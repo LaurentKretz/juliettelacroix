@@ -8,12 +8,13 @@
   OrderItem.destroy_all
   Order.destroy_all
   Address.destroy_all
+  Review.destroy_all
   User.destroy_all
   Sample.destroy_all
   Kit.destroy_all
   Perfume.destroy_all
 
-  jean = User.create!(first_name:"Jean", last_name:"Dupont", email:"jean.dupont@test.fr", password:"12345678")
+  jean = User.create!(first_name:"Jean", last_name:"Dupont", email:"jean.dupont@test.fr", password:"12345678", admin:true)
   jean.addresses.create!(first_name:"Jean", last_name:"Dupont", street:"11 villa gaudelet", zip_code:"75011", city:"Paris")
   order1 = jean.orders.create!(address:Address.first)
   perfume1 = Perfume.create!(name:"Winter Love", description:"Best flagrance for winter")
@@ -28,7 +29,7 @@
   sample4 = perfume4.samples.create!(kit:Kit.first)
   sample5 = perfume5.samples.create!(kit:Kit.first)
   order_item1 = OrderItem.create!(quantity:1, product_type:'Kit', product:Kit.first, order: Order.first)
-
+  review1 = perfume1.reviews.create!(user:User.first, comment:"I love it")
 
 
 
