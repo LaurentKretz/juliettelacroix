@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'pundit'
 gem 'activeadmin', github: 'activeadmin'
+gem 'devise_invitable'
 
 gem 'sass-rails'
 gem 'jquery-rails'
