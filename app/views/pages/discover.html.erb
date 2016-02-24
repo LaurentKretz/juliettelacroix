@@ -1,0 +1,38 @@
+<div class="wrapper-gold">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <h3 class="text-center section-title">Apprenez et découvrez vos sens de manière interactive</h3>
+        <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim. </p>
+        <p class="text-center"><%= link_to t(".top_call_to_action", default: "Découvrez la collection"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <img class="pic-home text-center" src="https://static.pexels.com/photos/7919/pexels-photo.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for(@address, url: edit_checkout_address_path) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :number %>
+
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :email %>
+      <%= f.input :encrypted_password %>
+
+      <%= f.input :street %>
+      <%= f.input :zip_code %>
+      <%= f.input :city %>
+      <%= f.input :country_code %>
+
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

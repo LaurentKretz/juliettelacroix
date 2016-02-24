@@ -10,20 +10,19 @@
   background-color: #B39A6A;
 }
 
+.wrapper-white {
+  background-color: white;
+}
+
 .wrapper-talking {
   background-color: #c9e6e6;
 }
 
-.takling-header {
-  text-align: center;
-  color: $greenish;
-}
-
-
 .pic-home {
-max-height: 350px;
-max-width: 540px;
+height: 100%;
+width: 100%;
 text-align: center;
+background-size: cover !important;
 }
 
 .section-title {
@@ -34,4 +33,9 @@ text-align: center;
   margin-top: 30px;
   line-height: 30px;
   font-size: 17px;
+}
+
+.testimony-large {
+  width: 50px;
+  border-radius: 50%;
 }
