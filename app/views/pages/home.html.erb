@@ -2,12 +2,21 @@
   <div>
     <h1><%= t('.title') %></h1>
     <div class="banner-invitation">
-        <form>
+        <!-- <form>
           <div class="form-group">
             <input type="text" class="hpsearch" placeholder="<%= t('.invitation_text') %>">
           </div>
           <button type="submit" class="btn btn-activate btn-success"><%= t('.invitation_button') %></button>
         </form>
+        <%= link_to "Ask my invitation", new_invitation_path(User.new()) %> -->
+
+        <%= simple_form_for @invited, as: "user", url: invitation_path("user"), html: { method: :post} do |f| %>
+          <% User.invite_key_fields.each do |field| -%>
+            <%= f.input field, label: false %>
+          <% end -%>
+
+          <%= f.button :submit, t("devise.invitations.new.submit_button") %>
+        <% end %>
     </div>
     <div class="banner-experience">
       <h2><%= t('.cta_text') %></h2>
