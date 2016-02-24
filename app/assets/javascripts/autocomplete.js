@@ -11,7 +11,7 @@ function onPlaceChanged() {
   var street_number = "";
   var street_name = "";
 
-  console.log(place);  // Uncomment this line to view the full object returned by Google API.
+  // console.log(place);  // Uncomment this line to view the full object returned by Google API.
 
 
   for (var i in place.address_components) {

@@ -26,5 +26,25 @@ fr:
         method: "La méthode de Juliette pour essayer les parfums"
         sample_test: "Vos derniers échantillons à tester"
         all_my_kits: "Mes tests dans les autres gammes"
+  checkout:
+    addresses:
+      edit:
+        title: "Définir une nouvelle addresse"
 
-
+        placeholder_address: "Saisissez votre addresse"
+        submit: "Valider"
+    confirmations:
+      show:
+        title: "Félicitations!"
+        order_processed: "Votre commande a bien été prise en compte."
+        conf_sentence: "Vous recevrez bientôt un email avec le numéro de suivi de votre commande. Cette information est également disponible dans"
+        account: "votre compte"
+    payments:
+      new:
+        title: "Votre commande"
+        delivery_address: "Adresse de livraison"
+        edit: "Modifier"
+        payment: "Paiement"
+  orders:
+    new:
+      title: "Récapitulatif de votre commande"

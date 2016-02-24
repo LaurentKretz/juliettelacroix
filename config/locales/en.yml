@@ -47,3 +47,25 @@ en:
         method: "Juliette's method for a successful essences sampling"
         sample_test: "Your last samples to test"
         all_my_kits: "My tests in other collections"
+  checkout:
+    addresses:
+      edit:
+        title: "Define a new delivery address"
+        placeholder_address: "Start typing your address"
+        simple_form:
+          submit: "Save"
+    confirmations:
+      show:
+        title: "Congratulations!"
+        order_processed: "Your order has been processed."
+        conf_sentence: "You will receive soon an email with your delivery package tracking number. Remember that this information will be also retrievable in"
+        account: "your account"
+    payments:
+      new:
+        title: "Your payment method"
+        delivery_address: "Delivery address"
+        edit: "Edit"
+        payment: "Payment"
+  orders:
+    new:
+      title: "Votre order"

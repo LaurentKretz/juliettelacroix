@@ -1,11 +1,10 @@
 module Checkout
   class PaymentsController < ApplicationController
+     def new
+     end
 
-   def new
-   end
-
-   def create
-   end
-
+     def create
+      redirect_to checkout_confirmation_path
+     end
   end
 end
