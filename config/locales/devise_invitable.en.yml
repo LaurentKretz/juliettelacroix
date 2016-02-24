@@ -13,8 +13,10 @@ en:
         header: "Send invitation"
         submit_button: "Send an invitation"
       edit:
-        header: "Set your password"
-        submit_button: "Set my password"
+        header: "Welcome in Juliette's universe"
+        subheader: "Start your experience now"
+        login: "Create your personal account"
+        submit_button: "Sign in"
     mailer:
       invitation_instructions:
         subject: "Invitation instructions"

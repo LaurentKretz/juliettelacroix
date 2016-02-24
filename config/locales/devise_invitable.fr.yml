@@ -34,8 +34,10 @@ fr:
         header: "Send invitation"
         submit_button: "Send an invitation"
       edit:
-        header: "Set your password"
-        submit_button: "Set my password"
+        header: "Bienvenue chez Juliette"
+        subheader: "Commencez l'expérience"
+        login: "Créer mon compte personnel"
+        submit_button: "Créer mon compte"
     mailer:
       invitation_instructions:
         subject: "Invitation instructions"

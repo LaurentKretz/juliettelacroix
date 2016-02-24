@@ -1,11 +1,41 @@
-<h2><%= t 'devise.invitations.edit.header' %></h2>
+<div class="small-padded"></div>
+<h1 class="text-center"><%= t 'devise.invitations.edit.header' %></h1>
+<h2 class="text-center"><%= t 'devise.invitations.edit.subheader' %></h2>
+<div class="small-padded"></div>
+<div class="wrapper-gold">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <h3 class="text-center section-title">Apprenez et découvrez vos sens de manière interactive</h3>
+        <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim. </p>
+        <p class="text-center"><%= link_to t(".top_call_to_action", default: "Découvrez la collection"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <img class="pic-home text-center" src="https://static.pexels.com/photos/7919/pexels-photo.jpg">
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :invitation_token %>
+<div class="wrapper-grey text-center">
+  <div class="small-padded"></div>
+  <h2><%= t 'devise.invitations.edit.login' %></h2>
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f| %>
+          <%= devise_error_messages! %>
+          <%= f.hidden_field :invitation_token %>
 
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
+          <%= f.input :password %>
+          <%= f.input :password_confirmation %>
 
-  <%= f.button :submit, t("devise.invitations.edit.submit_button") %>
-<% end %>
+          <%= f.button :submit, t("devise.invitations.edit.submit_button") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
