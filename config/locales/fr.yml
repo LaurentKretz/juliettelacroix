@@ -4,8 +4,8 @@ fr:
       discovery: "Ce que vous allez découvrir"
       experience: "Ce que vous allez ressentir"
       title: "Edition limitée disponible seulement sur invitation."
-      invitation_text: "Entrer votre code invitation"
-      invitation_button: "Activer"
+      invitation_text: "email@example.com"
+      invitation_button: "Envoyez moi une invitation"
       cta_text: "Vivez une expérience sensorielle unique"
   shared:
     footer:

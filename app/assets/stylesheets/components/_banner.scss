@@ -34,7 +34,9 @@
 input {
   outline: none;
   border: 0px inset;
-  width: 200px;
+  width: 400px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .form-group {
@@ -42,7 +44,7 @@ text-align: center;
 }
 
 .btn-activate {
-  width: 200px;
+  width: 300px;
 }
 
 .banner-experience {

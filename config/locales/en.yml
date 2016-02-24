@@ -25,8 +25,8 @@ en:
       discovery: "What you will discover"
       experience: "What you will experience"
       title: "Limited editions for members only."
-      invitation_text: "Enter your invitation code"
-      invitation_button: "Activate"
+      invitation_text: "email@example.com"
+      invitation_button: "Send me an invitation"
       cta_text: "Enjoy a unique sensory experience"
   shared:
     footer:
