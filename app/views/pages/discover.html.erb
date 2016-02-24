@@ -13,26 +13,27 @@
   </div>
 </div>
 
-<div class="container padded">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for(@address, url: edit_checkout_address_path) do |f| %>
-      <%= f.error_notification %>
+<div class="wrapper-grey">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <%= form_tag("/hello/there") do %>
+          <p><%= label_tag(:number, "Your coupon number") %>
+          <%= text_field_tag :number %></p>
+          <p><%= label_tag(:first_name, "Your first name") %>
+          <%= text_field_tag :first_name %></p>
+          <p><%= label_tag(:last_name, "Your last name") %>
+          <%= text_field_tag :last_name %></p>
+          <p><%= label_tag(:email, "Your last name") %>
+          <%= text_field_tag :email %></p>
+          <p><%= label_tag(:address, "Your last name") %>
+          <%= text_field_tag :address %></p>
+          <p><%= label_tag(:last_name, "Your last name") %>
+          <%= text_field_tag :last_name %></p>
 
-      <%= f.input :number %>
-
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :email %>
-      <%= f.input :encrypted_password %>
-
-      <%= f.input :street %>
-      <%= f.input :zip_code %>
-      <%= f.input :city %>
-      <%= f.input :country_code %>
-
-      <%= f.button :submit %>
-      <% end %>
+          <%= submit_tag %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
