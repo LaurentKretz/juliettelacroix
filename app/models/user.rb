@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :reviews
   has_many :orders
+  has_many :addresses
   has_many :order_items, through: :orders
   has_one :coupon
 end
