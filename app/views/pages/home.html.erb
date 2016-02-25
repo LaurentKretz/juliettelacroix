@@ -1,8 +1,21 @@
-<div class="banner" id="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/9692/pexels-photo.jpeg');">
-  <div>
+
+<!-- ############## Pour mettre de la vidéo> -->
+<div class="wrapper-gold">
+<div class="container">
+<%=video_tag("juliettelacroix1bis.mp4", poster: "juliettelacroix1.png", :autobuffer => true,      :autoplay => true, :loop => true, :html_options => {class: "bgvid video"})%>
+        <source src="video/Motion.mp4" type="video/mp4" />
+    </video>
+
+<!-- ############## Pour mettre une banner>
+<!-- <div class="banner" id="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/9692/pexels-photo.jpeg');">
+  <div> -->
+
+    <div class="overlay col-xs-12 col-sm-6">
     <h1><%= t('.title') %></h1>
     <h2><%= t('.subtitle') %></h2>
     <div class="banner-invitation">
+    </div>
+
         <!-- <form>
           <div class="form-group">
             <input type="text" class="hpsearch" placeholder="<%= t('.invitation_text') %>">
@@ -12,13 +25,13 @@
         <%= link_to "Ask my invitation", new_invitation_path(User.new()) %> -->
 
         <%if user_signed_in? %>
-          <h2><%=t(".h2banner")%></h2>
+          <h4><%=t(".h2banner")%></h4>
           <div class="small-padded"></div>
           <%= link_to account_dashboard_path do %>
             <div class="btn btn-default", style="opacity:0.5;">Accéder à votre espace</div>
           <% end %>
         <%elsif @invitation%>
-          <h2><%=t(".nbinvitations")%> <%=@invitation_nb%> </h2>
+          <h4><%=t(".nbinvitations")%> <%=@invitation_nb%> </h4>
           <div class="small-padded"></div>
           <%= simple_form_for @invited, as: "user", url: invitation_path("user"), method: :post, html: { class: 'form-inline home-form' } do |f| %>
           <% User.invite_key_fields.each do |field| -%>
@@ -38,13 +51,14 @@
           </form>
         <%end%>
     </div>
-    <div class="banner-experience col-xs-12">
+    <div class="overlay-bis banner-experience col-xs-12">
       <h2><%= t('.cta_text') %></h2>
-      <a href="#" id="down">
+      <a href="#experience" id="down">
         <i class="fa fa-angle-down arrow"></i>
       </a>
     </div>
   </div>
+</div>
 </div>
 
 <div class="wrapper-grey" id="experience">
