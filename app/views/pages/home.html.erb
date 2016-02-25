@@ -1,6 +1,7 @@
 <div class="banner" id="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/9692/pexels-photo.jpeg');">
   <div>
     <h1><%= t('.title') %></h1>
+    <h2><%= t('.subtitle') %></h2>
     <div class="banner-invitation">
         <!-- <form>
           <div class="form-group">
@@ -9,6 +10,7 @@
           <button type="submit" class="btn btn-activate btn-success"><%= t('.invitation_button') %></button>
         </form>
         <%= link_to "Ask my invitation", new_invitation_path(User.new()) %> -->
+
         <%if user_signed_in? %>
           <h2><%=t(".h2banner")%></h2>
           <div class="small-padded"></div>
@@ -18,12 +20,13 @@
         <%elsif @invitation%>
           <h2><%=t(".nbinvitations")%> <%=@invitation_nb%> </h2>
           <div class="small-padded"></div>
-          <%= simple_form_for @invited, as: "user", url: invitation_path("user"), html: { method: :post} do |f| %>
-            <% User.invite_key_fields.each do |field| -%>
-              <%= f.input field, label: false %>
-            <% end -%>
-            <%= f.button :submit, t("devise.invitations.new.submit_button") %>
-          <% end %>
+          <%= simple_form_for @invited, as: "user", url: invitation_path("user"), method: :post, html: { class: 'form-inline home-form' } do |f| %>
+          <% User.invite_key_fields.each do |field| -%>
+            <%= f.input field, input_html: {class: "hpsearch"}, placeholder: 'Type your email', label: false %>
+          <% end -%>
+
+          <%= f.button :submit, t("devise.invitations.new.submit_button") %>
+        <% end %>
         <%else%>
           <h2><%= t(".no_more_invitation")%></h2>
           <h3><%= t(".subscribe_newsletter")%></h3>
@@ -35,7 +38,7 @@
           </form>
         <%end%>
     </div>
-    <div class="banner-experience">
+    <div class="banner-experience col-xs-12">
       <h2><%= t('.cta_text') %></h2>
       <a href="#" id="down">
         <i class="fa fa-angle-down arrow"></i>
