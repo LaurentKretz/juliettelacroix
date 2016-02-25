@@ -4,6 +4,12 @@ class Users::InvitationsController < Devise::InvitationsController
   def create
     today = Date.today
     monday = today - today.cwday + 1
+
+    if params[:user][:email] == ""
+      set_flash_message :alert, :email_required
+      redirect_to root_path and return
+    end
+
     if User.where('invitation_sent_at >= ?', monday).count <= MAX_NUMBER
       if User.find_by_email(params[:user][:email]).nil?
         super

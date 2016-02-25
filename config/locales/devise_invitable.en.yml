@@ -11,6 +11,7 @@ en:
       updated_not_active: "Your password was set successfully."
       no_invitations_remaining: "You have already sent all your invitations."
       invitation_removed: "Your invitation was removed."
+      email_required: "You must provide an email"
       new:
         header: "Send invitation"
         submit_button: "Send me an invitation"

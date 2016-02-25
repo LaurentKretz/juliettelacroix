@@ -32,6 +32,7 @@ fr:
       updated_not_active: "Mot de passe créé avec succès"
       no_invitations_remaining: "Vous avez déjà envoyé toutes vos invitations disponibles."
       invitation_removed: "L'invitation a été supprimée"
+      email_required: "Veuillez fournir une adresse email"
       new:
         header: "Envoyer une invitation"
         submit_button: "Demander mon invitation"
