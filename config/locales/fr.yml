@@ -1,4 +1,7 @@
 fr:
+  layouts:
+    application:
+      title: "Julienne Lacroix || Des parfums uniques et d'exception"
   pages:
     home:
       discovery: "Ce que vous allez découvrir"

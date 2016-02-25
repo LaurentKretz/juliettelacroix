@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  layouts:
+    application:
+      title: "Julienne Lacroix || Unique and finest fraguances from Paris"
   pages:
     home:
       discovery: "What you will discover"
