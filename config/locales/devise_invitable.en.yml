@@ -4,14 +4,16 @@ en:
       invited: "You have a pending invitation, accept it to finish creating your account."
     invitations:
       send_instructions: "An invitation email has been sent to %{email}."
+      already_sent: "An invitation has already been sent to %{email}"
+      no_more: "We would love everyone send you an invitation but we have very limited quantities and therefore must limit ourselves. Please come and visit us again next week. If you wish you can subscribe to our newsletter."
       invitation_token_invalid: "The invitation token provided is not valid!"
       updated: "Your password was set successfully. You are now signed in."
       updated_not_active: "Your password was set successfully."
-      no_invitations_remaining: "No invitations remaining"
+      no_invitations_remaining: "You have already sent all your invitations."
       invitation_removed: "Your invitation was removed."
       new:
         header: "Send invitation"
-        submit_button: "Send an invitation"
+        submit_button: "Send me an invitation"
       edit:
         header: "Welcome in Juliette's universe"
         subheader: "Start your experience now"
@@ -19,9 +21,9 @@ en:
         submit_button: "Sign in"
     mailer:
       invitation_instructions:
-        subject: "Invitation instructions"
+        subject: "Your personnal invitation - Juliette Lacroix Perfumes"
         hello: "Hello %{email}"
-        someone_invited_you: "Someone has invited you to %{url}, you can accept it through the link below."
+        someone_invited_you: "This is your personnal invitation to Les Parfums de Juliette website."
         accept: "Accept invitation"
         accept_until: "This invitation will be due in %{due_date}."
         ignore: "If you don't want to accept the invitation, please ignore this email.<br />Your account won't be created until you access the link above and set your password."
