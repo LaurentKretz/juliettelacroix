@@ -1,21 +1,30 @@
 <div class="wrapper-footer1">
   <div class="container">
     <div class="row">
-      <div class="company col-xs-12 col-sm-4">
-        <div class="col-xs-6 text-left">
-          <p id="footer-nl"><strong><%= t('.about') %></strong></p>
-          <p id="footer-nl"><%= t('.creator') %></p>
-          <p id="footer-nl"><%= t('.discover') %></p>
-          <p id="footer-nl"><%= t('.blog') %></p>
-        </div>
-        <div class="col-xs-6 text-left">
-          <p id="footer-nl"><strong><%= t('.more') %></strong></p>
-          <p id="footer-nl"><%= t('.terms') %></p>
-          <p id="footer-nl"><%= t('.privacy') %></p>
-        </div>
+      <div class="company col-xs-12 col-sm-2">
+            <div class="text-left">
+              <ul>
+                <li id="footer-nl" class="list-footer"><strong><%= t('.about') %></strong></li>
+                <li id="footer-nl" class="list-footer">
+                <%= link_to t('.creator'), discover_path, html_options = {class: "footer-links"} %></li>
+                <li id="footer-nl" class="list-footer">
+                <%= link_to t('.discover'), discover_path, html_options = {class: "footer-links"} %></li>
+                <li id="footer-nl" class="list-footer"><%= link_to t('.blog'), discover_path, html_options = {class: "footer-links"} %></li>
+              </ul>
+            </div>
       </div>
-      <div class="col-xs-12 col-sm-4 text-center">
-        <div class="social col-xs-12">
+      <div class="company col-xs-12 col-sm-2">
+
+            <div class="text-left">
+              <ul>
+                <li id="footer-nl" class="list-footer"><strong><%= link_to t('.more'), discover_path, html_options = {class: "footer-links"} %></strong></li>
+                <li id="footer-nl" class="list-footer"><%= link_to t('.terms'), discover_path, html_options = {class: "footer-links"} %></li>
+                <li id="footer-nl" class="list-footer"><%= link_to t('.privacy'), discover_path, html_options = {class: "footer-links"} %></li>
+              </ul>
+            </div>
+    </div>
+      <div class="text-center col-xs-6 col-sm-4">
+        <div class="social">
           <ul class="list-inline">
             <li><a href=""><i class="fa fa-youtube fa-2x icons"></i></a></li>
             <li><a href=""><i class="fa fa-instagram fa-2x icons"></i></a></li>
@@ -23,17 +32,17 @@
             <li><a href=""><i class="fa fa-twitter fa-2x icons"></i></a></li>
           </ul>
         </div>
-        <div class="dropdown col-xs-12">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Language
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><%= params[:locale] == "fr" ? "Français" : "English" %>
           <span class="caret"></span>
           </button>
          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu3">
-           <li><%=link_to("Français", root_path(:locale => 'fr'))%></li>
-           <li><%=link_to("English", root_path(:locale => 'en'))%></li>
+           <li><%=link_to("Français", params.merge(locale: 'fr'))%></li>
+           <li><%=link_to("English", params.merge(locale: 'en'))%></li>
           </ul>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4 text-left">
+      <div class="col-xs-8 col-sm-4 text-left">
         <p id="footer-nl"><%= t('.nl_subtitle') %></p>
         <p>
           <form class="footer-form">

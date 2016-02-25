@@ -79,3 +79,19 @@
   color:    #DBC293;
 }
 
+.list-footer {
+  list-style-type:none;
+}
+
+.footer-links {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links:hover {
+  color:    #DBC293;
+}
+
+.fa:hover {
+  color: $gray-light;
+}
