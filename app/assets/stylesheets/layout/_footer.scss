@@ -1,7 +1,7 @@
 // Your footer style
 
 .wrapper-footer1 {
- background: #444;
+ background: #2F2E2E;
  padding: 30px 0;
 }
 
@@ -27,3 +27,55 @@
 #footer-nl {
   color: white;
 }
+
+.container {
+  width: 980px;
+}
+
+.footer-form {
+  .form-group {
+
+    background-color: transparent;
+    border-bottom: 2px solid rgba(179, 154, 106, .5);
+  }
+  .hpsearch {
+    background-color: transparent;
+    color: white;
+    border:none;
+    box-shadow: none;
+    color: $gold;
+
+  }
+
+  .hpsearch::placeholder {
+    color: $gold;
+  }
+
+  input {
+  outline: none;
+  border: 0px inset;
+  width: 350px;
+  text-align: justify;
+  font-size: 16px;
+  background-color: transparent;
+}
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #DBC293;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #DBC293;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #DBC293;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #DBC293;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color:    #DBC293;
+}
+

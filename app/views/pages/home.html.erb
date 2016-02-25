@@ -1,6 +1,7 @@
 <div class="banner" id="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/9692/pexels-photo.jpeg');">
   <div>
     <h1><%= t('.title') %></h1>
+    <h2><%= t('.subtitle') %></h2>
     <div class="banner-invitation">
         <!-- <form>
           <div class="form-group">
@@ -10,15 +11,15 @@
         </form>
         <%= link_to "Ask my invitation", new_invitation_path(User.new()) %> -->
 
-        <%= simple_form_for @invited, as: "user", url: invitation_path("user"), html: { method: :post} do |f| %>
+        <%= simple_form_for @invited, as: "user", url: invitation_path("user"), method: :post, html: { class: 'form-inline home-form' } do |f| %>
           <% User.invite_key_fields.each do |field| -%>
-            <%= f.input field, label: false %>
+            <%= f.input field, input_html: {class: "hpsearch"}, placeholder: 'Type your email', label: false %>
           <% end -%>
 
           <%= f.button :submit, t("devise.invitations.new.submit_button") %>
         <% end %>
     </div>
-    <div class="banner-experience">
+    <div class="banner-experience col-xs-12">
       <h2><%= t('.cta_text') %></h2>
       <a href="#" id="down">
         <i class="fa fa-angle-down arrow"></i>

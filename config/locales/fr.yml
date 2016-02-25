@@ -3,21 +3,26 @@ fr:
     home:
       discovery: "Ce que vous allez découvrir"
       experience: "Ce que vous allez ressentir"
-      title: "Edition limitée disponible seulement sur invitation."
+      title: "Fragrances d'exception en édition limitée"
+      subtitle: "Disponibles seulement sur invitation."
       invitation_text: "email@example.com"
       invitation_button: "Envoyez moi une invitation"
       cta_text: "Vivez une expérience sensorielle unique"
   shared:
     footer:
       about: "A propos"
+      creator: "La créatrice"
+      discover: "Notre concept"
       press: "Presse"
+      more: "Informations"
       blog: "Blog"
       nl_title: "Abonnez-vous à la newsletter"
-      nl_subtitle: "Découvrez chaque semaine un article sur le parfum"
+      nl_subtitle: "Chaque semaine un article sur le parfum"
       nl_button: "S'abonner"
       terms: "CGV"
       privacy: "Mentions légales"
       paris: "Fait à Paris"
+
   account:
     dashboards:
       show:

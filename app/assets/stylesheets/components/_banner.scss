@@ -25,11 +25,36 @@
   margin-top: 80px;
 }
 
-.hpsearch {
-  background-color: transparent;
-  color: white;
-  border-bottom: 2px solid rgba(250, 250, 250, .5);
+.home-form {
+  .form-group {
+    width: 60%;
+    background-color: rgba(0, 0, 0, .3);
+    border-bottom: 2px solid rgba(250, 250, 250, .5);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .hpsearch {
+    background-color: transparent;
+    color: white;
+    border:none;
+    box-shadow: none;
+    color: $gold;
+
+  }
+
+  .hpsearch::placeholder {
+    color: $gold;
+  }
 }
+
+.simple_form.home-form input[type='submit'] {
+    width: 22%;
+    margin-left: 5px;
+    background-color: $gold;
+    color: white;
+    border-color: rgba(196, 174, 132, .5);
+    border-radius: 2px;
+  }
 
 input {
   outline: none;
