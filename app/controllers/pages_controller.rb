@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :discover]
   skip_after_action :verify_authorized, only: :home
 
   def home
     @invited = User.new
+    @invitation_nb = MAX_NUMBER - nb_invitations_sent
+    @invitation = invitation_available
   end
 
 
@@ -49,4 +51,15 @@ class PagesController < ApplicationController
   def coupons_params
     params.require(:coupons).permit(:number)
   end
+
+  def nb_invitations_sent
+    today = Date.today
+    monday = today - today.cwday + 1
+    User.where('invitation_sent_at >= ?', monday).count
+  end
+
+  def invitation_available
+    nb_invitations_sent <= MAX_NUMBER
+  end
+
 end

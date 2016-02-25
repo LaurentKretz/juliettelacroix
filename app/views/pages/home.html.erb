@@ -9,14 +9,31 @@
           <button type="submit" class="btn btn-activate btn-success"><%= t('.invitation_button') %></button>
         </form>
         <%= link_to "Ask my invitation", new_invitation_path(User.new()) %> -->
-
-        <%= simple_form_for @invited, as: "user", url: invitation_path("user"), html: { method: :post} do |f| %>
-          <% User.invite_key_fields.each do |field| -%>
-            <%= f.input field, label: false %>
-          <% end -%>
-
-          <%= f.button :submit, t("devise.invitations.new.submit_button") %>
-        <% end %>
+        <%if user_signed_in? %>
+          <h2><%=t(".h2banner")%></h2>
+          <div class="small-padded"></div>
+          <%= link_to account_dashboard_path do %>
+            <div class="btn btn-default", style="opacity:0.5;">Accéder à votre espace</div>
+          <% end %>
+        <%elsif @invitation%>
+          <h2><%=t(".nbinvitations")%> <%=@invitation_nb%> </h2>
+          <div class="small-padded"></div>
+          <%= simple_form_for @invited, as: "user", url: invitation_path("user"), html: { method: :post} do |f| %>
+            <% User.invite_key_fields.each do |field| -%>
+              <%= f.input field, label: false %>
+            <% end -%>
+            <%= f.button :submit, t("devise.invitations.new.submit_button") %>
+          <% end %>
+        <%else%>
+          <h2><%= t(".no_more_invitation")%></h2>
+          <h3><%= t(".subscribe_newsletter")%></h3>
+          <form class="form-inline">
+            <div class="form-group">
+              <input type="text" name="email">
+            </div>
+          <button type="submit" class="btn btn-success"><%= t('.nl_button') %></button>
+          </form>
+        <%end%>
     </div>
     <div class="banner-experience">
       <h2><%= t('.cta_text') %></h2>

@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 
-  permit_params :email, :first_name, :last_name, :admin
+  permit_params :email, :first_name, :last_name, :admin, :first_purchase
 
   index do
     selectable_column
@@ -9,10 +9,19 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :created_at
-    column :admin
-    column "Address" do |user|
-      user.addresses.first.street
+    column :invitation_sent_at
+    column :invitation_accepted_at
+    column "Premier kit acheté" do |user|
+      user.first_purchase
     end
+    column "Address" do |user|
+      if user.addresses.first.nil?
+        "No address registered"
+      else
+        "#{user.addresses.first.street} #{user.addresses.first.zip_code.to_s} #{user.addresses.first.city}"
+      end
+    end
+    column :admin
     actions
   end
 
@@ -21,6 +30,7 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       f.input :email
+      f.input :first_purchase
     end
     f.inputs "Admin" do
       f.input :admin
