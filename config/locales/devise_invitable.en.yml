@@ -17,9 +17,14 @@ en:
         submit_button: "Send me an invitation"
       edit:
         header: "Welcome in Juliette's universe"
-        subheader: "Start your experience now"
-        login: "Create your personal account"
-        submit_button: "Sign in"
+        subheader: "Your invitation is accepted. You can start your journey in Juliette's flagrances now"
+        order: "Order your first discovery box"
+        submit_button: "Order my first discovery box"
+        first_name: "Your first name"
+        name: "Your name"
+        email: "Your email address"
+        password: "Choose your password"
+        password_conf: "Confirm your password"
     mailer:
       invitation_instructions:
         subject: "Your personnal invitation - Juliette Lacroix Perfumes"

@@ -59,7 +59,7 @@ class PagesController < ApplicationController
   end
 
   def invitation_available
-    nb_invitations_sent <= MAX_NUMBER
+    nb_invitations_sent < MAX_NUMBER
   end
 
 end

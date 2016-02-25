@@ -38,9 +38,14 @@ fr:
         submit_button: "Demander mon invitation"
       edit:
         header: "Bienvenue chez Juliette"
-        subheader: "Commencez l'expérience"
-        login: "Créer mon compte personnel"
-        submit_button: "Créer mon compte"
+        subheader: "Votre invitation a été acceptée - Commencez l'expérience"
+        order: "Commander mon premier coffret découverte"
+        submit_button: "Commander mon coffret découverte"
+        first_name: "Votre prénom"
+        name: "Votre nom"
+        email: "Votre adresse email"
+        password: "Choisissez votre mot de passe"
+        password_conf: "Confirmez le mot de passe"
     mailer:
       invitation_instructions:
         subject: "Votre invitation personnelle - Les parfums de Juliette"
