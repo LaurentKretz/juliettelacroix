@@ -23,6 +23,12 @@ Rails.application.routes.draw do
         resources :perfumes, only: [:show] do
           resources :reviews, only: [:create, :update]
         end
+        # post 'perfumes/step1', to: 'perfumes#step1', as: 'step1'
+        # post 'perfumes/step2', to: 'perfumes#step1', as: 'step2'
+        # post 'perfumes/step3', to: 'perfumes#step1', as: 'step3'
+        # post 'perfumes/step4', to: 'perfumes#step1', as: 'step4'
+        # post 'perfumes/step5', to: 'perfumes#step1', as: 'step5'
+        # post 'perfumes/step6', to: 'perfumes#step1', as: 'step6'
       end
   # resources :coupons, except: [:index]
   # resources :kits, except: [:show]

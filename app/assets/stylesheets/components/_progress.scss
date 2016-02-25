@@ -1,25 +1,26 @@
 progress {
-    background-color: $gold;
-    color: $gold;
+    background-color: $gray-lighter;
     border: 0;
-    height: 30px;
+    width: 60%;
+    height: 20px;
     border-radius: 9px;
 }
+
 progress::-webkit-progress-bar {
-    background-color: $gold;
+    background-color: $gray-lighter;
     border: 0;
-    height: 30px;
+    height: 20px;
     border-radius: 9px;
 }
 progress::-webkit-progress-value {
     background-color: $gold;
     border: 0;
-    height: 30px;
+    height: 20px;
     border-radius: 9px;
 }
 progress::-moz-progress-bar {
-    background-color: $gold;
+    background-color: $gray-lighter;
     border: 0;
-    height: 30px;
+    height: 20px;
     border-radius: 9px;
 }

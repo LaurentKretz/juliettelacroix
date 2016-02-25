@@ -13,12 +13,12 @@
           <img class="pic-home text-center" src="https://static.pexels.com/photos/6404/woman-girl-young-beauty.jpg">
           <h3>Ce que vous allez découvrir sur <%= @perfume.name%></h3>
           <ul class="list-unstyled section-par">
-          <li><i class="fa fa-check-circle"></i></li>
-          <li><i class="fa fa-check-circle"></i></li>
-          <li><i class="fa fa-check-circle"></i></li>
+            <li><i class="fa fa-check-circle"></i></li>
+            <li><i class="fa fa-check-circle"></i></li>
+            <li><i class="fa fa-check-circle"></i></li>
           </ul>
-          <p class="text-center"><progress value="20" max="100"></progress></p>
-          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Next step"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Etape 1/5 >"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Back <"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
         </div>
       </div>
     </div>
@@ -40,8 +40,9 @@
           <iframe src="https://player.vimeo.com/video/90947998?color=B39A6A&title=0&byline=0&portrait=0" width="100%" height="290" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="margin-top:20px;"></iframe>
           <h3>L'inspiration de Juliette et la naissance de <%= @perfume.name%></h3>
           <p class="section-par">Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus. </p>
-          <p class="text-center"><progress value="20" max="100"></progress></p>
-          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Next step"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><progress id="progressbar" value="20" max="100"></progress></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Etape 2/5 >"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Back <"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
         </div>
       </div>
     </div>
@@ -62,8 +63,9 @@
           <img class="pic-home text-center" src="https://static.pexels.com/photos/1848/nature-sunny-red-flowers.jpg">
           <h3>1ere note</h3>
           <p class="section-par">Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus.</p>
-          <p class="text-center"><progress value="40" max="100"></progress></p>
-          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Next step"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><progress id="progressbar" value="0" max="100"></progress></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Etape 3/5 >"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Back <"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
         </div>
       </div>
     </div>
@@ -71,7 +73,7 @@
 </div>
 
 
-<!-- # Step 5
+<!-- # Step 4
 # 2e note et info matière
 # 60 % -->
 
@@ -83,8 +85,9 @@
           <img class="pic-home text-center" src="https://static.pexels.com/photos/37332/flowers-buttercups-flowering-petals.jpg">
           <h3>2e note</h3>
           <p class="section-par">Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, </p>
-          <p class="text-center"><progress value="60" max="100"></progress></p>
-          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Next step"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><progress id="progressbar" value="0" max="100"></progress></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Etape 4/5 >"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Back <"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
         </div>
       </div>
     </div>
@@ -104,18 +107,12 @@
         <div class="card">
           <img class="pic-home text-center" src="https://static.pexels.com/photos/1924/sea-landscape-mountains-nature.jpg">
           <h3>Vos sensations</h3>
-          <%= simple_form_for(@perfume.review, url: account_perfume_reviews_path, method: :put, html: { class: "checkout-form" }) do |f| %>
-            <%= f.error_notification %>
-
-            <%= f.input :street, :input_html => { "data-autocomplete" => "street" }, :as => :hidden %>
-            <%= f.input :zip_code, :input_html => { "data-autocomplete" => "postal_code" }, :as => :hidden %>
-            <%= f.input :city, :input_html => { "data-autocomplete" => "locality" }, :as => :hidden %>
-            <%= f.input :country_code, :input_html => { "data-autocomplete" => "country" }, label: "Country", :as => :hidden %>
-
-            <%= f.button :submit, t('.submit'), html: { class: "checkout-form" }%>
-          <% end %>
-          <p class="text-center"><progress value="80" max="100"></progress></p>
-          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Next step"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p>Simple Form</p>
+          <p>Grade 1</p>
+          <p>Grade 2</p>
+          <p class="text-center"><progress id="progressbar" value="0" max="100"></progress></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Etape 5/5 >"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+          <p class="text-center"><%= link_to t(".top_call_to_action", default: "Back <"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
         </div>
       </div>
     </div>
@@ -138,7 +135,7 @@
       <div class="col-xs-12 col-md-offset-3 col-md-6">
         <div class="card">
           <img class="pic-home text-center" src="https://static.pexels.com/photos/4322/person-woman-hand-space.jpg">
-          <h3>Pour aller plus loin</h3>
+          <h3>Merci ! Pour aller plus loin :</h3>
           <ul class="list-unstyled section-par">
           <li><i class="fa fa-check-circle"></i></li>
           <li><i class="fa fa-check-circle"></i></li>
@@ -153,3 +150,5 @@
     </div>
   </div>
 </div>
+
+<script src="../../assets/javascripts/perfumetest.js" type="text/javascript"></script>
