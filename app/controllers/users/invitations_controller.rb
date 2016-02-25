@@ -23,6 +23,12 @@ class Users::InvitationsController < Devise::InvitationsController
     end
   end
 
+  def update
+    current_user.update(user_params)
+    current_user.save
+    raise
+    redirect_to root_path
+  end
 
   protected
 
@@ -36,5 +42,9 @@ class Users::InvitationsController < Devise::InvitationsController
 
   def after_invite_path_for(resource)
     resource ? super : root_path
+  end
+
+  def user_params
+    params.require[:user].permit(:first_name, :last_name, :email, :password)
   end
 end
