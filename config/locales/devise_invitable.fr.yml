@@ -27,6 +27,7 @@ fr:
       send_instructions: "Une invitation a été envoyée à %{email}."
       already_sent: "Une invitation a déjà été envoyée à %{email}"
       invitation_token_invalid: "L'invitation n'est plus valide"
+      no_more: "Nous aimerions pouvoir satisfaire toutes les demandes mais nos produits sont en quantité extrêmement limitée. Vous pouvez réessayer la semaine prochaine, et d'ici là vous inscrire à notre newsletter."
       updated: "Mot de passe créé avec succès, votre compte est bien créé"
       updated_not_active: "Mot de passe créé avec succès"
       no_invitations_remaining: "Vous avez déjà envoyé toutes vos invitations disponibles."
