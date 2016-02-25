@@ -1,0 +1,69 @@
+<!-- # Step 1
+# ce que vous allez découvrir
+# nom du parfum
+# liste des choses
+# timing
+ -->
+<h3><%=@perfume.name%></h3>
+<p><%=@perfume.description%></p>
+
+<div class="wrapper-gold">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <img class="pic-home text-center" src="https://static.pexels.com/photos/7919/pexels-photo.jpg">
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <h3 class="text-center section-title">Ce que vous allez découvrir</h3>
+        <ul class="list-unstyled section-par">
+          <li><i class="fa fa-check-circle"></i></li>
+          <li><i class="fa fa-check-circle"></i></li>
+          <li><i class="fa fa-check-circle"></i></li>
+        </ul>
+        <p class="text-center"><%= link_to t(".top_call_to_action", default: "Découvrez la collection"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- # Step 2
+# vidéo inspiration
+# 20%
+ -->
+
+<div class="container text-center">
+  <h1><%= @perfume.name%>: <%=@perfume.description%></h1>
+  <h3>L'inspiration de Juliette et la naissance de <%= @perfume.name%></h3>
+  <iframe src="https://player.vimeo.com/video/90947998?color=B39A6A&title=0&byline=0&portrait=0" width="962" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="margin-top:20px;"></iframe>
+  <p><a href="https://vimeo.com/90947998">Juliette's introduction to perfume</a> from <a href="https://vimeo.com/trendmodelsmgmt">Juliette Lacroix</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+  <p>20%<progress id="progressbar" value="20" max="100"></progress></p>
+  <p class="text-center"><%= link_to t(".top_call_to_action", default: "Next step"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+</div>
+
+
+<!-- # Step 3
+# faites le test et 1ere note
+# 40% -->
+
+
+
+<!-- # Step 4
+# faites le test et 1ere note
+# 40% -->
+
+
+
+<!-- # review du parfum
+# 80% -->
+
+
+
+
+<!-- # review du parfum
+# Plus de conseils parfums
+# Conseil perosnnalisé
+# acheter tout de suite
+# retour à mon profil
+# 100% -->

@@ -1,0 +1,24 @@
+#progressbar {
+    background-color: $gold;
+    border: 0;
+    height: 30px;
+    border-radius: 9px;
+}
+progress::-webkit-progress-bar {
+    background-color: $gold;
+    border: 0;
+    height: 30px;
+    border-radius: 9px;
+}
+progress::-webkit-progress-value {
+    background-color: $gold;
+    border: 0;
+    height: 30px;
+    border-radius: 9px;
+}
+progress::-moz-progress-bar {
+    background-color: $gold;
+    border: 0;
+    height: 30px;
+    border-radius: 9px;
+}

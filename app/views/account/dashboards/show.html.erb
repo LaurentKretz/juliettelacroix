@@ -18,6 +18,7 @@
     <% @perfumes.each do |perfume| %>
     <li><h3><%=perfume.name%></h3></li>
     <li><%=perfume.description%></li>
+    <%= link_to "Testez ce parfum", account_perfume_path(perfume), class: "navbar-wagon-item navbar-wagon-button btn" %></p>
     <%end%>
   </ul>
   <h3><%=link_to t('.all_my_kits'), ""%></h3>
