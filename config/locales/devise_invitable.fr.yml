@@ -24,7 +24,8 @@ fr:
     failure:
       invited: "Vous avez une invitation en attente, acceptez la pour finaliser votre compte"
     invitations:
-      send_instructions: "Une invitation à été envoyée à %{email}."
+      send_instructions: "Une invitation a été envoyée à %{email}."
+      already_sent: "Une invitation a déjà été envoyée à %{email}"
       invitation_token_invalid: "L'invitation n'est plus valide"
       updated: "Mot de passe créé avec succès, votre compte est bien créé"
       updated_not_active: "Mot de passe créé avec succès"
