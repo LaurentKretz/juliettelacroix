@@ -1,5 +1,5 @@
 class Users::InvitationsController < Devise::InvitationsController
-
+before_action :set_user, only:[:create, :update]
 
   def create
     today = Date.today
@@ -24,9 +24,8 @@ class Users::InvitationsController < Devise::InvitationsController
   end
 
   def update
-    current_user.update(user_params)
-    current_user.save
-    raise
+    @user.update(user_params)
+    @user.addresses.create!(address_params)
     redirect_to root_path
   end
 
@@ -44,7 +43,21 @@ class Users::InvitationsController < Devise::InvitationsController
     resource ? super : root_path
   end
 
-  def user_params
-    params.require[:user].permit(:first_name, :last_name, :email, :password)
+  private
+
+  def set_user
+  @user = User.find_by_email(params[:user][:email])
   end
+
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
+  end
+
+  def address_params
+    params.require(:user).permit(:first_name, :last_name, address: [:street, :city])
+  end
+
+
+
 end
