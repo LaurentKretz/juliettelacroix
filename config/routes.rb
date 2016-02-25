@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'discover', to: 'pages#discover'
 
   scope '(:locale)', locale: /en|fr/ do
-    devise_for :users
+    devise_for :users, :controllers => { :invitations => 'users/invitations' }
     root to: 'pages#home'
 
     # resources :perfumes, only: [:show, :index]

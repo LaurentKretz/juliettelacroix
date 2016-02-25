@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'pundit'
 gem 'activeadmin', github: 'activeadmin'
+gem 'devise_invitable'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -22,6 +23,7 @@ gem 'autoprefixer-rails'
 gem "rails-i18n"
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem "letter_opener", group: :development
 
 group :development, :test do
   gem 'binding_of_caller'

@@ -55,6 +55,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
@@ -101,6 +102,9 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (0.12.1)
     devise-i18n-views (0.3.7)
+    devise_invitable (1.5.5)
+      actionmailer (>= 3.2.6, < 5)
+      devise (>= 3.2.0)
     erubis (2.7.0)
     execjs (2.6.0)
     figaro (1.1.1)
@@ -135,6 +139,10 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -255,10 +263,12 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  devise_invitable
   figaro
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
+  letter_opener
   pg
   pry-byebug
   pry-rails
