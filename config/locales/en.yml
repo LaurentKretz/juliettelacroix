@@ -28,6 +28,11 @@ en:
       invitation_text: "email@example.com"
       invitation_button: "Send me an invitation"
       cta_text: "Enjoy a unique sensory experience"
+      h2banner: "Welcome in Juliette's perfumes. You are logged in."
+      nbinvitations: "Number of invitations left:"
+      no_more_invitation: "Sorry, there is no more invitation for this week. Please try again next week."
+      subscribe_newsletter: "Subscribe to our newsletter"
+      nl_button: "Subscribe"
   shared:
     footer:
       about: "About us"
