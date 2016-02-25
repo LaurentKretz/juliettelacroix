@@ -8,6 +8,11 @@ fr:
       invitation_text: "email@example.com"
       invitation_button: "Envoyez moi une invitation"
       cta_text: "Vivez une expérience sensorielle unique"
+      h2banner: "Bienvenue dans l'univers de Juliette. Vous êtes connecté."
+      nbinvitations: "Nombre d'invitations restantes:"
+      no_more_invitation: "Toutes les invitations de la semaine sont écoulées. Vous pouvez essayer à nouveau la semaine prochaine."
+      subscribe_newsletter: "Inscrivez vous à notre newsletter"
+      nl_button: "S'abonner"
   shared:
     footer:
       about: "A propos"
