@@ -4,4 +4,7 @@ class UsersController < ApplicationController
     @user = record.user
   end
 
+
+
+
 end

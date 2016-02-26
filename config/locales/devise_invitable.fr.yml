@@ -32,14 +32,29 @@ fr:
       updated_not_active: "Mot de passe créé avec succès"
       no_invitations_remaining: "Vous avez déjà envoyé toutes vos invitations disponibles."
       invitation_removed: "L'invitation a été supprimée"
+      email_required: "Veuillez fournir une adresse email"
       new:
         header: "Envoyer une invitation"
         submit_button: "Demander mon invitation"
       edit:
         header: "Bienvenue chez Juliette"
-        subheader: "Commencez l'expérience"
-        login: "Créer mon compte personnel"
-        submit_button: "Créer mon compte"
+        subheader: "Votre invitation a été acceptée - Commencez l'expérience"
+        order: "Commander mon premier coffret découverte"
+        submit_button: "Commander mon coffret découverte"
+        first_name: "Votre prénom"
+        name: "Votre nom"
+        first_name_delivery: "Prénom"
+        name_delivery: "Nom"
+        email: "Votre adresse email"
+        password: "Choisissez votre mot de passe"
+        password_conf: "Confirmez le mot de passe"
+        street: "Numéro & nom de la rue"
+        zip_code: "Code postal"
+        city: "Ville"
+        identity: "Identité"
+        delivery: "Adresse de livraison"
+
+        # accept_form: "Veuillez remplir tous les champs requis"
     mailer:
       invitation_instructions:
         subject: "Votre invitation personnelle - Les parfums de Juliette"

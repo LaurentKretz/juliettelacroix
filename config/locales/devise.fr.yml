@@ -2,6 +2,9 @@
 
 fr:
   devise:
+    invitations:
+      user:
+        accept_form: "Veuillez remplir tous les champs requis du formulaire"
     confirmations:
       confirmed: "Votre email est bien valide."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
