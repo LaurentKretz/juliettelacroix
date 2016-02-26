@@ -37,9 +37,10 @@ en:
       cta_text: "Indulge in a unique sensory experience"
       h2banner: "Welcome in Juliette's perfumes. You are logged in."
       nbinvitations: "Number of invitations left:"
-      no_more_invitation: "Sorry, there is no more invitation for this week. Please try again next week."
+      no_more_invitation: "Sorry, there is 0 invitation left for this week. Please try again next Tuesday."
       subscribe_newsletter: "Subscribe to our newsletter"
       nl_button: "Subscribe"
+      email: "Type your email"
   shared:
     footer:
       about: "About us"

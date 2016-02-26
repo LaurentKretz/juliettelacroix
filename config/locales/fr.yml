@@ -19,6 +19,7 @@ fr:
       no_more_invitation: "0 invitation restante. Rendez-vous mardi prochain pour tenter votre chance."
       subscribe_newsletter: "En savoir plus sur nos parfums"
       nl_button: "S'abonner"
+      email: "Saisissez votre email"
   shared:
     footer:
       about: "A propos"
