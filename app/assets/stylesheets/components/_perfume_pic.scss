@@ -1,11 +1,54 @@
+
+.perfume-circle {
+  position: relative;
+  width: 100%
+}
+
+#perfume1 {
+ position: absolute;
+ top: 100px;
+ left: 100px;
+ transform: rotate(-90deg);
+}
+
+#perfume2 {
+ position: absolute;
+ top: -6px;
+ left: 149px;
+ transform: rotate(-45deg);
+}
+
+#perfume3 {
+ position: absolute;
+ top: -50px;
+ left: 255px;
+ transform: rotate(-0deg);
+}
+
+#perfume4 {
+ position: absolute;
+ top: -8px;
+ left: 359px;
+ transform: rotate(45deg);
+}
+
+#perfume5 {
+ position: absolute;
+ top: 100px;
+ left: 400px;
+ transform: rotate(90deg);
+}
+
 .perfume-pic{
 
   position: relative;
   width: 172px;
   margin:0;
   padding:0;
+
   img{
   opacity: 0.3;
+  height: 150px;
   }
   img:hover{
     opacity: 1;
