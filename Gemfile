@@ -23,6 +23,7 @@ gem 'autoprefixer-rails'
 gem "rails-i18n"
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'owlcarousel-rails'
 gem "letter_opener", group: :development
 
 group :development, :test do
