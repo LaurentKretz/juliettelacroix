@@ -40,11 +40,10 @@
           <%= f.button :submit, t("devise.invitations.new.submit_button") %>
         <% end %>
         <%else%>
-          <h3><%= t(".no_more_invitation")%></h3>
-          <h5><%= t(".subscribe_newsletter")%></h5>
+          <h4><%= t(".no_more_invitation")%></h4>
           <form class="form-inline home-form">
             <div class="form-group">
-              <input type="text" name="email" class="hpsearch">
+              <input type="text" name="email" class="hpsearch", placeholder= "<%= t('.subscribe_newsletter') %>">
             </div>
           <button type="submit" class="btn btn-success"><%= t('.nl_button') %></button>
           </form>

@@ -41,9 +41,10 @@
     background-color: transparent;
     color: white;
     border:none;
+    margin: none;
     box-shadow: none;
-    color: $gold;
-
+    margin: auto;
+    width: 100%;
   }
 
   .hpsearch::placeholder {
