@@ -41,21 +41,47 @@ background-size: cover !important;
 }
 
 // ############## POUR METTRE DE LA VIDEO //
-.container { position:relative;
-width: 980px;
-padding-left: 0px }
+//
+.container-video video {
+/*  making the video fullscreen  */
+  position: fixed;
+  display: block;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  width: initial;
+  height: 100vh;
+  z-index: -10;
+  margin: 0px auto;
+  object-fit: cover;
+  padding: 0px;
+}
 
-.container video {
-    position:relative;
-    z-index:0;
-    width: 1274px;
-    margin-left: -150px;
- }
+// .container { position:relative;
+// width: 980px;
+// padding-left: 0px }
+
+// .container video {
+//     position:relative;
+//     z-index:0;
+//     width: 1274px;
+//     margin-left: -150px;
+//  }
+//
+.container-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  //padding-top: 89px;
+}
 .overlay {
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    height: 100%;
+    // position: absolute;
+    // top: 60px;
+    // width: 100%;
+    // height: 100%;
     z-index: 1;
     color: white;
     text-shadow: 2px 2px $gold;
@@ -64,9 +90,9 @@ padding-left: 0px }
 
 
  .overlay-bis {
-    position: absolute;
-    top: 360px;
-    left: -20px;
+    // position: absolute;
+    // top: 360px;
+    // left: -20px;
     z-index: 1;
     color: white;
     text-shadow: 2px 2px $gold;
@@ -77,31 +103,31 @@ padding-left: 0px }
   color: white;
 }
 
-.bgvid {
-     position: fixed;
-     top: 50%;
-     left: 50%;
-     min-width: 100%;
-     min-height: 100%;
-     width: auto;
-     height: auto;
-     z-index: -100;
-     -ms-transform: translateX(-50%) translateY(-50%);
-     -moz-transform: translateX(-50%) translateY(-50%);
-     -webkit-transform: translateX(-50%) translateY(-50%);
-     transform: translateX(-50%) translateY(-50%);
-     background: url(juliettelacroix1.png) no-repeat;
-     background-size: cover;
- }
+// .bgvid {
+//      position: fixed;
+//      top: 50%;
+//      left: 50%;
+//      min-width: 100%;
+//      min-height: 100%;
+//      width: auto;
+//      height: auto;
+//      z-index: -100;
+//      -ms-transform: translateX(-50%) translateY(-50%);
+//      -moz-transform: translateX(-50%) translateY(-50%);
+//      -webkit-transform: translateX(-50%) translateY(-50%);
+//      transform: translateX(-50%) translateY(-50%);
+//      background: url(juliettelacroix1.png) no-repeat;
+//      background-size: cover;
+//  }
 
- @media screen and (max-device-width: 800px) {
-    html {
-         background: url(juliettelacroix1.png) #000 no-repeat center center fixed;
-    }
-    #bgvid {
-        display: none;
-    }
-}
+//  @media screen and (max-device-width: 800px) {
+//     html {
+//          background: url(juliettelacroix1.png) #000 no-repeat center center fixed;
+//     }
+//     #bgvid {
+//         display: none;
+//     }
+// }
 .padded {
   margin-top: -12px;
  }

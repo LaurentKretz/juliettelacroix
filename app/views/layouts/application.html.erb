@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO</title>
+    <title><%= t('.site') %></title>
     <%= csrf_meta_tags %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -19,5 +18,6 @@
       src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAeNsutHdohOVTLJjZLhkYc_DgVCZqWaB8">
     </script>
     <%= javascript_include_tag 'application' %>
+    <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.0.9/scrollreveal.min.js"></script>
   </body>
 </html>

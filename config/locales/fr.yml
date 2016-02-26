@@ -1,17 +1,23 @@
 fr:
+  simple_form:
+    placeholders:
+      email: "Saisissez votre email"
+  layouts:
+    application:
+      site: "Juliette Lacroix || Parfums d'exception"
   pages:
     home:
       discovery: "Ce que vous allez découvrir"
       experience: "Ce que vous allez ressentir"
-      title: "Fragrances d'exception en édition limitée"
+      title: "Fragrances d'exception en édition limitée."
       subtitle: "Disponibles seulement sur invitation."
       invitation_text: "email@example.com"
       invitation_button: "Envoyez moi une invitation"
       cta_text: "Vivez une expérience sensorielle unique"
       h2banner: "Bienvenue dans l'univers de Juliette. Vous êtes connecté."
       nbinvitations: "Nombre d'invitations restantes:"
-      no_more_invitation: "Toutes les invitations de la semaine sont écoulées. Vous pouvez essayer à nouveau la semaine prochaine."
-      subscribe_newsletter: "Inscrivez vous à notre newsletter"
+      no_more_invitation: "0 invitation restante. Rendez-vous mardi prochain pour tenter votre chance."
+      subscribe_newsletter: "En savoir plus sur nos parfums"
       nl_button: "S'abonner"
   shared:
     footer:
@@ -27,7 +33,9 @@ fr:
       terms: "CGV"
       privacy: "Mentions légales"
       paris: "Fait à Paris"
-
+    navbar:
+      sign_in: "Se connecter"
+      top_call_to_action: "Découvrir l'experience"
   account:
     dashboards:
       show:

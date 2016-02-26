@@ -1,22 +1,21 @@
 
 <!-- ############## Pour mettre de la vidéo> -->
-<div class="wrapper-gold">
-<div class="container">
-<%=video_tag("juliettelacroix1bis.mp4", poster: "juliettelacroix1.png", :autobuffer => true,      :autoplay => true, :loop => true, :html_options => {class: "bgvid video"})%>
-        <source src="video/Motion.mp4" type="video/mp4" />
-    </video>
+<div>
+<div class="container-video">
+<%= video_tag("juliettelacroix1.mp4", poster: "juliettelacroix1.png", autobuffer: true, autoplay: true, :loop => true, :html_options => {class: "bgvid"})%>
+
 
 <!-- ############## Pour mettre une banner>
 <!-- <div class="banner" id="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/9692/pexels-photo.jpeg');">
   <div> -->
 
-    <div class="overlay col-xs-12 col-sm-6">
-    <h1><%= t('.title') %></h1>
-    <h2><%= t('.subtitle') %></h2>
-    <div class="banner-invitation">
-    </div>
+    <div class="overlay">
+      <h1><%= t('.title') %></h1>
+      <h2><%= t('.subtitle') %></h2>
+      <div class="banner-invitation">
+      </div>
 
-        <!-- <form>
+        <!-- <form> ### Pour n'accepter que les codes d'invitation #####
           <div class="form-group">
             <input type="text" class="hpsearch" placeholder="<%= t('.invitation_text') %>">
           </div>
@@ -31,31 +30,31 @@
             <div class="btn btn-default", style="opacity:0.5;">Accéder à votre espace</div>
           <% end %>
         <%elsif @invitation%>
-          <h4><%=t(".nbinvitations")%> <%=@invitation_nb%> </h4>
+          <h5><%=t(".nbinvitations")%> <%=@invitation_nb%> </h5>
           <div class="small-padded"></div>
           <%= simple_form_for @invited, as: "user", url: invitation_path("user"), method: :post, html: { class: 'form-inline home-form' } do |f| %>
           <% User.invite_key_fields.each do |field| -%>
-            <%= f.input field, input_html: {class: "hpsearch"}, placeholder: 'Type your email', label: false %>
+            <%= f.input field, input_html: {class: "hpsearch"}, placeholder: I18n.t('.simple_form.placeholders.email'), label: false %>
           <% end -%>
 
           <%= f.button :submit, t("devise.invitations.new.submit_button") %>
         <% end %>
         <%else%>
-          <h2><%= t(".no_more_invitation")%></h2>
-          <h3><%= t(".subscribe_newsletter")%></h3>
-          <form class="form-inline">
+          <h3><%= t(".no_more_invitation")%></h3>
+          <h5><%= t(".subscribe_newsletter")%></h5>
+          <form class="form-inline home-form">
             <div class="form-group">
-              <input type="text" name="email">
+              <input type="text" name="email" class="hpsearch">
             </div>
           <button type="submit" class="btn btn-success"><%= t('.nl_button') %></button>
           </form>
         <%end%>
-    </div>
-    <div class="overlay-bis banner-experience col-xs-12">
-      <h2><%= t('.cta_text') %></h2>
-      <a href="#experience" id="down">
-        <i class="fa fa-angle-down arrow"></i>
-      </a>
+      <div class="overlay-bis banner-experience">
+        <h2><%= t('.cta_text') %></h2>
+        <a href="#experience" id="down">
+          <i class="fa fa-angle-down arrow"></i>
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -65,7 +64,9 @@
   <div class="container padded">
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <img class="pic-home text-center" src="https://static.pexels.com/photos/6675/flight-mountains-sky-flying.jpeg">
+        <div class="img-reveal">
+        <img data-sr="enter top, move 250px, over 1s, wait 3s" class="pic-home text-center " src="https://static.pexels.com/photos/6675/flight-mountains-sky-flying.jpeg">
+        </div>
       </div>
       <div id="experience" class="col-xs-12 col-sm-6">
         <h3 class="text-center section-title">Découvrez la 1ere collection aérienne</h3>
@@ -120,3 +121,8 @@
   </div>
 </div>
 
+ <script>
+    window.sr = ScrollReveal();
+    sr.reveal('.img-reveal', { duration: 200 });
+    // window.scrollReveal = new scrollReveal();
+    </script>

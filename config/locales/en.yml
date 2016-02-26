@@ -20,14 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  simple_form:
+    placeholders:
+      email: "Type your email"
+  layouts:
+    application:
+      site: "Juliette Lacroix || Unique fragrances from Paris"
   pages:
     home:
       discovery: "What you will discover"
       experience: "What you will experience"
-      title: "Limited editions for members only."
+      title: "Limited-edition fragrances from Paris."
+      subtitle: "For members only."
       invitation_text: "email@example.com"
       invitation_button: "Send me an invitation"
-      cta_text: "Enjoy a unique sensory experience"
+      cta_text: "Indulge in a unique sensory experience"
       h2banner: "Welcome in Juliette's perfumes. You are logged in."
       nbinvitations: "Number of invitations left:"
       no_more_invitation: "Sorry, there is no more invitation for this week. Please try again next week."
@@ -44,6 +51,9 @@ en:
       terms: "Terms"
       privacy: "Privacy"
       paris: "Made in Paris"
+    navbar:
+      sign_in: "Log in"
+      top_call_to_action: "Get on board"
   account:
     dashboards:
       show:
