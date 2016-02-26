@@ -33,20 +33,26 @@
   <div class="small-padded"></div>
   <div class="container padded">
     <h2 class= "text-center"><%= t 'devise.invitations.edit.order' %></h2>
-    <div class="small-padded"></div>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3", id="first-purchase-form">
         <%=  simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f| %>
-          <%= devise_error_messages! %>
           <%= f.hidden_field :invitation_token %>
+          <%= f.hidden_field :invitation_accepted_at, value: Time.now%>
+          <%= f.hidden_field :invitation_limit, value: 0%>
+          <h3><%=t("devise.invitations.edit.identity")%></h3>
           <%= f.input :first_name, label: false, placeholder: t("devise.invitations.edit.first_name") %>
           <%= f.input :last_name, label: false, placeholder: t("devise.invitations.edit.name") %>
-          <%= f.input :email, label: false, placeholder: "email" %>
-          <%= f.simple_fields_for :address do |a| %>
-            <%= a.input :street %>
-            <%= a.input :zip_code %>
-            <%= a.input :city %>
+          <%= f.hidden_field :email, label: false, placeholder: "email" %>
+          <p>Votre email est <strong><%=resource.email%></strong>. Vous pourrez le changer ultérieurement</p>
+          <h3><%=t("devise.invitations.edit.delivery")%></h3>
+          <%= f.simple_fields_for :addresses, as: @addresses do |a| %>
+            <%= a.input :first_name, label: false, placeholder: t("devise.invitations.edit.first_name_delivery") %>
+            <%= a.input :last_name, label: false, placeholder: t("devise.invitations.edit.name_delivery") %>
+            <%= a.input :street, label: false, placeholder: t("devise.invitations.edit.street") %>
+            <%= a.input :zip_code, label: false, placeholder: t("devise.invitations.edit.zip_code") %>
+            <%= a.input :city, label: false, placeholder: t("devise.invitations.edit.city") %>
           <% end %>
+          <h3><%=t("devise.invitations.edit.password")%></h3>
           <%= f.input :password, label: false, placeholder: t("devise.invitations.edit.password") %>
           <%= f.input :password_confirmation, label: false, placeholder: t("devise.invitations.edit.password_conf") %>
           <div class="small-padded"></div>

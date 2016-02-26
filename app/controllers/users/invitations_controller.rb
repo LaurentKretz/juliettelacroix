@@ -23,10 +23,22 @@ before_action :set_user, only:[:create, :update]
     end
   end
 
+  def edit
+    set_minimum_password_length if respond_to? :set_minimum_password_length
+    resource.invitation_token = params[:invitation_token]
+    @addresses = resource.addresses.build
+    render :edit
+  end
+
   def update
-    @user.update(user_params)
-    @user.addresses.create!(address_params)
+  if @user.update(resource_params)
+    flash.clear
     redirect_to root_path
+  else
+    set_flash_message :alert, :accept_form
+    render :edit
+  end
+
   end
 
   protected
@@ -50,14 +62,8 @@ before_action :set_user, only:[:create, :update]
   end
 
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password)
+  def resource_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :invitation_limit, :invitation_token, :invitation_accepted_at, addresses_attributes:[:id, :first_name, :last_name, :street, :city])
   end
-
-  def address_params
-    params.require(:user).permit(:first_name, :last_name, address: [:street, :city])
-  end
-
-
 
 end

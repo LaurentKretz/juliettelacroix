@@ -43,9 +43,18 @@ fr:
         submit_button: "Commander mon coffret découverte"
         first_name: "Votre prénom"
         name: "Votre nom"
+        first_name_delivery: "Prénom"
+        name_delivery: "Nom"
         email: "Votre adresse email"
         password: "Choisissez votre mot de passe"
         password_conf: "Confirmez le mot de passe"
+        street: "Numéro & nom de la rue"
+        zip_code: "Code postal"
+        city: "Ville"
+        identity: "Identité"
+        delivery: "Adresse de livraison"
+
+        # accept_form: "Veuillez remplir tous les champs requis"
     mailer:
       invitation_instructions:
         subject: "Votre invitation personnelle - Les parfums de Juliette"

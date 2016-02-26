@@ -22,9 +22,17 @@ en:
         submit_button: "Order my first discovery box"
         first_name: "Your first name"
         name: "Your name"
+        first_name_delivery: "First name"
+        name_delivery: "Name"
         email: "Your email address"
         password: "Choose your password"
         password_conf: "Confirm your password"
+        street: "Nb. & Street Name"
+        zip_code: "Zip code"
+        city: "City"
+        identity: "Identity"
+        delivery: "Delivery address"
+        # accept_form: "Please fill in all required inputs"
     mailer:
       invitation_instructions:
         subject: "Your personnal invitation - Juliette Lacroix Perfumes"
