@@ -7,6 +7,8 @@ $(document).ready(function() {
       paginationSpeed : 400,
       singleItem:true,
       autoHeight : true,
+      navigationText:  ["<",">"],
+      addClassActive: true,
       // "singleItem:true" is a shortcut for:
       // items : 1,
       // itemsDesktop : false,
