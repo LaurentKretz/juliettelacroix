@@ -4,16 +4,16 @@
         <div class="dropdown">
         <i class="fa fa-bars menu-logo dropdown-toggle" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-left">
-            <li><a href="">La créatrice</a></li>
-            <li><a href="">La collection</a></li>
-            <li><a href="">Le blog</a></li>
-            <li><a href="">Démarrer l'expérience</a></li>
+            <li><a href=""><%= t('.artist') %></a></li>
+            <li><a href=""><%= t('.collection') %></a></li>
+            <li><a href=""><%= t('.blog') %></a></li>
+            <li><a href=""><%= t('.top_call_to_action') %></a></li>
           </ul>
         </div>
       </div>
     <div class="navbar-side-left hidden-xs hidden-sm">
-      <a href="">La créatrice</a>
-      <a href="">La collection</a>
+      <a href=""><%= t('.artist') %></a>
+      <a href=""><%= t('.collection') %></a>
     </div>
   </div>
   <%= link_to root_path, class: "navbar-logo hidden-xs", id: "logo-font" do %>
@@ -24,7 +24,7 @@
   <% end %>
   <div class='navbar-side'>
     <div class="navbar-side-right hidden-xs hidden-sm">
-      <a href="">Le blog</a>
+      <a href=""><%= t('.blog') %></a>
       <%= link_to t(".top_call_to_action"), discover_path%>
     </div>
 
