@@ -137,3 +137,16 @@
   text-decoration: none;
   color: #B39A6A;
 }
+
+#hp_login_modal {
+ text-decoration: none;
+ background-color: transparent;
+ color: $gold;
+ border: none;
+ font-family: $base-font;
+ font-size: 14px;
+}
+
+#hp_login_modal:hover {
+ color: black;
+}
