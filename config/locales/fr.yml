@@ -59,10 +59,10 @@ fr:
         account: "votre compte"
     payments:
       new:
-        title: "Votre commande"
+        title: "Récapitulatif"
         delivery_address: "Adresse de livraison"
         edit: "Modifier"
         payment: "Paiement"
   orders:
     new:
-      title: "Récapitulatif de votre commande"
+      title: "Votre panier"

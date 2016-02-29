@@ -1,8 +1,16 @@
 <div class="container">
   <div class="row wapper-grey container padded col-xs-12 col-sm-offset-2 col-sm-8">
     <h1><%= t('.title')%></h1>
+    <h4><%= @order.order_items.count %> articles -
+    <%= humanized_money_with_symbol(@order.amount) %></h4>
 
     <h2><%= t('.delivery_address')%></h2>
+    <ul class="list-unstyled">
+      <li><%= current_user.addresses.last.first_name %> <%= current_user.addresses.last.last_name %></li>
+      <li><%= current_user.addresses.last.street %></li>
+      <li><%= current_user.addresses.last.city %></li>
+      <li><%= current_user.addresses.last.zip_code %></li>
+    </ul>
 
     <%= link_to(t(".edit"), edit_checkout_address_path)%>
 

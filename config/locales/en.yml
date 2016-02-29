@@ -84,5 +84,5 @@ en:
         payment: "Payment"
   orders:
     new:
-      title: "Votre order"
+      title: "Your basket"
 

@@ -12,6 +12,7 @@ gem 'pundit'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise_invitable'
 gem 'money-rails'
+gem 'stripe'
 
 gem 'sass-rails'
 gem 'jquery-rails'

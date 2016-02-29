@@ -1,3 +1,53 @@
-<h1><%= t('.title')%></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1><%= t('.title')%></h1>
+      <div class="small-padded"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-9 col-sm-7 col-sm-offset-1">
+      <h3>Products</h3>
+    </div>
+    <div class="col-xs-1"><h3 class="text-center">Quantity</h3></div>
+    <div class="col-xs-1"><h3 class="text-center">Price</h3></div>
+  </div>
+  <% @order.order_items.each do |order_item| %>
+    <div class="row">
+      <div class="col-xs-9 col-sm-7 col-sm-offset-1">
+        <h4> <%= link_to "#" do %>
+          <%= order_item.product.name %> - Ref : <%= order_item.product_sku %>
+        <%end%> </h4>
+      </div>
+      <div class="col-xs-1 text-center">
+        <h4><%= order_item.quantity %></h4>
+      </div>
+      <div class="col-xs-1 text-center">
+        <h4><%= humanized_money_with_symbol(order_item.amount) %></h4>
+      </div>
+      <div class="col-xs-1 text-center">
+      <h4><%= link_to "#" do%>
+        <i class="fa fa-trash-o"></i>
+      <%end%></h4>
+      </div>
+    </div>
+  <%end%>
+  <div class="row">
+    <div class="col-xs-9 col-sm-7 col-sm-offset-1">
+      <h3>Total</h3>
+    </div>
+    <div class="col-xs-1"><h3 class="text-center"></h3></div>
+    <div class="col-xs-1"><h3 class="text-center"><%= humanized_money_with_symbol(@order.amount) %></h3></div>
+  </div>
+  <div class="small-padded"></div>
+  <div class="text-center">
+    <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'order_id', @order.id %>
+      <%= submit_tag 'Order now', class: "btn btn-lg btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
-<p>Find me in app/views/orders/create.html.erb</p>
+<div class="min-height"></div>
+
+
