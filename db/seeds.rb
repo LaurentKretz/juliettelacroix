@@ -17,12 +17,61 @@
   jean = User.create!(first_name:"Jean", last_name:"Dupont", email:"jean.dupont@test.fr", password:"12345678", admin:true)
   jean.addresses.create!(first_name:"Jean", last_name:"Dupont", street:"11 villa gaudelet", zip_code:"75011", city:"Paris")
   order1 = jean.orders.create!(address:Address.first)
-  perfume1 = Perfume.create!(name:"Winter Love", description:"Best flagrance for winter")
-  perfume2 = Perfume.create!(name:"Fresh Summer", description:"A summer night in the air")
-  perfume3 = Perfume.create!(name:"Spring Free", description:"Free your mind and live your life")
-  perfume4 = Perfume.create!(name:"All night long", description:"Night never ends")
-  perfume5 = Perfume.create!(name:"Autumn soul", description:"Summer ends, Winter starts, you are")
-  kit1 = Kit.create!(name:"Collection 1", description:"Our first collection")
+  perfume1 = Perfume.create!(
+    name:"Winter Love",
+    description:"Best flagrance for winter",
+    introduction: "Vision moderne de l'éternelle Eau de Cologne, cette création en respecte le canevas, pour mieux la sublimer. Le trio néroli / fleur d'oranger / bergamote, plein de tendresse, évoque immédiatement l'enfance. On sourit, forcément. La note est verte, très naturelle, un peu amère, avec une vraie dimension florale. Le musc fond sur la peau et intrigue... A la fois propre et obscène, doux et légèrement salé. Indélébile pour sa tenue, le parfum remplit la pièce et vous accompagnera toute la journée.",
+    inspiration: "J'ai créé ce parfum après être retourné dans la maison de campagne de mes grands-parents. Enfant, je passais des heures à jouer dans le grenier, adorant l'odeur du vieux fauteuil en cuir dans lequel je venais lire en cachette, et la fenêtre ouverte sur la forêt de pins nous séparant de la mer. Les effluves des embruns et du sable chaud pour amis.",
+    note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
+    note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
+    sku: "winter_love_75ml",
+    price: 95
+  )
+  perfume2 = Perfume.create!(
+    name:"Fresh Summer",
+    description:"A summer night in the air",
+    introduction: "Vision moderne de l'éternelle Eau de Cologne, cette création en respecte le canevas, pour mieux la sublimer. Le trio néroli / fleur d'oranger / bergamote, plein de tendresse, évoque immédiatement l'enfance. On sourit, forcément. La note est verte, très naturelle, un peu amère, avec une vraie dimension florale. Le musc fond sur la peau et intrigue... A la fois propre et obscène, doux et légèrement salé. Indélébile pour sa tenue, le parfum remplit la pièce et vous accompagnera toute la journée.",
+    inspiration: "J'ai créé ce parfum après être retourné dans la maison de campagne de mes grands-parents. Enfant, je passais des heures à jouer dans le grenier, adorant l'odeur du vieux fauteuil en cuir dans lequel je venais lire en cachette, et la fenêtre ouverte sur la forêt de pins nous séparant de la mer. Les effluves des embruns et du sable chaud pour amis.",
+    note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
+    note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
+    sku: "fresh_summer_75ml",
+    price: 95
+  )
+  perfume3 = Perfume.create!(
+    name:"Spring Free",
+    description:"Free your mind and live your life",
+    introduction: "Vision moderne de l'éternelle Eau de Cologne, cette création en respecte le canevas, pour mieux la sublimer. Le trio néroli / fleur d'oranger / bergamote, plein de tendresse, évoque immédiatement l'enfance. On sourit, forcément. La note est verte, très naturelle, un peu amère, avec une vraie dimension florale. Le musc fond sur la peau et intrigue... A la fois propre et obscène, doux et légèrement salé. Indélébile pour sa tenue, le parfum remplit la pièce et vous accompagnera toute la journée.",
+    inspiration: "J'ai créé ce parfum après être retourné dans la maison de campagne de mes grands-parents. Enfant, je passais des heures à jouer dans le grenier, adorant l'odeur du vieux fauteuil en cuir dans lequel je venais lire en cachette, et la fenêtre ouverte sur la forêt de pins nous séparant de la mer. Les effluves des embruns et du sable chaud pour amis.",
+    note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
+    note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
+    sku: "spring_free_75ml",
+    price: 95
+  )
+  perfume4 = Perfume.create!(
+    name:"All night long",
+    description:"Night never ends",
+    introduction: "Vision moderne de l'éternelle Eau de Cologne, cette création en respecte le canevas, pour mieux la sublimer. Le trio néroli / fleur d'oranger / bergamote, plein de tendresse, évoque immédiatement l'enfance. On sourit, forcément. La note est verte, très naturelle, un peu amère, avec une vraie dimension florale. Le musc fond sur la peau et intrigue... A la fois propre et obscène, doux et légèrement salé. Indélébile pour sa tenue, le parfum remplit la pièce et vous accompagnera toute la journée.",
+    inspiration: "J'ai créé ce parfum après être retourné dans la maison de campagne de mes grands-parents. Enfant, je passais des heures à jouer dans le grenier, adorant l'odeur du vieux fauteuil en cuir dans lequel je venais lire en cachette, et la fenêtre ouverte sur la forêt de pins nous séparant de la mer. Les effluves des embruns et du sable chaud pour amis.",
+    note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
+    note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
+    sku: "all_night_long_75ml",
+    price: 95
+  )
+  perfume5 = Perfume.create!(
+    name:"Autumn soul",
+    description:"Summer ends, Winter starts, you are",
+    introduction: "Vision moderne de l'éternelle Eau de Cologne, cette création en respecte le canevas, pour mieux la sublimer. Le trio néroli / fleur d'oranger / bergamote, plein de tendresse, évoque immédiatement l'enfance. On sourit, forcément. La note est verte, très naturelle, un peu amère, avec une vraie dimension florale. Le musc fond sur la peau et intrigue... A la fois propre et obscène, doux et légèrement salé. Indélébile pour sa tenue, le parfum remplit la pièce et vous accompagnera toute la journée.",
+    inspiration: "J'ai créé ce parfum après être retourné dans la maison de campagne de mes grands-parents. Enfant, je passais des heures à jouer dans le grenier, adorant l'odeur du vieux fauteuil en cuir dans lequel je venais lire en cachette, et la fenêtre ouverte sur la forêt de pins nous séparant de la mer. Les effluves des embruns et du sable chaud pour amis.",
+    note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
+    note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
+    sku: "autumn_soul_75ml",
+    price: 95
+  )
+  kit1 = Kit.create!(
+    name:"Collection 1",
+    description:"Our first collection",
+    sku: "collection_1_discovery_package",
+    price: 5)
   sample1 = perfume1.samples.create!(kit:Kit.first)
   sample2 = perfume2.samples.create!(kit:Kit.first)
   sample3 = perfume3.samples.create!(kit:Kit.first)
