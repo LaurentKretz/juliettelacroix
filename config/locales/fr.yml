@@ -36,7 +36,7 @@ fr:
       paris: "Fait à Paris"
     navbar:
       sign_in: "Se connecter"
-      top_call_to_action: "Découvrir l'experience"
+      top_call_to_action: "Démarrer l'experience"
   account:
     dashboards:
       show:
