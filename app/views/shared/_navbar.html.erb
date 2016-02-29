@@ -50,17 +50,27 @@
           </ul>
         </div>
     <% else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <!-- Button (call-to-action) -->
+    <%= link_to t(".top_call_to_action", default: "Démarrer l'expérience"), discover_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+      <!-- Login text link -->
+      <%#= link_to t(".sign_in"), :id => "login", :class => "btn", "data-toggle" => "modal" %>
+
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="hp_login_modal">Log In</button>
+
+      <%= render 'welcome/login_modal' %>
+
+
+
     <% end %>
-      </div>
+
   </div>
-</div>
-
-
 
 
   <!-- Dropdown list appearing on mobile only -->
-<!--   <div class="navbar-wagon-item hidden-md hidden-lg">
+<div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -72,4 +82,7 @@
       </ul>
     </div>
   </div>
-</div> -->
+</div>
+
+
+

@@ -120,8 +120,10 @@
   </div>
 </div>
 
- <script>
+<%= content_for(:after_js) do %>
+ <%= javascript_tag do %>
     window.sr = ScrollReveal();
-    sr.reveal('.img-reveal', { duration: 200 });
-    // window.scrollReveal = new scrollReveal();
-    </script>
+    sr.reveal('.img-reveal', { duration: 10 });
+    //window.scrollReveal = new scrollReveal();
+  <% end %>
+<% end %>

@@ -195,3 +195,24 @@
   border-top: 1px solid #E6E6E6;
 }
 
+
+#logo-font {
+  font-family: 'Parisienne', cursive;
+  font-size: 24px;
+  text-decoration: none;
+  color: #B39A6A;
+}
+
+#hp_login_modal {
+ text-decoration: none;
+ background-color: transparent;
+ color: $gold;
+ border: none;
+ font-family: $base-font;
+ font-size: 14px;
+}
+
+#hp_login_modal:hover {
+ color: black;
+}
+

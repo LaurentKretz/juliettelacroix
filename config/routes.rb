@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'discover', to: 'pages#discover'
+  get 'welcome', to: 'welcome#login', :as => :login
 
   scope '(:locale)', locale: /en|fr/ do
     devise_for :users, :controllers => { :invitations => 'users/invitations' }

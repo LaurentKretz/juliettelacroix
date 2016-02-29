@@ -18,6 +18,8 @@
       src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAeNsutHdohOVTLJjZLhkYc_DgVCZqWaB8">
     </script>
     <%= javascript_include_tag 'application' %>
+
     <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.0.9/scrollreveal.min.js"></script>
+    <%= yield :after_js %>
   </body>
 </html>
