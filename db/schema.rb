@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228170101) do
+ActiveRecord::Schema.define(version: 20160229100952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +57,10 @@ ActiveRecord::Schema.define(version: 20160228170101) do
   create_table "kits", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "price_cents", default: 0, null: false
+    t.string   "sku"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -86,12 +88,14 @@ ActiveRecord::Schema.define(version: 20160228170101) do
   create_table "perfumes", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.text     "introduction"
     t.text     "inspiration"
     t.text     "note1"
     t.text     "note2"
+    t.integer  "price_cents",  default: 0, null: false
+    t.string   "sku"
   end
 
   create_table "reviews", force: :cascade do |t|
