@@ -4,9 +4,9 @@ class OrderItemsController < ApplicationController
     @product = Perfume.find(params[:product_id])
 
     if session[:order_id]
-      @order = Order.find(session[:order_id])
+      @order = current_user.orders.where(state: "pending").find(session[:order_id])
     else
-      @order = Order.create!(user_id: current_user.id, address_id: current_user.addresses.first.id, state:"pending")
+      @order = current_user.orders.create!(address: current_user.addresses.first, state: "pending")
       session[:order_id] = @order.id
     end
 
