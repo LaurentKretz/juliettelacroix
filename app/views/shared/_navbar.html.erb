@@ -1,19 +1,39 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, id: "logo-font" do %>
+<div class='navbar-juliette'>
+  <div class="navbar-side">
+    <div class="navbar-wagon-item">
+        <div class="dropdown">
+        <i class="fa fa-bars menu-logo dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href=""><%= t('.artist') %></a></li>
+            <li><a href=""><%= t('.collection') %></a></li>
+            <li><a href=""><%= t('.blog') %></a></li>
+            <li><a href=""><%= t('.top_call_to_action') %></a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="navbar-side-left hidden-xs hidden-sm">
+      <a href=""><%= t('.artist') %></a>
+      <a href=""><%= t('.collection') %></a>
+    </div>
+  </div>
+  <%= link_to root_path, class: "navbar-logo hidden-xs", id: "logo-font" do %>
     Juliette Lacroix
   <% end %>
+  <%= link_to root_path, class: "navbar-logo hidden-sm hidden-md hidden-lg", id: "logo-font" do %>
+    JL
+  <% end %>
+  <div class='navbar-side'>
+    <div class="navbar-side-right hidden-xs hidden-sm">
+      <a href=""><%= t('.blog') %></a>
+      <%= link_to t(".top_call_to_action"), discover_path%>
+    </div>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
       <!-- Notification -->
 
       <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
+      <div class="navbar-wagon-item" id="log-perfume">
         <div class="dropdown">
           <%= image_tag "perfume.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -22,11 +42,6 @@
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
               <% end %>
             </li>
-            <!-- <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
-              <% end %>
-            </li> -->
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
@@ -34,8 +49,6 @@
             </li>
           </ul>
         </div>
-      </div>
-
     <% else %>
 
     <!-- Button (call-to-action) -->
@@ -47,16 +60,17 @@
 <!-- Large modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="hp_login_modal">Log In</button>
 
-
       <%= render 'welcome/login_modal' %>
+
 
 
     <% end %>
 
   </div>
 
+
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+<div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -70,9 +84,5 @@
   </div>
 </div>
 
-<script type="text/javascript">
-// $(document).ready(function(){
-//     $('.modal').modal('show');
-// });
-</script>
+
 
