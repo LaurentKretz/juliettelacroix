@@ -1,0 +1,51 @@
+.owl-theme .owl-controls .owl-buttons div {
+  padding: 5px 9px;
+}
+
+.owl-theme .owl-pagination {
+  padding: 0px;
+  margin-bottom: 0;
+}
+
+.owl-theme .owl-controls {
+  margin-bottom: 20px;
+}
+
+.owl-wrapper{
+  margin:0;
+  padding:0;
+}
+
+.owl-next {
+  padding: 0px 60px !important;
+  padding-top: 12px !important;
+  font-size: 50px !important;
+  font-weight: bold !important;
+  border-radius: 100px !important;
+  position: fixed !important;
+  top:40% !important;
+  right: 18% !important;
+  opacity:0.3 !important;
+  transition: all 0.3s ease-in !important;
+}
+
+.owl-next:hover {
+    opacity: 1 !important;
+  };
+
+.owl-prev {
+  padding: 0px 60px !important;
+  padding-top: 12px !important;
+  font-size: 50px !important;
+  font-weight: bold !important;
+  border-radius: 100px !important;
+  position: fixed !important;
+  top:40% !important;
+  left: 18% !important;
+  opacity:0.3 !important;
+  transition: all 0.3s ease-in !important;
+}
+
+.owl-prev:hover {
+    opacity: 1 !important;
+  };
