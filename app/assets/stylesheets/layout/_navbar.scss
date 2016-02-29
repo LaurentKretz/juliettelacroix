@@ -1,3 +1,67 @@
+.navbar-juliette {
+  display: flex;
+  padding: 0 30px;
+  background: white;
+  align-items: center;
+  margin-bottom: 15px;
+
+  // @media (max-width: 640px) {
+  //   background: red;
+  // }
+}
+
+.navbar-side-left {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+
+.navbar-side-right {
+  margin-right: auto;
+  margin-left: 20px;
+}
+.navbar-side-right, .navbar-side-left {
+  a {
+    display: inline-block;
+    color: #B39A6A;
+    padding: 20px;
+    font-size: 15px;
+  }
+}
+
+.navbar-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+#log-perfume{
+  margin-left: auto;
+}
+
+.navbar-wagon-item#dropdown {
+  margin-left: auto;
+}
+
+#logo-font {
+  font-family: 'Parisienne', cursive;
+  font-size: 35px;
+  text-decoration: none;
+  color: #B39A6A;
+}
+
+.menu-logo {
+  color: #B39A6A;
+}
+
+#menu-font {
+  font-family: 'Parisienne', cursive;
+  font-size: 35px;
+  text-decoration: none;
+  color: #B39A6A;
+}
+
+
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -131,9 +195,3 @@
   border-top: 1px solid #E6E6E6;
 }
 
-#logo-font {
-  font-family: 'Parisienne', cursive;
-  font-size: 24px;
-  text-decoration: none;
-  color: #B39A6A;
-}

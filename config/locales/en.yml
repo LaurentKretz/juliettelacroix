@@ -54,7 +54,10 @@ en:
       paris: "Made in Paris"
     navbar:
       sign_in: "Log in"
-      top_call_to_action: "Get on board"
+      top_call_to_action: "Start the experience"
+      artist: "Artist"
+      collection: "Collection"
+      blog: "Blog"
   account:
     dashboards:
       show:
