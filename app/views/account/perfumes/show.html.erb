@@ -7,20 +7,18 @@
 <div id="owl-demo" class="owl-carousel">
 
   <div class="wrapper-grey">
-    <div class="container padded">
+    <div class="container small-padded">
       <div class="row">
-        <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
           <div class="card">
             <img class="pic-home text-center" src="https://static.pexels.com/photos/6404/woman-girl-young-beauty.jpg">
             <h3>Ce que vous allez découvrir sur <%= @perfume.name%></h3>
-            <p class="section-par">Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus. </p>
+            <p class="section-par"><%= @perfume.introduction %></p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
 
 <!-- # Step 2
 # vidéo inspiration
@@ -28,13 +26,13 @@
  -->
 
   <div class="wrapper-grey">
-    <div class="container padded">
+    <div class="container small-padded">
       <div class="row">
-        <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
           <div class="card">
             <iframe src="https://player.vimeo.com/video/90947998?color=B39A6A&title=0&byline=0&portrait=0" width="100%" height="290" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="margin-top:20px;"></iframe>
             <h3>L'inspiration de Juliette et la naissance de <%= @perfume.name%></h3>
-            <p class="section-par">Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus. </p>
+            <p class="section-par"><%= @perfume.inspiration %></p>
             <p class="text-center"><progress id="progressbar" value="20" max="100"></progress></p>
           </div>
         </div>
@@ -42,20 +40,18 @@
     </div>
   </div>
 
-
-
 <!-- # Step 3
 # faites le test et 1ere note
 # 40% -->
 
   <div class="wrapper-grey">
-    <div class="container padded">
+    <div class="container small-padded">
       <div class="row">
-        <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
           <div class="card">
             <img class="pic-home text-center" src="https://static.pexels.com/photos/1848/nature-sunny-red-flowers.jpg">
             <h3>1ere note</h3>
-            <p class="section-par">Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus.</p>
+            <p class="section-par"><%=@perfume.note1 %></p>
             <p class="text-center"><progress id="progressbar" value="40" max="100"></progress></p>
           </div>
         </div>
@@ -63,19 +59,18 @@
     </div>
   </div>
 
-
   <!-- # Step 4
   # 2e note et info matière
   # 60 % -->
 
   <div class="wrapper-grey">
-    <div class="container padded">
+    <div class="container small-padded">
       <div class="row">
-        <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
           <div class="card">
             <img class="pic-home text-center" src="https://static.pexels.com/photos/37332/flowers-buttercups-flowering-petals.jpg">
             <h3>2e note</h3>
-            <p class="section-par">Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem. Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, </p>
+            <p class="section-par"><%=@perfume.note2 %></p>
             <p class="text-center"><progress id="progressbar" value="60" max="100"></progress></p>
           </div>
         </div>
@@ -83,16 +78,13 @@
     </div>
   </div>
 
-
-
-
   <!-- # review du parfum
   # 80% -->
 
   <div class="wrapper-grey">
-    <div class="container padded">
+    <div class="container small-padded">
       <div class="row">
-        <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
           <div class="card">
             <img class="pic-home text-center" src="https://static.pexels.com/photos/1924/sea-landscape-mountains-nature.jpg">
             <h3>Vos sensations</h3>
@@ -106,9 +98,6 @@
     </div>
   </div>
 
-
-
-
   <!-- # review du parfum
   # Plus de conseils parfums
   # Conseil perosnnalisé
@@ -117,9 +106,9 @@
   # 100% -->
 
   <div class="wrapper-grey">
-    <div class="container padded">
+    <div class="container small-padded">
       <div class="row">
-        <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
           <div class="card">
             <img class="pic-home text-center" src="https://static.pexels.com/photos/4322/person-woman-hand-space.jpg">
             <h3>Merci ! Pour aller plus loin :</h3>

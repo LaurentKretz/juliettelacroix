@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224163555) do
+ActiveRecord::Schema.define(version: 20160228170101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,8 +86,12 @@ ActiveRecord::Schema.define(version: 20160224163555) do
   create_table "perfumes", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.text     "introduction"
+    t.text     "inspiration"
+    t.text     "note1"
+    t.text     "note2"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -130,7 +134,6 @@ ActiveRecord::Schema.define(version: 20160224163555) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "admin",                  default: false, null: false
-    t.boolean  "first_purchase",         default: false
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -139,6 +142,7 @@ ActiveRecord::Schema.define(version: 20160224163555) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.boolean  "first_purchase",         default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
