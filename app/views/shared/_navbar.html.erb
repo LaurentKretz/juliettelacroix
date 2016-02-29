@@ -51,11 +51,7 @@
         </div>
     <% else %>
 
-      <!-- Login text link -->
-      <%#= link_to t(".sign_in"), :id => "login", :class => "btn", "data-toggle" => "modal" %>
-
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="hp_login_modal">Log In</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="hp_login_modal">Log In</button>
 
       <%= render 'welcome/login_modal' %>
 
@@ -65,21 +61,7 @@
 
   </div>
 
-
-  <!-- Dropdown list appearing on mobile only -->
-<div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Juliette Lacroix</a></li>
-        <li><a href="#">La 1ere collection</a></li>
-        <li><a href="#">L'expérience découverte</a></li>
-        <li><a href="#">Demander une invitation</a></li>
-        <li><a href="#">Blog Esprit des Sens</a></li>
-      </ul>
-    </div>
-  </div>
 </div>
-
+</div>
 
 
