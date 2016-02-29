@@ -120,7 +120,7 @@
             <p>Ci-dessus vos résultats, vous pouvez désormais bénéficier de plus de conseils et même d'un conseil personnalisé de Juliette, tester un autre parfum ou acheter celui-ci en 2 clics</p>
             <p class="text-center"><%= link_to t(".top_call_to_action", default: "Plus de conseils"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
             <p class="text-center"><%= link_to t(".top_call_to_action", default: "Tester un autre parfum"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
-            <p class="text-center"><%= link_to t(".top_call_to_action", default: "Acheter pour 95€"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
+            <p class="text-center"><%= link_to t(".top_call_to_action", default: "Acheter pour ") + humanized_money_with_symbol(@perfume.price), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
           </div>
         </div>
       </div>
