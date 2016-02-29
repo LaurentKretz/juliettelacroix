@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     # resources :perfumes, only: [:show, :index]
     # resources :kits, only: [:index, :show]
+    resources :order_items, only: [:create]
     resources :orders, only: [:new, :create]
       namespace :checkout do
         resource :address, only: [:edit, :update]
