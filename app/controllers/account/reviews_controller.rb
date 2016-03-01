@@ -9,9 +9,6 @@ module Account
     end
 
     def update
-
-      end
-    end
     end
 
     private
@@ -30,10 +27,7 @@ module Account
       @user = User.find(params[:user_id])
       @user = current_user
     end
-
   end
-
-
 end
 
 # <%= simple_form_for([@perfume, @review]) do |f| %>
