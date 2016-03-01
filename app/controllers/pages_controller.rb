@@ -6,6 +6,11 @@ class PagesController < ApplicationController
     @invited = User.new
     @invitation_nb = MAX_NUMBER - nb_invitations_sent
     @invitation = invitation_available
+    @press_releases = [
+      {},
+      {},
+      {}
+    ]
   end
 
 

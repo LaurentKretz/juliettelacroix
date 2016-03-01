@@ -62,13 +62,13 @@
 <div class="wrapper-grey" id="experience">
   <div class="container padded">
     <div class="row">
+        <div class="hptitle"><h3 class="text-center section-title img-reveal col-xs-12">Découvrez la 1ere collection aérienne</h3></div>
       <div class="col-xs-12 col-sm-6">
-        <div class="img-reveal">
-        <img data-sr="enter top, move 250px, over 1s, wait 3s" class="pic-home text-center " src="https://static.pexels.com/photos/6675/flight-mountains-sky-flying.jpeg">
+        <div class="pic-frame">
+        <img class="pic-home text-center " src="https://static.pexels.com/photos/6675/flight-mountains-sky-flying.jpeg">
         </div>
       </div>
       <div id="experience" class="col-xs-12 col-sm-6">
-        <h3 class="text-center section-title">Découvrez la 1ere collection aérienne</h3>
         <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem </p>
         <p class="text-center"><%= link_to t(".top_call_to_action", default: "Découvrez la collection"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
       </div>
@@ -79,14 +79,16 @@
 
 <div class="wrapper-gold">
   <div class="container padded">
+        <div class="hptitle"><h3 class="text-center section-title img-reveal col-xs-12">Apprenez et découvrez vos sens de manière interactive</h3></div>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <h3 class="text-center section-title">Apprenez et découvrez vos sens de manière interactive</h3>
         <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem </p>
         <p class="text-center"><%= link_to t(".top_call_to_action", default: "Découvrez la collection"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
       </div>
       <div class="col-xs-12 col-sm-6">
+        <div class="pic-frame">
         <img class="pic-home text-center" src="https://static.pexels.com/photos/7066/man-relax-couch-study.jpg">
+        </div>
       </div>
     </div>
   </div>
@@ -95,11 +97,13 @@
 <div class="wrapper-grey">
   <div class="container padded">
     <div class="row">
+        <div class="hptitle"><h3 class="text-center section-title img-reveal col-xs-12">Juliette est là pour vous accompagner</h3></div>
       <div class="col-xs-12 col-sm-6">
+        <div class="pic-frame">
         <img class="pic-home text-center" src="https://static.pexels.com/photos/26180/pexels-photo-26180.jpg">
+        </div>
       </div>
       <div id="experience" class="col-xs-12 col-sm-6">
-        <h3 class="text-center section-title">Juliette est là pour vous accompagner</h3>
         <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem </p>
         <p class="text-center"><%= link_to t(".top_call_to_action", default: "Découvrez la collection"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %></p>
       </div>
@@ -110,20 +114,27 @@
 <div class="wrapper-gold">
   <div class="container">
     <div class="text-center">
-      <h2>Ils parlent de nous</h2>
+      <div class="hptitle">
+      <h3>Ils parlent de nous</h3>
+      </div>
     </div>
-    <div class="text-center">
+    <div id="owl-hp" class="owl-carousel owl-theme col-xs-12 col-sm-6">
+      <div class="item"><h1>1</h1></div>
+      <div class="item"><h1>2</h1></div>
+      <div class="item"><h1>3</h1></div>
+    </div>
+    <!-- <div class="text-center">
       <%=image_tag('femme_sourire.jpg', :class => "avatar-large")%>
       <h4>Marie</h4>
       <p>"L'expérience de découverte est vraiment top, j'ai trouvé mon nouveau parfum préféré'"</p>
-    </div>
+    </div> -->
   </div>
 </div>
 
 <%= content_for(:after_js) do %>
  <%= javascript_tag do %>
     window.sr = ScrollReveal();
-    sr.reveal('.img-reveal', { duration: 10 });
+    sr.reveal('.img-reveal', { reset: true});
     //window.scrollReveal = new scrollReveal();
   <% end %>
 <% end %>
