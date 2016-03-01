@@ -48,7 +48,8 @@ fr:
   checkout:
     addresses:
       edit:
-        title: "Définir une nouvelle adresse"
+        title: "Vos adresses"
+        new: "Ajouter une nouvelle adresse"
         placeholder_address: "Saisissez votre addresse"
         submit: "Valider"
     confirmations:

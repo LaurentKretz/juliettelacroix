@@ -1,35 +1,52 @@
 <div class="container">
-  <div class="row wapper-grey container padded col-xs-12 col-sm-offset-2 col-sm-8">
-    <h1><%= t('.title')%></h1>
-    <h4><%= @order.order_items.count %> articles -
-    <%= humanized_money_with_symbol(@order.amount) %></h4>
+<div class="small-padded"></div>
+  <div class="row wapper-grey container text-center">
+    <div class = "col-xs-12 col-sm-offset-4 col-sm-4">
+      <h1><%= t('.title')%></h1>
+      <h4><%= @order.order_items.count %> articles -
+      <%= humanized_money_with_symbol(@order.amount) %></h4>
 
-    <h2><%= t('.delivery_address')%></h2>
-    <ul class="list-unstyled">
-      <li><%= current_user.addresses.last.first_name %> <%= current_user.addresses.last.last_name %></li>
-      <li><%= current_user.addresses.last.street %></li>
-      <li><%= current_user.addresses.last.city %></li>
-      <li><%= current_user.addresses.last.zip_code %></li>
-    </ul>
-
-    <%= link_to(t(".edit"), edit_checkout_address_path)%>
-
-    <h2><%= t('.payment')%></h2>
-    <%= form_tag checkout_payment_path, method: :post do %>
-      <label for="card_number">Card number: </label>
-      <input type="integer" class="form-control" id="card_number">
-
-      <label for="validity">Validity: </label>
-      <input type="integer"  class="form-control" id="validity">
-
-      <label for="CSV">CSV: </label>
-      <input type="integer"  class="form-control" id="CSV">
-
-       <label for="Card owner name">Card owner name: </label>
-      <input type="text"  class="form-control" id="Card-owner-name">
-
-      <input type="submit">
-    <% end %>
+      <h2><%= t('.delivery_address')%></h2>
+      <ul class="list-unstyled">
+        <li><%= @order.address.first_name %> <%= @order.address.last_name %></li>
+        <li><%= @order.address.street %></li>
+        <li><%= @order.address.city %></li>
+        <li><%= @order.address.zip_code %></li>
+        <li><%= link_to(t(".edit"), edit_checkout_address_path)%></li>
+      </ul>
+    </div>
   </div>
+  <div class="row text-center">
+    <div class = "col-xs-12 col-sm-offset-4 col-sm-4">
+      <!-- <h2><%= t('.payment')%></h2> -->
+      <%= form_tag checkout_payment_path, method: :post do %>
+        <!-- <label for="card_number">Card number: </label>
+        <input type="integer" class="form-control" id="card_number">
+
+        <label for="validity">Validity: </label>
+        <input type="integer"  class="form-control" id="validity">
+
+        <label for="CSV">CSV: </label>
+        <input type="integer"  class="form-control" id="CSV">
+
+         <label for="Card owner name">Card owner name: </label>
+        <input type="text"  class="form-control" id="Card-owner-name">
+
+        <input type="submit"> -->
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="My Order - Juliette Lacroix"
+      data-description="<%= @order.order_items.count %> article - <%= humanized_money_with_symbol(@order.amount) %>"
+      data-amount="<%= @order.amount_cents %>"
+      data-currency="EUR"
+      data-locale = "auto"
+      data-label = "Payer">
+      </script>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="min-height"></div>
+
 </div>
 

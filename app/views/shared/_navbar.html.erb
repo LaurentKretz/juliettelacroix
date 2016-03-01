@@ -10,7 +10,6 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <!-- Notification -->
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -22,11 +21,11 @@
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
               <% end %>
             </li>
-            <!-- <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+            <li>
+              <%= link_to new_order_path do %>
+                <i class="fa fa-shopping-basket"></i>  <%= t ".basket", default: "Panier" %>
               <% end %>
-            </li> -->
+            </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
@@ -49,6 +48,8 @@
 
 
   </div>
+
+
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">

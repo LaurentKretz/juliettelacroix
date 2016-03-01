@@ -66,7 +66,8 @@ en:
   checkout:
     addresses:
       edit:
-        title: "Define a new delivery address"
+        title: "Your addresses"
+        new: "Add a new address"
         placeholder_address: "Start typing your address"
         simple_form:
           submit: "Save"
