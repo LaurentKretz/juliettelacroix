@@ -51,6 +51,23 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .banner {
+    color: white;
+    text-align: center;
+    background-size: cover !important;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+  .banner p {
+    padding-bottom: 50px;
+  }
+
+  .banner a {
+    text-decoration: none;
+    color: white;
+  }
   </style>
 </head>
 
@@ -62,10 +79,12 @@
     </div>
     <p>If you are the application owner check the logs for more information.</p>
   </div> -->
-   <div>
-    <h1>Erreur 500</h1>
-    <p>Vous avez perdu votre parfum, revenez parmi nous !</p>
-    <a href="http://localhost:3000/">Accueil</a>
+  <div class="banner" id="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/6404/woman-girl-young-beauty.jpg');">
+    <div>
+      <p>Erreur 404</p>
+      <p>Vous avez perdu votre parfum, revenez parmi nous !</p>
+      <a href="/">Accueil</a>
+    </div>
   </div>
 </body>
 </html>
