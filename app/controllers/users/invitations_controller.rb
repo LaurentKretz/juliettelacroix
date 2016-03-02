@@ -33,7 +33,7 @@ before_action :set_user, only:[:create, :update]
   def update
   if @user.update(resource_params)
     #Creation d'un faux order pour accéder au dashboard. Nécessitera stripe
-    @user.orders.create!(user: @user, address:@user.addresses.first)
+    @user.orders.create!(user: @user, address:@User.addresses.first)
     @order_item = OrderItem.create!(order:@user.orders.first, product:Kit.first, product_type:"Kit")
     flash.clear
     sign_in_and_redirect(@user)
