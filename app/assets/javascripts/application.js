@@ -5,4 +5,6 @@
 //= require owl.carousel
 //= require adress_card
 //= require stars
-//= requitre_tree
+//= require home
+//=require_tree
+
