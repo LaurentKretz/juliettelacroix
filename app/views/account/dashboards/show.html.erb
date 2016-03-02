@@ -11,6 +11,7 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="row text-right">
 Filtrer par : Note Status
@@ -66,14 +67,12 @@ Filtrer par : Note Status
       <div class="kit col-xs-12 col-sm-3">
       <% if rev.nil? || rev.grade3.nil? %>
       <div class="kit-status"><i class="fa fa-square-o"></i>
-        <%= link_to "Tester ce parfum", account_perfume_path(perfume), :id => "link-dashboard1" %>
+        <%= link_to "Tester ce parfum", account_perfume_path(id:perfume)%>
       </div>
       <% else %>
       <div class="kit-status"><i class="fa fa-check"></i>Déjà testé</div>
     <%end%>
-        <div class="buybtn"><i class="fa fa-shopping-cart"></i>
-          <%= link_to "Acheter", account_orders_path(perfume), :id => "link-dashboard2"%>
-        </div>
+
       </div>
     </div>
     <%end%>
