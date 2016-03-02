@@ -1,0 +1,9 @@
+$('*[data-perfume-id="<%= @review.perfume.id %>"] *[data-grade-id="<%= @grade_number %>"] label').each(function() {
+  if(<%= @review.send("grade#{@grade_number}") %> >= $(this)[0].htmlFor.slice(-1)) {
+    $(this).addClass("starred");
+  }
+  else {
+    $(this).removeClass("starred");
+  }
+});
+

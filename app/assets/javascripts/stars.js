@@ -6,12 +6,12 @@ $('.star input').on('click', function() {
   if (reviewId != "nil") {
     $.post( "/account/perfumes/" + perfumeId + "/reviews/" + reviewId + "/update?grade=" + gradeId + '&value=' + gradeValue , function( data ) {
       console.log(data)
-      document.location.reload(true)
+      // document.location.reload(true)
     });
   } else {
     $.post( "/account/perfumes/" + perfumeId + "/reviews/?grade=" + gradeId + '&value=' + gradeValue , function( data ) {
       console.log(data)
-      document.location.reload(true)
+      // document.location.reload(true)
     });
   }
 })
