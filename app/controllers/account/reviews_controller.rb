@@ -5,13 +5,11 @@ module Account
 
     def create
       @review = Review.where(user: @user, perfume: @perfume).first_or_initialize
-      grade_number = params[:grade]
-      return unless %w(1 2 3).include?(grade_number)
-
-      @review["grade#{grade_number}"] = params[:value]
+      @grade_number = params[:grade]
+      return unless %w(1 2 3).include?(@grade_number)
+      @review["grade#{@grade_number}"] = params[:value]
       @review.save
-
-      render json: @review, status: :created
+      render :update_review
     end
 
     def update
@@ -20,8 +18,6 @@ module Account
         @grade_number = params[:grade]
         @review["grade#{@grade_number}"] = params[:value]
         @review.save
-
-        # render json: @review
       end
     end
 
