@@ -44,7 +44,7 @@
     <div class="col-xs-1"><h3 class="text-center"><%= humanized_money_with_symbol(@order.amount) %></h3></div>
   </div>
   <div class="small-padded"></div>
-  <% if @order.amount == 0 %>
+  <% if @order.amount_cents == 0 %>
     <h3 class="text-center">Votre panier est vide</h3 class="text-center">
   <%else%>
     <div class="text-center">

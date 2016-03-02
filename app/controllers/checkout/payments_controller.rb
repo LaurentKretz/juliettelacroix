@@ -27,6 +27,7 @@ module Checkout
       )
 
       @order.update(payment: charge.to_json, state: 'paid')
+      current_user.update(stripe_customer_id: customer.id, invitation_limit: 5)
       redirect_to checkout_confirmation_path
 
     rescue Stripe::CardError => e
