@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       resource :confirmation, only: [:show]
     end
 
-<<<<<<< HEAD
     namespace :account do
       resource :dashboard, only: [:show]
       resource :profile, only: [:edit, :update]
@@ -25,20 +24,9 @@ Rails.application.routes.draw do
       resources :kits, only: [:show]
       resources :perfumes, only: [:show] do
         resources :reviews, only: [:create, :update]
+        post "reviews/:review_id/update" => "reviews#update_review"
       end
-      # post 'perfumes/step1', to: 'perfumes#step1', as: 'step1'
-=======
-      namespace :account do
-        resource :dashboard, only: [:show]
-        resource :profile, only: [:edit, :update]
-        resources :orders, only: [:index]
-        resources :kits, only: [:show]
-        resources :perfumes, only: [:show] do
-          resources :reviews, only: [:create, :update]
-          post "reviews/:review_id/update" => "reviews#update_review"
-        end
         # post 'perfumes/step1', to: 'perfumes#step1', as: 'step1'
->>>>>>> 037a0888b8f607ec53430c83e943ae5c30ba5172
         # post 'perfumes/step2', to: 'perfumes#step1', as: 'step2'
         # post 'perfumes/step3', to: 'perfumes#step1', as: 'step3'
         # post 'perfumes/step4', to: 'perfumes#step1', as: 'step4'
