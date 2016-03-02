@@ -11,31 +11,6 @@
   </div>
 </div>
 
-
-<!-- <div class="container text-center" id="samples">
-  <h2><%=t('.sample_test')%></h2>
-  <div class="perfume-circle padded">
-    <div class="col-xs-12">
-      <div id="perfume1"><%= render 'shared/perfume_pic' %></div>
-      <div id="perfume2"><%= render 'shared/perfume_pic' %></div>
-      <div id="perfume3"><%= render 'shared/perfume_pic' %></div>
-      <div id="perfume4"><%= render 'shared/perfume_pic' %></div>
-      <div id="perfume5"><%= render 'shared/perfume_pic' %></div>
-      <div class="padded"></div>
-
-    </div>
-  </div> -->
-<!--   <ul class="list-unstyled">
-    <% @perfumes.each do |perfume| %>
-    <li><h3><%=perfume.name%></h3></li>
-    <li><%=perfume.description%></li>
-    <%= link_to "Testez ce parfum", account_perfume_path(perfume), class: "navbar-wagon-item navbar-wagon-button btn" %></p>
-    <%end%>
-  </ul>
-  <h3><%=link_to t('.all_my_kits'), ""%></h3>
-</div>
-<div class="padded"></div> -->
-
 <div class="container">
   <div class="row">
     <% @perfumes.each do |perfume| %>
@@ -85,14 +60,12 @@
       <div class="kit col-xs-12 col-sm-3">
       <% if rev.nil? || rev.grade3.nil? %>
       <div class="kit-status"><i class="fa fa-square-o"></i>
-        <%= link_to "Tester ce parfum", account_perfume_path(perfume), :id => "link-dashboard1" %>
+        <%= link_to "Tester ce parfum", account_perfume_path(id:perfume)%>
       </div>
       <% else %>
       <div class="kit-status"><i class="fa fa-check"></i>Déjà testé</div>
     <%end%>
-        <div class="buybtn"><i class="fa fa-shopping-cart"></i>
-          <%= link_to "Acheter", account_orders_path(perfume), :id => "link-dashboard2"%>
-        </div>
+
       </div>
     </div>
     <%end%>
