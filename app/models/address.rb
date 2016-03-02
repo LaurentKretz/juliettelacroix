@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: addresses
+#
+#  id           :integer          not null, primary key
+#  first_name   :string
+#  last_name    :string
+#  street       :string
+#  zip_code     :integer
+#  city         :string
+#  country_code :string
+#  user_id      :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Address < ActiveRecord::Base
   belongs_to :user
   has_many :orders

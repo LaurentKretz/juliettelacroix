@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         resources :kits, only: [:show]
         resources :perfumes, only: [:show] do
           resources :reviews, only: [:create, :update]
+          post "reviews/:review_id/update" => "reviews#update_review"
         end
         # post 'perfumes/step1', to: 'perfumes#step1', as: 'step1'
         # post 'perfumes/step2', to: 'perfumes#step1', as: 'step2'
