@@ -17,18 +17,18 @@ module Account
     def update
       if params[:review_id]
         @review = Review.find(params[:review_id])
-        grade_number = params[:grade]
-        @review["grade#{grade_number}"] = params[:value]
+        @grade_number = params[:grade]
+        @review["grade#{@grade_number}"] = params[:value]
         @review.save
 
-        render json: @review
+        # render json: @review
       end
     end
 
     def update_review
       @review = Review.find(params[:review_id])
-      grade_number = params[:grade]
-      @review["grade#{grade_number}"] = params[:value]
+      @grade_number = params[:grade]
+      @review["grade#{@grade_number}"] = params[:value]
       @review.save
 
     end

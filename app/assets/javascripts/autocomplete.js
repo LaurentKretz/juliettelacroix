@@ -20,8 +20,8 @@ function onPlaceChanged() {
     for (var j in component.types) {  // Some types are ["country", "political"]
       var type  = component.types[j];
       var value = component.long_name;
-      var type_element = $('.checkout-form [data-autocomplete="' + type + '"]');
-
+      var type_element = $('[data-autocomplete="' + type + '"]');
+      console.log("type_element",type_element)
       if (type == "country") {
         value = component.short_name;
         var option = $(type_element).find('option[value="' + value + '"]');
@@ -39,7 +39,7 @@ function onPlaceChanged() {
     }
   }
 
-  $('.checkout-form [data-autocomplete="street"]').val(street_number + ' ' + street_name);
+  $('[data-autocomplete="street"]').val(street_number + ' ' + street_name);
 }
 
 google.maps.event.addDomListener(window, 'load', function() {

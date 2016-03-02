@@ -53,6 +53,7 @@ fr:
         city: "Ville"
         identity: "Identité"
         delivery: "Adresse de livraison"
+        placeholder_address: "Adresse"
 
         # accept_form: "Veuillez remplir tous les champs requis"
     mailer:

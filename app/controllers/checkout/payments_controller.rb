@@ -3,7 +3,6 @@ module Checkout
     before_action :set_order
     def new
 
-
       #Dispay the perfumes kit selected for purchase
       #Display the delivery address enter in the discover controller
       #
@@ -17,12 +16,15 @@ module Checkout
           email: params[:stripeEmail]
         )
         charge(@stripe_customer.id)
-        current_user.update(stripe_customer_id: customer.id, invitation_limit: 5)
+        current_user.update(stripe_customer_id: @stripe_customer.id, invitation_limit: 5)
       else
         charge(current_user.stripe_customer_id)
         current_user.update(invitation_limit: 5)
       end
-        redirect_to checkout_confirmation_path
+
+      current_user.update!(first_purchase: true)
+
+      redirect_to checkout_confirmation_path
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
