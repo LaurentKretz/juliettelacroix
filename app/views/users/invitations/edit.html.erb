@@ -26,100 +26,37 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-        <%= form_tag invitation_path(:user), method: :put do %>
-          <%= hidden_field_tag 'user[invitation_token]', nil %>
-          <%= hidden_field_tag 'user[invitation_accepted_at]', Time.now %>
-          <%= hidden_field_tag 'user[invitation_limit]', 0 %>
-          <%= hidden_field_tag 'user[email]', nil %>
-          <span class="input input--haruki">
-            <%= text_field_tag 'user[first_name]', nil, class: "input__field input__field--haruki"  %>
-            <%= label_tag 'user[first_name]', class: "input__label input__label--haruki" do %>
-              <span class="input__label-content input__label-content--haruki">
-                <%= t("devise.invitations.edit.first_name") %>
-              </span>
-            <% end %>
-          </span>
+        <%=  simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f| %>
+          <%= f.hidden_field :invitation_token %>
+          <%= f.hidden_field :invitation_accepted_at, value: Time.now%>
+          <%= f.hidden_field :invitation_limit, value: 0%>
+          <h3><%=t("devise.invitations.edit.identity")%></h3>
 
-          <span class="input input--haruki">
-            <%= text_field_tag 'user[last_name]', nil, class: "input__field input__field--haruki"  %>
-            <%= label_tag 'user[last_name]', class: "input__label input__label--haruki" do %>
-              <span class="input__label-content input__label-content--haruki">
-                <%= t("devise.invitations.edit.last_name") %>
-              </span>
-            <% end %>
-          </span>
+          <div class="input input--haruki">
+          <%= f.input :first_name, label: t("devise.invitations.edit.first_name"), label_html: { class: 'input__label input__label--haruki' }, input_html: { class: 'input__field input__field--haruki' }, placeholder_html: { class: 'input__label-content input__label-content--haruki' } %>
+          </div>
 
+          <%= f.input :last_name, label: false, placeholder: t("devise.invitations.edit.name") %>
+
+          <%= f.hidden_field :email, label: false, placeholder: "email" %>
           <p>Votre email est <strong><%=resource.email%></strong>. Vous pourrez le changer ultérieurement</p>
           <h3><%=t("devise.invitations.edit.delivery")%></h3>
-          <%= fields_for :addresses, as: @addresses do |a| %>
-            <span class="input input--haruki">
-              <%= text_field_tag 'user[addresses_attributes][0][first_name]', nil, class: "input__field input__field--haruki"  %>
-              <%= label_tag 'user[addresses_attributes][0][first_name]', class: "input__label input__label--haruki" do %>
-                <span class="input__label-content input__label-content--haruki">
-                  <%= t("devise.invitations.edit.first_name") %>
-                </span>
-              <% end %>
-            </span>
-
-            <span class="input input--haruki">
-              <%= text_field_tag 'user[addresses_attributes][0][last_name]', nil, class: "input__field input__field--haruki"  %>
-              <%= label_tag 'user[addresses_attributes][0][last_name]', class: "input__label input__label--haruki" do %>
-                <span class="input__label-content input__label-content--haruki">
-                  <%= t("devise.invitations.edit.last_name") %>
-                </span>
-              <% end %>
-            </span>
-
-            <span class="input input--haruki">
-              <%= text_field_tag 'user[addresses_attributes][0][street]', nil, class: "input__field input__field--haruki"  %>
-              <%= label_tag 'user[addresses_attributes][0][street]', class: "input__label input__label--haruki" do %>
-                <span class="input__label-content input__label-content--haruki">
-                  <%= t("devise.invitations.edit.street") %>
-                </span>
-              <% end %>
-            </span>
-
-            <span class="input input--haruki">
-              <%= text_field_tag 'user[addresses_attributes][0][zip_code]', nil, class: "input__field input__field--haruki"  %>
-              <%= label_tag 'user[addresses_attributes][0][zip_code]', class: "input__label input__label--haruki" do %>
-                <span class="input__label-content input__label-content--haruki">
-                  <%= t("devise.invitations.edit.zip_code") %>
-                </span>
-              <% end %>
-            </span>
-
-            <span class="input input--haruki">
-              <%= text_field_tag 'user[addresses_attributes][0][city]', nil, class: "input__field input__field--haruki"  %>
-              <%= label_tag 'user[addresses_attributes][0][city]', class: "input__label input__label--haruki" do %>
-                <span class="input__label-content input__label-content--haruki">
-                  <%= t("devise.invitations.edit.city") %>
-                </span>
-              <% end %>
-            </span>
+          <%= f.simple_fields_for :addresses, as: @addresses do |a| %>
+            <%= a.input :first_name, label: false, placeholder: t("devise.invitations.edit.first_name_delivery") %>
+            <%= a.input :last_name, label: false, placeholder: t("devise.invitations.edit.name_delivery") %>
+            <%= a.input :street, label: false, placeholder: t("devise.invitations.edit.street") %>
+            <%= a.input :zip_code, label: false, placeholder: t("devise.invitations.edit.zip_code") %>
+            <%= a.input :city, label: false, placeholder: t("devise.invitations.edit.city") %>
           <% end %>
 
           <h3><%=t("devise.invitations.edit.password")%></h3>
-          <span class="input input--haruki">
-              <%= password_field_tag 'user[password]', nil, class: "input__field input__field--haruki" %>
-              <%= label_tag 'user[password]', class: "input__label input__label--haruki" do %>
-                <span class="input__label-content input__label-content--haruki">
-                  <%= t("devise.invitations.edit.password") %>
-                </span>
-              <% end %>
-            </span>
-             <span class="input input--haruki">
-              <%= password_field_tag 'user[password_confirmation]', nil, class: "input__field input__field--haruki" %>
-              <%= label_tag 'user[password_confirmation]', class: "input__label input__label--haruki" do %>
-                <span class="input__label-content input__label-content--haruki">
-                  <%= t("devise.invitations.edit.password_conf") %>
-                </span>
-              <% end %>
-            </span>
-          <div class="small-padded">
-          <%= submit_tag t("devise.invitations.edit.submit_button"), class: 'btn btn-default'%>
-          </div>
+          <%= f.input :password, label: false, placeholder: t("devise.invitations.edit.password") %>
+          <%= f.input :password_confirmation, label: false, placeholder: t("devise.invitations.edit.password_conf") %>
+          <div class="small-padded"></div>
+          <%= f.button :submit, t("devise.invitations.edit.submit_button") %>
         <% end %>
 
       </div>
     </div>
   </div>
+</div>
