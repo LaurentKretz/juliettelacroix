@@ -32,6 +32,7 @@ en:
         city: "City"
         identity: "Identity"
         delivery: "Delivery address"
+        placeholder_address: "Address"
         # accept_form: "Please fill in all required inputs"
     mailer:
       invitation_instructions:
