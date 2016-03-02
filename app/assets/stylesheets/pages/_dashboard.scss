@@ -1,3 +1,26 @@
+.flexbox-columns {
+  display: flex;
+  flex-direction: column;
+  .abstract {
+    flex: 1 0 auto;
+  }
+  .review {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .star {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .flex-item {
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
+
+
 .text-dashboard {
   display: flex;
   align-items: center;
@@ -39,7 +62,6 @@ fieldset, label { margin: 0; padding: 0; }
 
 .rating {
   border: none;
-  float: left;
 }
 
 .rating > input { display: none; }
