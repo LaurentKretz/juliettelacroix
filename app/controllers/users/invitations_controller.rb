@@ -31,7 +31,7 @@ before_action :set_user, only:[:create, :update]
   end
 
   def update
-  if @user.update!(resource_params)
+  if @user.update(resource_params)
     #Creation d'un faux order pour accéder au dashboard. Nécessitera stripe
     @order = @user.orders.create!(user: @user, address:@user.addresses.first, state:"pending")
     session[:order_id] = @order.id

@@ -36,6 +36,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3", id="first-purchase-form">
         <%=  simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f| %>
+
           <%= f.hidden_field :invitation_token %>
           <%= f.hidden_field :invitation_accepted_at, value: Time.now%>
           <%= f.hidden_field :invitation_limit, value: 0%>
