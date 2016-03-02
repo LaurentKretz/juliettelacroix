@@ -18,8 +18,14 @@ module Checkout
   end
 
   def create
-    if current_user.addresses.create!(address_params)
-      redirect_to order_path(session[:order_id], address_id:current_user.addresses.last), method: "put"
+    if @address = current_user.addresses.create!(address_params)
+      @order = current_user.orders.where(state: "pending").find(session[:order_id])
+      if @order.update!(address:@address)
+        redirect_to new_checkout_payment_path
+      else
+        flash[:alert] = "Erreur dans votre adresse. Veuillez en choisir une autre"
+        redirect_to edit_checkout_address_path
+      end
     else
       render :new
     end

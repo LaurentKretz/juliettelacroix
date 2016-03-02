@@ -8,5 +8,5 @@
       <li><%=address.country_code%></li>
     </ul>
   </div>
-  <%= link_to "Envoyer à cette addresse", order_path(session[:order_id], address_id:address.id), method: "put", class: "address-card-description-link" %>
+  <%= link_to "Envoyer à cette addresse", order_path(id:session[:order_id], address_id:address.id), method: "put", class: "address-card-description-link" %>
 </div>

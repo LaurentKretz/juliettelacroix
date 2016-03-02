@@ -12,7 +12,7 @@ class OrderItemsController < ApplicationController
 
     new_item = OrderItem.create!(product_sku: @product.sku, product_type: params[:product_type], product_id: @product.id, amount: @product.price, quantity: params[:quantity], order:@order)
     flash[:notice] = "#{@product.name}  well added to #{ActionController::Base.helpers.link_to "your cart", new_order_path}"
-    redirect_to account_perfume_path(@product, anchor: "last-card")
+    redirect_to account_perfume_path(id:@product.id, anchor: "last-card")
   end
 
   def destroy
