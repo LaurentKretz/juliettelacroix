@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
    $("#owl-demo").owlCarousel({
 
       navigation : false, // Show next and prev buttons
@@ -16,7 +17,10 @@ $(document).ready(function() {
       // itemsDesktopSmall : false,
       // itemsTablet: false,
       // itemsMobile : false
-
   });
 
+  if (window.location.hash == "#last-card"){
+    var owl = $("#owl-demo").data('owlCarousel');
+    owl.jumpTo(6);
+  }
 });

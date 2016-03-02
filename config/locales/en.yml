@@ -69,7 +69,8 @@ en:
   checkout:
     addresses:
       edit:
-        title: "Define a new delivery address"
+        title: "Your addresses"
+        new: "Add a new address"
         placeholder_address: "Start typing your address"
         simple_form:
           submit: "Save"
@@ -87,5 +88,5 @@ en:
         payment: "Payment"
   orders:
     new:
-      title: "Votre order"
+      title: "Your basket"
 

@@ -8,3 +8,33 @@
   margin-bottom: 20px;
 }
 
+.address-card {
+  height: 150px;
+  background-size: cover !important;
+  color: #393939;
+  position: relative;
+  margin-top: 20px;
+}
+.address-card-description {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+.address-card-description h2 {
+  font-size: 22px;
+  margin-top: 10px;
+}
+.address-card-description p {
+  font-size: 13px;
+  }
+.address-card-description-link {
+
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  transition: all 0.2s ease-in;
+}
+.address-card-description-link:hover{
+  font-weight: bold;
+  text-decoration: none;
+}

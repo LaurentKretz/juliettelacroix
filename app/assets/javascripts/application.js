@@ -3,6 +3,5 @@
 //= require bootstrap-sprockets
 //= require autocomplete
 //= require owl.carousel
-//= stars
-//= require_tree .
-
+//= require adress_card
+//= require stars

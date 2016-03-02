@@ -18,4 +18,5 @@ class OrderItem < ActiveRecord::Base
   validates :product_id, presence: :true
   scope :kit, -> {where(product_type: "Kit")}
   scope :perfume, -> {where(product_type: "Perfume")}
+  monetize :amount_cents
 end

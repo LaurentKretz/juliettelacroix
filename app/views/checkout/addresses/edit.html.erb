@@ -1,20 +1,35 @@
 <div class="container">
-<div class="row wapper-grey container padded col-xs-12 col-sm-offset-2 col-sm-8">
+  <div class="container padded col-xs-12 col-sm-offset-2 col-sm-8">
     <h1><%= t('.title')%></h1>
+      <%= link_to "#", id: "mask" do%>
+        Show/hide addresses
+      <%end%>
+    <div class="row">
+      <% current_user.addresses.each do |address|%>
+        <div class="col-xs-12 col-sm-4">
+          <%= render "shared/address_card", address: address %>
+        </div>
+      <%end%>
+    </div>
+    <h2><%= t('.new')%></h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <%= simple_form_for(@address, url: checkout_address_path, method: :post, html: { class: "checkout-form" }) do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :first_name, label: false, placeholder:"First name" %>
+          <%= f.input :last_name, label: false, placeholder:"Last name" %>
+          <div class="form-group string optional disabled address_street simple_form">
+            <%= text_field_tag :full_address, @address.full_address, :id => "user_input_autocomplete_address", placeholder: t('.placeholder_address'), class: "form-control" %>
+          </div>
 
-    <%= simple_form_for(@address, url: checkout_address_path, method: :put, html: { class: "checkout-form" }) do |f| %>
-      <%= f.error_notification %>
+          <%= f.input :street, :input_html => { "data-autocomplete" => "street" }, :as => :hidden %>
+          <%= f.input :zip_code, :input_html => { "data-autocomplete" => "postal_code" }, :as => :hidden %>
+          <%= f.input :city, :input_html => { "data-autocomplete" => "locality" }, :as => :hidden %>
+          <%= f.input :country_code, :input_html => { "data-autocomplete" => "country" }, label: "Country", :as => :hidden %>
 
-      <div class="form-group string optional disabled address_street simple_form">
-        <%= text_field_tag :full_address, @address.full_address, :id => "user_input_autocomplete_address", placeholder: t('.placeholder_address'), class: "form-control" %>
+          <%= f.button :submit, t('.submit'), html: { class: "checkout-form" }%>
+        <% end %>
       </div>
-
-      <%= f.input :street, :input_html => { "data-autocomplete" => "street" }, :as => :hidden %>
-      <%= f.input :zip_code, :input_html => { "data-autocomplete" => "postal_code" }, :as => :hidden %>
-      <%= f.input :city, :input_html => { "data-autocomplete" => "locality" }, :as => :hidden %>
-      <%= f.input :country_code, :input_html => { "data-autocomplete" => "country" }, label: "Country", :as => :hidden %>
-
-      <%= f.button :submit, t('.submit'), html: { class: "checkout-form" }%>
-    <% end %>
+    </div>
   </div>
 </div>
