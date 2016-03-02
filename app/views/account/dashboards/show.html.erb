@@ -33,7 +33,7 @@
         <div class="description flexbox-columns">
           <div class="review" data-perfume-id='<%= perfume.id %>' data-review-id='<%= rev.nil? ? "nil" : rev.id %>'>
             <div class="star" data-grade-id='1' class='note-<%= current_user_review(perfume).try(:grade1) %>'>
-              <div class="flex-item">
+              <div class="flex-item grade1">
                 Grade 1:
               </div>
               <fieldset class="rating flex-item">
@@ -46,7 +46,7 @@
             </div> |
 
             <div class="star" data-grade-id='2' class='note<%= current_user_review(perfume).try(:grade2) %>'>
-              <div class="flex-item">
+              <div class="flex-item grade2">
               Grade 2:
               </div>
               <fieldset class="rating">
