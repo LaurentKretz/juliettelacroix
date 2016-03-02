@@ -4,4 +4,4 @@
 //= require autocomplete
 //= require owl.carousel
 //= require adress_card
-//= require_tree .
+//= require stars
