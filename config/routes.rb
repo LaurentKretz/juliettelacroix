@@ -1,7 +1,9 @@
+
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'discover', to: 'pages#discover'
   get 'welcome', to: 'welcome#login', :as => :login
+  post 'newsletter/subscribe', to: 'users#subscribe', as: :subscribe_to_newsletter
 
   scope '(:locale)', locale: /en|fr/ do
     devise_for :users, :controllers => { :invitations => 'users/invitations' }

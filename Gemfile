@@ -13,6 +13,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise_invitable'
 gem 'money-rails'
 gem 'stripe'
+gem 'gibbon'
 
 gem 'sass-rails'
 gem 'jquery-rails'
