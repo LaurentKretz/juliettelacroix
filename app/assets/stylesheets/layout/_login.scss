@@ -1,9 +1,60 @@
-.login {
-  border-color: black;
 
-input {
-  border-color-bottom: black;
+#login-modal .modal-dialog {
+  width: 400px;
+
+  input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+
+  input {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 1px solid $gray-lighter;
+  }
+
+  .btn {
+    text-align: center;
+    font-size: 20px;
+    font-family: $header-font;
+  }
 }
 
+#login-modal h2 {
+font-family: $header-font;
+font-size: 40px;
+text-align: center;
+color: $gold;
+}
 
+#login-modal input[type=text], input[type=password] {
+  margin-top: 10px;
+}
+
+#modal-frame {
+  border: 1px solid $gold;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 1px 1px 1px $gray-light;
+  margin: 10px 10px;
+}
+
+#hp-inputmodal {
+  font-family: $base-font;
+  font-size: 14px;
+}
+
+.modal-dialog {
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.modal-links {
+  font-size: 12px;
+  font-family: $base-font;
 }

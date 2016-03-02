@@ -1,0 +1,34 @@
+.text-dashboard {
+  display: flex;
+  align-items: center;
+}
+
+.flex-items {
+  flex: 0 0 20%;
+}
+
+.perfume-card {
+  margin: 5px 5px;
+}
+
+#star {
+  display: inline-block;
+}
+
+#title-bar {
+  border-bottom: 1px solid $gold;
+  color: $gold;
+}
+
+.fa {
+  color: $gold;
+}
+
+#link-dashboard1 {
+font-size: 14px;
+}
+
+#link-dashboard2 {
+color: $gold;
+font-size: 14px;
+}

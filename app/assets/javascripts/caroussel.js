@@ -3,12 +3,13 @@ $(document).ready(function() {
 
    $("#owl-demo").owlCarousel({
 
-      navigation : true, // Show next and prev buttons
+      navigation : false, // Show next and prev buttons
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
       autoHeight : true,
-      navigationText:  ["<",">"],
+      pagination: true,
+      paginationNumbers: true,
       addClassActive: true,
       // "singleItem:true" is a shortcut for:
       // items : 1,

@@ -1,18 +1,38 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, id: "logo-font" do %>
+<div class='navbar-juliette'>
+  <div class="navbar-side">
+    <div class="navbar-wagon-item">
+        <div class="dropdown">
+        <i class="fa fa-bars menu-logo dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href=""><%= t('.artist') %></a></li>
+            <li><a href=""><%= t('.collection') %></a></li>
+            <li><a href=""><%= t('.blog') %></a></li>
+            <li><a href=""><%= t('.top_call_to_action') %></a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="navbar-side-left hidden-xs hidden-sm">
+      <a href=""><%= t('.artist') %></a>
+      <a href=""><%= t('.collection') %></a>
+    </div>
+  </div>
+  <%= link_to root_path, class: "navbar-logo hidden-xs", id: "logo-font" do %>
     Juliette Lacroix
   <% end %>
+  <%= link_to root_path, class: "navbar-logo hidden-sm hidden-md hidden-lg", id: "logo-font" do %>
+    JL
+  <% end %>
+  <div class='navbar-side'>
+    <div class="navbar-side-right hidden-xs hidden-sm">
+      <a href=""><%= t('.blog') %></a>
+      <%= link_to t(".top_call_to_action"), discover_path%>
+    </div>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
 
       <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
+      <div class="navbar-wagon-item" id="logo-perfume">
         <div class="dropdown">
           <%= image_tag "perfume.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -33,22 +53,17 @@
             </li>
           </ul>
         </div>
-      </div>
-
     <% else %>
 
-    <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Démarrer l'expérience"), discover_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="hp_login_modal">Log In</button>
 
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= render 'welcome/login_modal' %>
+
+
 
     <% end %>
 
-
-
   </div>
-
 
 
   <!-- Dropdown list appearing on mobile only -->
@@ -64,5 +79,8 @@
       </ul>
     </div>
   </div>
+
 </div>
+</div>
+
 

@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 20160301180229) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "admin",                  default: false, null: false
+    t.boolean  "first_purchase",         default: false
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -151,7 +152,6 @@ ActiveRecord::Schema.define(version: 20160301180229) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
-    t.boolean  "first_purchase",         default: false
     t.string   "stripe_customer_id"
   end
 

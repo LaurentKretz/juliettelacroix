@@ -3,18 +3,13 @@ module Account
     skip_after_action :verify_authorized, only: :show
     before_action :find_perfume, :find_user
 
-    def show
-    end
-
-    def new
-      @review = Review.new
-    end
-
     def create
       @review = @perfume.reviews.build(review_params)
       @review.save
     end
 
+    def update
+    end
 
     private
 
@@ -32,10 +27,7 @@ module Account
       @user = User.find(params[:user_id])
       @user = current_user
     end
-
   end
-
-
 end
 
 # <%= simple_form_for([@perfume, @review]) do |f| %>

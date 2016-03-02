@@ -7,7 +7,7 @@
 }
 
 .wrapper-gold {
-  background-color: #B39A6A;
+  background-color: $gold;
 }
 
 .wrapper-white {
@@ -103,33 +103,42 @@ background-size: cover !important;
   color: white;
 }
 
-// .bgvid {
-//      position: fixed;
-//      top: 50%;
-//      left: 50%;
-//      min-width: 100%;
-//      min-height: 100%;
-//      width: auto;
-//      height: auto;
-//      z-index: -100;
-//      -ms-transform: translateX(-50%) translateY(-50%);
-//      -moz-transform: translateX(-50%) translateY(-50%);
-//      -webkit-transform: translateX(-50%) translateY(-50%);
-//      transform: translateX(-50%) translateY(-50%);
-//      background: url(juliettelacroix1.png) no-repeat;
-//      background-size: cover;
-//  }
+.pic-frame {
 
-//  @media screen and (max-device-width: 800px) {
-//     html {
-//          background: url(juliettelacroix1.png) #000 no-repeat center center fixed;
-//     }
-//     #bgvid {
-//         display: none;
-//     }
-// }
+  img {
+    outline: 2px solid white;
+    outline-offset: -30px;
+    border-radius: 10px;
+    width: 480px;
+
+}
+
+}
+
 .padded {
   margin-top: -12px;
  }
 
+.hptitle h3 {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+  color: $gray;
+  margin-bottom: 20px;
+}
 
+.padded {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+#owl-hp .item{
+    background: $gray-lighter;
+    padding: 30px 0px;
+    margin: 5px;
+    color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+}
