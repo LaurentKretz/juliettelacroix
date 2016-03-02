@@ -12,4 +12,7 @@ module ApplicationHelper
   @devise_mapping ||= Devise.mappings[:user]
   end
 
+  def current_user_review(perfume)
+    perfume.reviews.where(user_id: current_user.id).first
+  end
 end
