@@ -14,7 +14,7 @@
     <h2><%= t('.new')%></h2>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <%= simple_form_for(@address, url: checkout_address_path, method: :post, html: { class: "checkout-form" }) do |f| %>
+        <%= simple_form_for(@address, url: checkout_address_path, method: "post", html: { class: "checkout-form" }) do |f| %>
           <%= f.error_notification %>
           <%= f.input :first_name, label: false, placeholder:"First name" %>
           <%= f.input :last_name, label: false, placeholder:"Last name" %>

@@ -1,3 +1,39 @@
-<h1><%= t('.title')%></h1>
-<h2><%= t('.order_processed')%> </h2>
+
+<h1> <%= t('.title')%> </h1>
+<h3><%= t('.order_processed')%> </h3>
 <p><%= t(".conf_sentence")%> <%= link_to(t(".account"), account_orders_path)%>.</p>
+<h3><%= t(".order_sentence")%></h3>
+<div class="row">
+    <div class="col-xs-9 col-sm-7 col-sm-offset-1">
+      <h3>Products</h3>
+    </div>
+    <div class="col-xs-1"><h3 class="text-center">Quantity</h3></div>
+    <div class="col-xs-1"><h3 class="text-center">Price</h3></div>
+  </div>
+<% @order.order_items.each do |order_item| %>
+    <div class="row">
+      <div class="col-xs-9 col-sm-7 col-sm-offset-1">
+        <% if order_item.product_type == "Perfume"%>
+          <h4> <%= link_to account_perfume_path(id:order_item.product_id) do %>
+            <%= order_item.product.name %> - Ref : <%= order_item.product_sku %>
+          <%end%> </h4>
+        <%else%>
+          <h4><%= order_item.product.name %> - Ref : <%= order_item.product_sku %></h4>
+        <%end%>
+      </div>
+      <div class="col-xs-1 text-center">
+        <h4><%= order_item.quantity %></h4>
+      </div>
+      <div class="col-xs-1 text-center">
+        <h4><%= humanized_money_with_symbol(order_item.amount) %></h4>
+      </div>
+    </div>
+  <%end%>
+  <div class="row">
+    <div class="col-xs-9 col-sm-7 col-sm-offset-1">
+      <h3>Total</h3>
+    </div>
+    <div class="col-xs-1"><h3 class="text-center"></h3></div>
+    <div class="col-xs-1"><h3 class="text-center"><%= humanized_money_with_symbol(@order.amount) %></h3></div>
+  </div>
+<div class="min-height"></div>
