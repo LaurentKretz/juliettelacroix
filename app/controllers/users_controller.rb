@@ -32,6 +32,7 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:subscribe]
 
+
   def show
     @user = record.user
   end
