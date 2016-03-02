@@ -30,6 +30,7 @@ module Account
       grade_number = params[:grade]
       @review["grade#{grade_number}"] = params[:value]
       @review.save
+
     end
 
     private
@@ -47,7 +48,6 @@ module Account
     def find_user
       @user = current_user
     end
-
   end
 end
 

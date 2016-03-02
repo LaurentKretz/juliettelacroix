@@ -23,10 +23,15 @@ class ApplicationController < ActionController::Base
     redirect_to(root_path)
   end
 
+  def default_url_options
+  { host: ENV['HOST'] || 'localhost:3000' }
+  end
+
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource_or_scope)
     account_dashboard_path
   end
+
 end
 
