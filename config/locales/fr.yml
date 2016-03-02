@@ -60,6 +60,7 @@ fr:
         title: "Félicitations!"
         order_processed: "Votre commande a bien été prise en compte."
         conf_sentence: "Vous recevrez bientôt un email avec le numéro de suivi de votre commande. Cette information est également disponible dans"
+        order_sentence: "Récapitulatif de votre commande"
         account: "votre compte"
     payments:
       new:

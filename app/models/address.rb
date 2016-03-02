@@ -21,7 +21,7 @@ class Address < ActiveRecord::Base
   validates :user_id, presence: :true
 
   def country_name
-    unless country_code == ""
+    unless country_code == "" || country_code.nil?
       country = ISO3166::Country[country_code]
       country.translations[I18n.locale.to_s] || country.name
     end
