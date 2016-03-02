@@ -5,9 +5,7 @@
 <%= video_tag("juliettelacroix1.mp4", poster: "juliettelacroix1.png", autobuffer: true, autoplay: true, :loop => true, :html_options => {class: "bgvid"})%>
 
 
-<!-- ############## Pour mettre une banner>
-<!-- <div class="banner" id="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/9692/pexels-photo.jpeg');">
-  <div> -->
+
 
     <div class="overlay">
       <h1><%= t('.title') %></h1>
@@ -15,13 +13,6 @@
       <div class="banner-invitation">
       </div>
 
-        <!-- <form> ### Pour n'accepter que les codes d'invitation #####
-          <div class="form-group">
-            <input type="text" class="hpsearch" placeholder="<%= t('.invitation_text') %>">
-          </div>
-          <button type="submit" class="btn btn-activate btn-success"><%= t('.invitation_button') %></button>
-        </form>
-        <%= link_to "Ask my invitation", new_invitation_path(User.new()) %> -->
 
         <%if user_signed_in? %>
           <h4><%=t(".h2banner")%></h4>
