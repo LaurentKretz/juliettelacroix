@@ -35,7 +35,14 @@ class UsersController < ApplicationController
     @user = record.user
   end
 
-
-
-
+  def subscribe
+    if params[:email] =~ /^([^@\s]+)@([-a-z0-9A-Z]+)\.([a-zA-Z]{2,})$/
+      SubscribeToNewsletter.new(params[:email]).run
+      flash[:notice] = "Vous avez bien été inscrit à notre newsletter !"
+      redirect_to :back
+    else
+      flash[:alert] = "Invalid email"
+      redirect_to :back
+    end
+  end
 end
