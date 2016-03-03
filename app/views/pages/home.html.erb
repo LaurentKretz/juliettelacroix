@@ -7,8 +7,8 @@
 
     <div class="overlay">
       <h1><%= t('.title') %></h1>
-      <h2><%= t('.subtitle') %></h2>
-      <div class="banner-invitation">
+      <h3><%= t('.subtitle') %></h3>
+      <div class="banner-invitation padded">
       </div>
 
 
@@ -38,7 +38,6 @@
           </form>
         <%end%>
       <div class="overlay-bis banner-experience">
-        <h2><%= t('.cta_text') %></h2>
         <a href="#experience" id="down">
           <i class="fa fa-angle-down arrow"></i>
         </a>
@@ -54,7 +53,8 @@
         <div class="hptitle"><h3 class="text-center section-title col-xs-12"><%= t('.title1') %></h3></div>
       <div class="col-xs-12 col-sm-6">
         <div class="pic-frame">
-        <img class="pic-home text-center " src="https://static.pexels.com/photos/6675/flight-mountains-sky-flying.jpeg">
+        <%= image_tag 'scentbird.jpg', class: "pic-home text-center"%>
+
         </div>
       </div>
       <div id="experience" class="col-xs-12 col-sm-6">
@@ -78,7 +78,7 @@
       </div>
       <div class="col-xs-12 col-sm-6">
         <div class="pic-frame">
-        <img class="pic-home text-center" src="https://static.pexels.com/photos/7066/man-relax-couch-study.jpg">
+        <img class="pic-home text-center" src="https://static.pexels.com/photos/6404/woman-girl-young-beauty.jpg">
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
         <div class="hptitle"><h3 class="text-center section-title col-xs-12"><%= t('.title3') %></h3></div>
       <div class="col-xs-12 col-sm-6">
         <div class="pic-frame">
-        <img class="pic-home text-center" src="https://static.pexels.com/photos/26180/pexels-photo-26180.jpg">
+        <%= image_tag 'perfumer.jpg', class: "pic-home text-center"%>
         </div>
       </div>
       <div id="experience" class="col-xs-12 col-sm-6">
