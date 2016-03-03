@@ -34,7 +34,7 @@
           <h3><%=t("devise.invitations.edit.identity")%></h3>
 
           <div class="input input--haruki">
-          <%= f.input :first_name, label: t("devise.invitations.edit.first_name") %>
+          <%= f.input :first_name, label:false, placeholder: t("devise.invitations.edit.first_name") %>
           </div>
 
           <%= f.input :last_name, label: false, placeholder: t("devise.invitations.edit.name") %>
