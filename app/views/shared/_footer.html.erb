@@ -45,12 +45,12 @@
       <div class="col-xs-8 col-sm-4 text-left">
         <p id="footer-nl"><%= t('.nl_subtitle') %></p>
         <p>
-          <form class="footer-form">
+          <%= form_tag subscribe_to_newsletter_path, class: "footer-form" do %>
             <div class="form-group">
               <input type="text" name="email" class="hpsearch" placeholder="Votre adresse email">
             </div>
           <button type="submit" class="btn btn-success" ><%= t('.nl_button') %></button>
-          </form>
+          <% end %>
         </p>
       </div>
     </div>

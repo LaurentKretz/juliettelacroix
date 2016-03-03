@@ -81,12 +81,17 @@ en:
         conf_sentence: "You will receive soon an email with your delivery package tracking number. Remember that this information will be also retrievable in"
         order_sentence: "Recap of your order"
         account: "your account"
+        back_home: "Back to my home"
+        delivery_address: "Delivery address"
     payments:
       new:
         title: "Your payment method"
         delivery_address: "Delivery address"
         edit: "Edit"
         payment: "Payment"
+        article:
+          one: "1 article"
+          other: "%{count} articles"
   orders:
     new:
       title: "Your basket"

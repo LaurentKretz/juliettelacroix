@@ -6,7 +6,7 @@ en:
       send_instructions: "An invitation email has been sent to %{email}."
       already_sent: "An invitation has already been sent to %{email}"
       no_more: "We would love everyone send you an invitation but we have very limited quantities and therefore must limit ourselves. Please come and visit us again next week. If you wish you can subscribe to our newsletter."
-      invitation_token_invalid: "The invitation token provided is not valid!"
+      invitation_token_invalid: "The invitation token provided is not valid anymore. Please login or ask for a new invitation"
       updated: "Your password was set successfully. You are now signed in."
       updated_not_active: "Your password was set successfully."
       no_invitations_remaining: "You have already sent all your invitations."
@@ -32,6 +32,7 @@ en:
         city: "City"
         identity: "Identity"
         delivery: "Delivery address"
+        placeholder_address: "Address"
         # accept_form: "Please fill in all required inputs"
     mailer:
       invitation_instructions:
