@@ -77,14 +77,13 @@
         </div>
       </div>
       <div class="kit col-xs-12 col-sm-2">
-        <% if rev.nil? || (rev.grade1 && rev.grade2 && rev.grade3).nil? %>
-          <div class="kit-status perf_to_test"><i class="fa fa-square-o"></i>
+        <%# if rev.nil? || (rev.grade1 && rev.grade2 && rev.grade3).nil? %>
+          <div class="kit-status perf_to_test navbar-wagon-item navbar-wagon-button btn">
             <%= link_to "Evaluer ce parfum", account_perfume_path(id:perfume)%>
           </div>
-        <% else %>
-          <div class="kit-status"><i class="fa fa-check"></i>Déjà évalué</div>
-        <%end%>
-          <div id="link-dashboard2"><i class="fa fa-shopping-cart"></i>
+        <%# else %>
+        <%# end%>
+          <div id="link-dashboard2">
             <%= form_tag order_items_path, class: "text-center" do %>
                 <%= hidden_field_tag 'product_id', perfume.id %>
                 <%= hidden_field_tag 'product_sku', perfume.sku %>

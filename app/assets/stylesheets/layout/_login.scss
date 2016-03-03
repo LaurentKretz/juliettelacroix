@@ -10,7 +10,7 @@
     margin-top: 0;
     margin-bottom: 15px;
     text-align: left;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gold;
   }
 
   .btn {
@@ -41,7 +41,7 @@ color: $gold;
   margin: 10px 10px;
 }
 
-#hp-inputmodal {
+.hp-inputmodal {
   font-family: $base-font;
   font-size: 14px;
 }
@@ -57,4 +57,13 @@ color: $gold;
 .modal-links {
   font-size: 12px;
   font-family: $base-font;
+}
+
+#borderbottom {
+border-bottom: 1px solid $gold;
+width:100%;
+}
+
+.close {
+  margin: 2px 2px;
 }

@@ -10,8 +10,12 @@
 
 .address-card {
   height: 150px;
-  background-size: cover !important;
-  color: #393939;
+  border: 1px solid $gold;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 1px 1px 1px $gray-light;
   position: relative;
   margin-top: 20px;
 }
@@ -32,7 +36,7 @@
   position: absolute;
   bottom: 0;
   left: 10px;
-  transition: all 0.2s ease-in;
+  //transition: all 0.2s ease-in;
 }
 .address-card-description-link:hover{
   font-weight: bold;
