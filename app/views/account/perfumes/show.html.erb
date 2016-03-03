@@ -109,7 +109,7 @@
              <li class="section-par">Testez un autre parfum et laissez-vous emerveiller par d'autres senteurs.</li>
           </ul>
           <p class= "text-center">
-            <%= link_to t(".top_call_to_action", default: "Noter ce parfum"), account_dashboard_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+            <%= link_to t(".top_call_to_action", default: "Noter ce parfum"), account_dashboard_path(anchor: "title-bar"), class: "navbar-wagon-item navbar-wagon-button btn" %>
           </p>
           <p class="text-center">
           <%= form_tag order_items_path, class: "text-center" do %>

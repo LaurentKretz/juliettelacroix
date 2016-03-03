@@ -37,8 +37,8 @@
           <span class="caret"></span>
           </button>
          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu3">
-           <li><%=link_to("Français", params.merge(locale: 'fr'))%></li>
-           <li><%=link_to("English", params.merge(locale: 'en'))%></li>
+           <li><%=link_to(t('.language-fr'), params.merge(locale: 'fr'))%></li>
+           <li><%=link_to(t('.language-en'), params.merge(locale: 'en'))%></li>
           </ul>
         </div>
       </div>
@@ -47,7 +47,7 @@
         <p>
           <%= form_tag subscribe_to_newsletter_path, class: "footer-form" do %>
             <div class="form-group">
-              <input type="text" name="email" class="hpsearch" placeholder="Votre adresse email">
+              <input type="text" name="email" class="hpsearch" placeholder=<%= t('.nl_email') %>>
             </div>
           <button type="submit" class="btn btn-success" ><%= t('.nl_button') %></button>
           <% end %>
