@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h2><%= t('.title')%></h2>
+      <h3><%= t('.title')%></h3>
       <p>Voici le récapitulatif des articles ajoutés à votre panier. </p>
     </div>
   </div>
   <div class="frame">
     <div class="row">
       <div class="col-xs-9 col-sm-7 col-sm-offset-1">
-        <h4>Produits</h4>
+        <h4>Article(s) sélectionné(s)</h4>
       </div>
-      <div class="col-xs-1"><h4 class="text-center">Quantités</h4></div>
+      <div class="col-xs-1"><h4 class="text-center">Quantité(s)</h4></div>
       <div class="col-xs-1"><h4 class="text-center">Prix</h4></div>
     </div>
     <% @order.order_items.each do |order_item| %>
@@ -39,7 +39,7 @@
     <%end%>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-1" id="delivery">
       <h4>Vos bénéfices</h4>
       <div class="flexbox"><i class="fa fa-truck"></i>Livraison gratuite en France métropolitaine</div>
       <div class="flexbox"><i class="fa fa-reply"></i>Retours gratuits
@@ -49,19 +49,41 @@
     </div>
     <div class="totalcolor">
       <div class="totalcolor col-xs-12 col-sm-2">
-        <h4>Total to pay</h4>
+        <h4>Total à payer</h4>
       </div>
       <div class="totalcolor col-xs-1"><h4 class="text-left"><%= humanized_money_with_symbol(@order.amount) %></h4></div>
     </div>
   </div>
-  <div class="small-padded"></div>
+  <div class="row">
+    <div class = "col-xs-12 col-sm-offset-1 col-sm-8">
+      <h4>Confirmer votre addresse de livraison</h4>
+
+      <div class="frame_address">
+        <ul class="list-unstyled">
+          <li><%= @order.address.first_name %> <%= @order.address.last_name %></li>
+          <li><%= @order.address.street %></li>
+          <li><%= @order.address.city %></li>
+          <li><%= @order.address.zip_code %></li>
+          <li><%= link_to("Modifier", edit_checkout_address_path)%><i class="fa fa-pencil"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <% if @order.amount_cents == 0 %>
     <h3 class="text-center">Votre panier est vide</h3 class="text-center">
   <%else%>
     <div class="text-center">
-      <%= form_tag orders_path do %>
+      <%= form_tag checkout_payment_path do %>
         <%= hidden_field_tag 'order_id', @order.id %>
-        <%= submit_tag 'Commander', class: "btn_order btn btn-lg" %>
+         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="My Order - Juliette Lacroix"
+      data-description="<%= @order.order_items.count %> article - <%= humanized_money_with_symbol(@order.amount) %>"
+      data-amount="<%= @order.amount_cents %>"
+      data-currency="EUR"
+      data-locale = "auto"
+      data-label = "Payer">
+      </script>
       <% end %>
     </div>
   <%end%>
