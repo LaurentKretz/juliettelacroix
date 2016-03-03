@@ -27,7 +27,7 @@
       <h3 class="col-xs-12" id="title-bar"><%= perfume.name %></h3>
     <div class="perfume-card">
       <div class="image col-xs-12 col-sm-2">
-        <%=image_tag("perfume.jpg", height: '150' )%>
+        <%= link_to image_tag("perfume.jpg", height: '150' ), account_perfume_path(id:perfume) %>
       </div>
       <% rev = perfume.reviews.where(user_id: current_user.id).first %>
       <div class="col-xs-12 col-sm-8">
@@ -83,6 +83,7 @@
           </div>
         <% else %>
           <div class="kit-status"><i class="fa fa-check"></i>Déjà évalué</div>
+          <%= link_to "Découvrir", account_perfume_path(id:perfume)%>
         <%end%>
           <div id="link-dashboard2"><i class="fa fa-shopping-cart"></i>
             <%= form_tag order_items_path, class: "text-center" do %>

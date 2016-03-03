@@ -1,5 +1,3 @@
-<% content_for :meta_title, "#{@perfume.name} de Juliette Lacroix" %>
-<% content_for :meta_description, @perfume.description %>
 
 <!-- # Step 1
 # ce que vous allez découvrir
@@ -17,7 +15,14 @@
         </div>
         <div id="experience" class="col-xs-12 col-sm-6">
           <h3 class="text-center section-title">Ce que vous allez découvrir sur <%= @perfume.name%></h3>
-          <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem </p>
+          <ul class="section-par">
+            <li class="section-par">L'inspiration nordique de ce parfum rafraîchissant</li>
+            <li class="section-par">Le musc frais comme matière 1ere principale</li>
+            <li class="section-par">Le jasmin l'accompagnant et donnant sa tenue à <%= @perfume.name%></li>
+            <li class="section-par">Vos sensations personnelles en fonction du moment de la journée</li>
+          </ul>
+
+         <!--  <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem </p> -->
         </div>
       </div>
     </div>
@@ -32,12 +37,12 @@
     <div class="container padded">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <iframe src="https://player.vimeo.com/video/90947998?color=B39A6A&title=0&byline=0&portrait=0" width="100%" height="290" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="margin-top:20px;"></iframe>
+          <iframe src="https://player.vimeo.com/video/90947998?color=B39A6A&title=0&byline=0&portrait=0" width="100%" height="330" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="margin-top:20px;"></iframe>
         </div>
         <div id="experience" class="col-xs-12 col-sm-6">
-          <h3 class="text-center section-title">Ce que vous allez découvrir sur <%= @perfume.name%></h3>
-          <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem </p>
-          <p class="text-center"><progress id="progressbar" value="20" max="100"></progress></p>
+          <h3 class="text-center section-title">L'inspiration de <%= @perfume.name%></h3>
+          <p class="section-par">Venu du fin fond de la Sibérie, découvrez dans cette vidéo Juliette qui vous raconte le voyage qui a inspiré la création de Winter Love et son travail autour du musc et du jasmin.</p>
+          <p class="section-par">Toujours au top, le style scandinave ne manquera pas de vous séduire par sa douceur et son esprit cocooning idéal pour amorcer la nouvelle saison puis découvrez le travaul de Juliette sur les matières 1eres.</p>
         </div>
       </div>
     </div>
@@ -54,9 +59,9 @@
           <img class="pic-home text-center" src="https://static.pexels.com/photos/37332/flowers-buttercups-flowering-petals.jpg">
         </div>
         <div id="experience" class="col-xs-12 col-sm-6">
-          <h3>1ere note</h3>
-          <p class="section-par"><%=@perfume.note1 %></p>
-          <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem </p>
+          <h3 class="text-center section-title">1ere note : le musc scandinave</h3>
+          <p class="section-par">Le musc était à l’origine une matière première animale, provenant de la sécrétion d’une glande du chevrotin porte-musc, vivant en Asie, Sibérie ou dans l’Himalaya. </p>
+          <p class="section-par">La récolte du musc nécessitant la mort de l’animal, sa chasse est aujourd’hui strictement interdite, et tous les muscs utilisés en parfumerie sont depuis longtemps d’origine synthétique (sauf si vous trouvez au marché noir du véritable musc Tonkin via un contrebandier sibérien, mais cela n’est franchement pas recommandé !).</p>
         </div>
       </div>
     </div>
@@ -73,9 +78,9 @@
           <img class="pic-home text-center" src="https://static.pexels.com/photos/1848/nature-sunny-red-flowers.jpg">
         </div>
         <div id="experience" class="col-xs-12 col-sm-6">
-          <h3>2e note</h3>
-          <p class="section-par"><%=@perfume.note2 %></p>
-          <p class="section-par">Travaillés autour du musc, cette collection de 5 parfums aux facettes différentes sont uniques en leur genre Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem </p>
+          <h3 class="text-center section-title">2e note : le jasmin frais</h3>
+          <p class="section-par">Le jasmin est l'une des fleurs reine de la parfumerie, avec la rose. Son nom vient de l'arabe yasamin, qui a donné le prénom Yasmine. Il pousse sur un arbuste en lianes et produit des fleurs particulièrement odorantes, qui servent à parfumer le thé notamment.</p>
+          <p class="section-par">Originaire d'Asie du Sud et du Sud-Est, il existe plus de 200 variétés de jasmin, mais en parfumerie, seules deux variétés sont utilisées pour la productions des matières à parfums.</p>
         </div>
       </div>
     </div>
@@ -83,61 +88,40 @@
   <!-- # review du parfum
   # 80% -->
 
-  <div class="wrapper-grey">
-    <div class="container padded">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <img class="pic-home text-center" src="https://static.pexels.com/photos/1924/sea-landscape-mountains-nature.jpg">
-        </div>
-        <div id="experience" class="col-xs-12 col-sm-6">
-          <h3>Vos sensations</h3>
-            <p>Simple Form</p>
-            <p>Grade 1</p>
-            <p>Grade 2</p>
-            <!-- <p class="text-center"><progress id="progressbar" value="80" max="100"></progress></p> -->
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- # review du parfum
   # Plus de conseils parfums
   # Conseil perosnnalisé
   # acheter tout de suite
   # retour à mon profil
   # 100% -->
-  <div>
-    <div class="wrapper-grey">
-      <div class="container small-padded">
-        <div class="row">
-          <div class="col-xs-12 col-md-offset-2 col-md-8">
-            <div class="card">
-              <img class="pic-home text-center" src="https://static.pexels.com/photos/4322/person-woman-hand-space.jpg">
-              <h3>Merci ! Pour aller plus loin :</h3>
-              <ul class="list-unstyled section-par">
-              <li><i class="fa fa-check-circle"></i></li>
-              <li><i class="fa fa-check-circle"></i></li>
-              <li><i class="fa fa-check-circle"></i></li>
-              </ul>
-              <p>Ci-dessus vos résultats, vous pouvez désormais bénéficier de plus de conseils et même d'un conseil personnalisé de Juliette, tester un autre parfum ou acheter celui-ci en 2 clics</p>
-              <p class= "text-center">
-                <%= link_to t(".top_call_to_action", default: "Tester un autre parfum"), account_dashboard_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-              </p>
-              <p class="text-center">
-              <%= form_tag order_items_path, class: "text-center" do %>
-                <%= hidden_field_tag 'product_id', @perfume.id %>
-                <%= hidden_field_tag 'product_sku', @perfume.sku %>
-                <%= hidden_field_tag 'product_type', :Perfume %>
-                <%= hidden_field_tag 'quantity', 1 %>
-                <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(@perfume.price), class: "navbar-wagon-item navbar-wagon-button btn"%>
-              <% end %></p>
-            </div>
-          </div>
+
+  <div class="wrapper-grey">
+    <div class="container padded">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <img class="pic-home text-center" src="https://static.pexels.com/photos/4322/person-woman-hand-space.jpg">
+        </div>
+        <div id="experience" class="col-xs-12 col-sm-6">
+          <h3 class="text-center section-title">Partagez vos sensations</h3>
+          <ul class="section-par">
+             <li class="section-par">Portez le parfum maintenant et notez une 1ere fois vos sensations</li>
+             <li class="section-par">Attendez demain et notez la tenue du sillage qui reste sur votre peau</li>
+             <li class="section-par">Testez un autre parfum et laissez-vous emerveiller par d'autres senteurs.</li>
+          </ul>
+          <p class= "text-center">
+            <%= link_to t(".top_call_to_action", default: "Noter ce parfum"), account_dashboard_path(anchor: "title-bar"), class: "navbar-wagon-item navbar-wagon-button btn" %>
+          </p>
+          <p class="text-center">
+          <%= form_tag order_items_path, class: "text-center" do %>
+            <%= hidden_field_tag 'product_id', @perfume.id %>
+            <%= hidden_field_tag 'product_sku', @perfume.sku %>
+            <%= hidden_field_tag 'product_type', :Perfume %>
+            <%= hidden_field_tag 'quantity', 1 %>
+            <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(@perfume.price), class: "navbar-wagon-item navbar-wagon-button btn"%>
+          <% end %></p>
         </div>
       </div>
     </div>
   </div>
 
 </div>
-
-<div class="small-padded"></div>
