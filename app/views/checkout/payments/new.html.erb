@@ -1,21 +1,6 @@
 <div class="container">
 <div class="small-padded"></div>
-  <div class="row">
-    <div class = "col-xs-12 col-sm-offset-2 col-sm-8">
-      <h3>Confirmer votre addresse de livraison</h3>
-     <!--  <h4><%= t('.article', count: @order.order_items.count)%> -
-      <%= humanized_money_with_symbol(@order.amount) %></h4> -->
-      <div class="frame_address">
-        <ul class="list-unstyled">
-          <li><%= @order.address.first_name %> <%= @order.address.last_name %></li>
-          <li><%= @order.address.street %></li>
-          <li><%= @order.address.city %></li>
-          <li><%= @order.address.zip_code %></li>
-          <li><%= link_to(t(".edit"), edit_checkout_address_path)%><i class="fa fa-pencil"></i></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+
   <div class="row text-center">
     <div class = "col-xs-12 col-sm-offset-2 col-sm-4">
       <!-- <h2><%= t('.payment')%></h2> -->
