@@ -4,11 +4,12 @@ $('.star input').on('click', function() {
   var reviewId = $(this).parents(".review").data('review-id');
   var gradeValue = $(this).val();
   if (reviewId != "nil") {
-    $.post( "/account/perfumes/" + perfumeId + "/reviews/" + reviewId + "/update?grade=" + gradeId + '&value=' + gradeValue , function( data ) {
+    $.ajax({
+      type: "put",
+      url: "/account/perfumes/" + perfumeId + "/reviews/" + reviewId + "?grade=" + gradeId + '&value=' + gradeValue
     });
   } else {
-    $.post( "/account/perfumes/" + perfumeId + "/reviews/?grade=" + gradeId + '&value=' + gradeValue , function( data ) {
-    });
+    $.post( "/account/perfumes/" + perfumeId + "/reviews/?grade=" + gradeId + '&value=' + gradeValue);
   }
 })
 
@@ -22,7 +23,6 @@ $('#comment_input').on('keyup', function(event) {
   if(event.which == 13 && event.shiftKey){
     console.log("in the if");
     $('#comment_form').submit();
-
   };
 });
 

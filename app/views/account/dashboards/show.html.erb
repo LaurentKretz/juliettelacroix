@@ -74,19 +74,19 @@
           <div class="abstract">
             <%=perfume.description%>
           </div>
-          <div>
-            <%= t(".review_comment") %>
-          </div>
-          <div id="comment">
-          <%= rev.comment %>
-          </div>
-          <div class="abstract" data-perfume-id='<%= perfume.id %>' data-review-id='<%= rev.nil? ? "nil" : rev.id %>'>
+         <!--  <div> -->
+<!--             <%= t(".review_comment") %> -->
+<!--           </div> -->
+<!--           <div id="comment"> -->
+<!--           <%= rev.comment %> -->
+<!--           </div> -->
+          <!-- <div class="abstract" data-perfume-id='<%= perfume.id %>' data-review-id='<%= rev.nil? ? "nil" : rev.id %>'>
 
-          <%=  form_tag(account_perfume_review_path(perfume_id: perfume.id, id:rev.id, review_id: rev.id), method: :put, id: "comment_form") do %>
-          <%= text_area_tag 'comment_input', rev.comment %>
-          <% end %>
+          <%#=  form_tag(account_perfume_review_path(perfume_id: perfume.id, id:rev.id, review_id: rev.id), method: :put, id: "comment_form", remote: true) do %>
+            <%#= text_area_tag 'comment_input', rev.comment %>
+          <%# end %>
           <h5>Appuyer sur shift et enter pour insérer votre commentaire</h5>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="kit col-xs-12 col-sm-2">

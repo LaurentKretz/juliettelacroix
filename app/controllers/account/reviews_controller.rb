@@ -12,25 +12,26 @@ module Account
       render :update_review
     end
 
-    def update
-      if params[:review_id]
-        @review["grade#{@grade_number}"] = params[:value] if params[:value]
-        @review = Review.find(params[:review_id])
-        @grade_number = params[:grade] if params[:grade]
-        @review.comment = params[:comment_input] if params[:comment_input]
-        @review.save
-        respond_to do |format|
-          format.html {redirect_to account_dashboard_path}
-          format.js {render action: "update_comment"}
-        end
-      end
-    end
+    # def update_review
+    #   @review = Review.find(params[:review_id])
+    #   @grade_number = params[:grade]
+    #   @review["grade#{@grade_number}"] = params[:value]
+    #   @review.save
+    #   respond_to do |format|
+    #    format.js
+    #   end
+    # end
 
-    def update_review
-      @review = Review.find(params[:review_id])
-      @grade_number = params[:grade]
-      @review["grade#{@grade_number}"] = params[:value]
+    def update
+      @review = Review.find(params[:id])
+      @grade_number = params[:grade] if params[:grade]
+      @review["grade#{@grade_number}"] = params[:value] if params[:value]
+      @review.comment = params[:comment_input] if params[:comment_input]
       @review.save
+      respond_to do |format|
+        format.js
+        format.html { redirect_to account_dashboard_path }
+      end
     end
 
     private
@@ -50,10 +51,3 @@ module Account
     end
   end
 end
-
-# <%= simple_form_for([@perfume, @review]) do |f| %>
-#             <%= f.error_notification %>
-
-#             <%= form.input :content %>
-#             <%= form.button :submit %>
-#           <% end %>
