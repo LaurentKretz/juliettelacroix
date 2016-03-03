@@ -1,7 +1,7 @@
 module Account
   class PerfumesController < ApplicationController
     skip_after_action :verify_authorized, only: :show
-    before_action :set_perfume, only: [:show, :step1, :step2, :step3, :step4, :step5, :step6]
+    before_action :set_perfume
 
     def show
       @user = current_user

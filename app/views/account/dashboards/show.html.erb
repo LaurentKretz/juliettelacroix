@@ -83,6 +83,7 @@
           </div>
         <% else %>
           <div class="kit-status"><i class="fa fa-check"></i>Déjà évalué</div>
+          <%= link_to "Découvrir", account_perfume_path(id:perfume)%>
         <%end%>
           <div id="link-dashboard2"><i class="fa fa-shopping-cart"></i>
             <%= form_tag order_items_path, class: "text-center" do %>
