@@ -18,6 +18,7 @@ class OrderItemsController < ApplicationController
       else
       redirect_to account_perfume_path(id:@product.id, anchor: "last-card")
     end
+  end
 
   def destroy
     @order_item = OrderItem.find(params[:id])

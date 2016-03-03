@@ -66,6 +66,7 @@ en:
         sample_test: "Your last samples to test"
         all_my_kits: "My tests in other collections"
         introduction: "You will soon receive 5 extracts of our collection. First watch Juliett's video explaining what olfactive profiles are"
+        review_comment: "Describe how you feel with this perfume"
   checkout:
     addresses:
       edit:
