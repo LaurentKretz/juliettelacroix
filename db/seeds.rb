@@ -25,7 +25,8 @@
     note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
     note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
     sku: "winter_love_75ml",
-    price: 95
+    price: 95,
+    picture_url: "perfume_yellow.jpg"
   )
   perfume2 = Perfume.create!(
     name:"Fresh Summer",
@@ -35,7 +36,8 @@
     note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
     note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
     sku: "fresh_summer_75ml",
-    price: 95
+    price: 95,
+    picture_url: "perfume_purple.jpg"
   )
   perfume3 = Perfume.create!(
     name:"Spring Free",
@@ -45,7 +47,8 @@
     note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
     note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
     sku: "spring_free_75ml",
-    price: 95
+    price: 95,
+    picture_url: "perfume_green.jpg"
   )
   perfume4 = Perfume.create!(
     name:"All night long",
@@ -55,7 +58,8 @@
     note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
     note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
     sku: "all_night_long_75ml",
-    price: 95
+    price: 95,
+    picture_url: "perfume_pink.jpg"
   )
   perfume5 = Perfume.create!(
     name:"Autumn soul",
@@ -65,7 +69,8 @@
     note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
     note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
     sku: "autumn_soul_75ml",
-    price: 95
+    price: 95,
+    picture_url: "perfume.jpg"
   )
   kit1 = Kit.create!(
     name:"Collection 1",
