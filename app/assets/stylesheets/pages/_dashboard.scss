@@ -20,6 +20,42 @@
   }
 }
 
+.btn-dash {
+  background-color: $gold;
+  color: white;
+  margin: 10px 8px;
+  border-radius: 4px;
+}
+
+.btn-dash:hover {
+  background-color: $gray-lighter;
+}
+
+#assess {
+  background-color: $gray;
+  border-radius: 4px;
+  padding-right: 5px;
+  margin-left: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+#assess:hover {
+  color: $gold;
+  background-color: $gray-lighter;
+}
+
+#purchase {
+ font-size: 16px;
+ margin-right: 17px;
+ background-color: $gold;
+ padding-left: 9px;
+}
+
+#purchase:hover {
+ background-color: $gray-lighter;
+ color: $gold;
+}
 
 .text-dashboard {
   display: flex;
@@ -57,7 +93,7 @@ margin-top: 20px;
 }
 .abstract {
   margin-bottom: 30px;
-  border: 1px dotted #ddd;
+  border: 1px dotted $gold;
 }
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
