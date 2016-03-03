@@ -20,7 +20,6 @@ $('.star input').on('click', function() {
 
 $('#comment_input').on('keyup', function(event) {
   if(event.which == 13 && event.shiftKey){
-    console.log("in the if");
     $('#comment_form').submit();
 
   };
