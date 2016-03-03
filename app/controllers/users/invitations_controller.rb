@@ -41,7 +41,7 @@ before_action :set_user, only:[:create, :update]
     @order.save
     flash.clear
     sign_in(@user)
-    redirect_to new_checkout_payment_path
+    redirect_to new_order_path
 
   else
     set_flash_message :alert, :accept_form
