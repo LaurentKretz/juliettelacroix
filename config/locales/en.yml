@@ -89,6 +89,9 @@ en:
         delivery_address: "Delivery address"
         edit: "Edit"
         payment: "Payment"
+        article:
+          one: "1 article"
+          other: "%{count} articles"
   orders:
     new:
       title: "Your basket"

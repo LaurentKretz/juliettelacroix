@@ -70,6 +70,9 @@ fr:
         delivery_address: "Adresse de livraison"
         edit: "Modifier"
         payment: "Paiement"
+        article:
+          one: "1 article"
+          other: "%{count} articles"
   orders:
     new:
       title: "Votre panier"
