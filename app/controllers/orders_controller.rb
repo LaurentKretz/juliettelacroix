@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
     @order = current_user.orders.where(state: "pending").find(session[:order_id])
 
     if @order.update!(address_id:params[:address_id])
-      redirect_to new_checkout_payment_path
+      redirect_to new_order_path
     else
       flash[:alert] = "Erreur dans votre adresse. Veuillez en choisir une autre"
       redirect_to edit_checkout_address_path
