@@ -16,12 +16,12 @@ module Account
       if params[:review_id]
         @review["grade#{@grade_number}"] = params[:value] if params[:value]
         @review = Review.find(params[:review_id])
-        @grade_number = params[:grade]
-        @review.comment = params[:comment] if params[:comment]
+        @grade_number = params[:grade] if params[:grade]
+        @review.comment = params[:comment_input] if params[:comment_input]
         @review.save
         respond_to do |format|
           format.html {redirect_to account_dashboard_path}
-          format.js {render action: "update_review"}
+          format.js {render action: "update_comment"}
         end
       end
     end
