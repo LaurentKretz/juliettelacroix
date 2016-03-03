@@ -16,6 +16,12 @@ module Account
       else
         @perfumes = @kit.perfumes
       end
+
+      Perfume.all.each do |perfume|
+        if perfume.reviews.where(user_id: current_user.id).first.nil?
+          perfume.reviews.create!(user:current_user)
+        end
+      end
     end
 
     private

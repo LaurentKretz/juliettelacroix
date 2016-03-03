@@ -11,3 +11,18 @@ $('.star input').on('click', function() {
     });
   }
 })
+
+// $('#comment').on('click', function() {
+//   // expend frame
+//   // show previous comment
+//   })
+// })
+
+$('#comment_input').on('keyup', function(event) {
+  if(event.which == 13 && event.shiftKey){
+    console.log("in the if");
+    $('#comment_form').submit();
+
+  };
+});
+
