@@ -36,24 +36,28 @@
 
 #title-bar {
   border-bottom: 1px solid $gold;
+  box-shadow: 1px 1px 1px $gray-light;
   color: $gold;
 }
 
 #link-dashboard1 {
-font-size: 14px;
+font-size: 16px;
 color: black;
 }
 
 #link-dashboard2 {
 color: $gold;
-font-size: 14px;
+font-size: 16px;
 }
 
 .kit-status {
-  font-size: 14px;
+  font-size: 16px;
   color: green;
 }
-
+.abstract {
+  margin-bottom: 30px;
+  border: 1px dotted #ddd;
+}
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 fieldset, label { margin: 0; padding: 0; }
@@ -70,7 +74,7 @@ fieldset, label { margin: 0; padding: 0; }
   font-size: 1em;
   font-family: FontAwesome;
   display: inline-block;
-  content: "\f005";
+  content: "\f08a";
 }
 
 .rating > .half:before {
@@ -79,24 +83,24 @@ fieldset, label { margin: 0; padding: 0; }
 }
 
 .rating > label {
-  color: #ddd;
+ color: #ddd;
  float: right;
 }
 
 .starred {
-  color: #FFD700 !important;
+  color: $gold !important;
 }
 
 .starred:hover {
-  color: #FFED85 !important;
+  color: #2f2e2e !important;
 }
 /***** CSS to Highlight Stars on Hover *****/
 
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700; } /* hover previous stars in list */
+.rating:not(:checked) > label:hover ~ label { color: $gold; } /* hover previous stars in list */
 
 .rating > input:checked + label:hover, /* hover current star when changing rating */
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+.rating > input:checked ~ label:hover ~ label { color: #2f2e2e;  }

@@ -4,22 +4,41 @@ module Account
     def show
       @user = current_user
       @kit = @user.order_items.kit.order(created_at: "desc").first.product
+
       if params[:grade_1]
-        @perfumes_with_reviews = @kit.perfumes.includes(:reviews).order("reviews.grade1 DESC").reject { |perfume| perfume.reviews.count == 0 }
-        @perfumes_without_reviews = @kit.perfumes.select { |perfume| perfume.reviews.count == 0 }
-        @perfumes = (@perfumes_with_reviews + @perfumes_without_reviews).flatten
+        @perfumes = perfumes_ordered_by_grade(:grade1)
       elsif params[:grade_2]
-        @perfumes_with_reviews = @kit.perfumes.includes(:reviews).order("reviews.grade2 DESC").reject { |perfume| perfume.reviews.count == 0 }
-        @perfumes_without_reviews = @kit.perfumes.select { |perfume| perfume.reviews.count == 0 }
-        @perfumes = (@perfumes_with_reviews + @perfumes_without_reviews).flatten
+        @perfumes = perfumes_ordered_by_grade(:grade2)
       elsif params[:grade_3]
-        @perfumes_with_reviews = @kit.perfumes.includes(:reviews).order("reviews.grade3 DESC").reject { |perfume| perfume.reviews.count == 0 }
-        @perfumes_without_reviews = @kit.perfumes.select { |perfume| perfume.reviews.count == 0 }
-        @perfumes = (@perfumes_with_reviews + @perfumes_without_reviews).flatten
+        @perfumes = perfumes_ordered_by_grade(:grade3)
+      elsif params[:not_tested]
+        @perfumes = not_tested_perfumes
       else
         @perfumes = @kit.perfumes
       end
     end
 
+    private
+
+    def not_tested_perfumes
+      @perfumes_not_tested = @kit.perfumes.
+        joins(:reviews).
+        where(reviews: { user_id: current_user.id }).
+        where("reviews.grade1 IS NULL OR reviews.grade2 IS NULL OR reviews.grade3 IS NULL")
+
+      @perfumes_tested = @kit.perfumes.where.not(id: @perfumes_not_tested.pluck(:id))
+      return (@perfumes_not_tested + @perfumes_tested).flatten
+    end
+
+    def perfumes_ordered_by_grade(grade)
+      @perfumes_with_reviews = @kit.perfumes.
+        joins(:reviews).
+        where(reviews: { user_id: current_user.id }).
+        where.not(reviews: { grade => nil }).
+        order("reviews.#{grade} DESC")
+
+      @perfumes_without_reviews = @kit.perfumes.where.not(id: @perfumes_with_reviews.pluck(:id))
+      return (@perfumes_with_reviews + @perfumes_without_reviews).flatten
+    end
   end
 end

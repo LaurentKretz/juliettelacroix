@@ -11,9 +11,13 @@ class OrderItemsController < ApplicationController
     end
 
     new_item = OrderItem.create!(product_sku: @product.sku, product_type: params[:product_type], product_id: @product.id, amount: @product.price, quantity: params[:quantity], order:@order)
-    flash[:notice] = "#{@product.name} bien ajouté à #{ActionController::Base.helpers.link_to "votre panier", new_order_path}"
-    redirect_to account_perfume_path(id:@product.id, anchor: "last-card")
-  end
+
+    flash[:notice] = "#{@product.name}  well added to #{ActionController::Base.helpers.link_to "your cart", new_order_path}"
+    if request.referrer.include? ("account/dashboard")
+      redirect_to new_order_path
+      else
+      redirect_to account_perfume_path(id:@product.id, anchor: "last-card")
+    end
 
   def destroy
     @order_item = OrderItem.find(params[:id])

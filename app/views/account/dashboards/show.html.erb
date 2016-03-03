@@ -12,29 +12,30 @@
 </div>
 
 
-<div class="container">
-  <div class="row text-right">
-    Classer par : <%= link_to "Grade 1", account_dashboard_path(grade_1: true), class: "btn btn-primary"%>
-    <%= link_to "Grade 2", account_dashboard_path(grade_2: true), class: "btn btn-primary" %>
-    <%= link_to "Grade 3", account_dashboard_path(grade_3: true), class: "btn btn-primary" %>
-    </div>
-</div>
 
 <div class="container">
   <div class="row">
+<div class="container">
+  <div class="row text-right">
+    Classer par note: <%= link_to "Tenue", account_dashboard_path(grade_1: true), class: ""%> /
+    <%= link_to "Tête", account_dashboard_path(grade_2: true), class: "" %> /
+    <%= link_to "Coeur", account_dashboard_path(grade_3: true), class: "" %> /
+    <%= link_to "Non testé", account_dashboard_path(not_tested: true), class: "" %>
+    </div>
+</div>
     <% @perfumes.each do |perfume| %>
       <h3 class="col-xs-12" id="title-bar"><%= perfume.name %></h3>
     <div class="perfume-card">
-      <div class="image col-xs-12 col-sm-3">
-        <img src="../app/assets/images/perfume.jpg">
+      <div class="image col-xs-12 col-sm-2">
+        <%=image_tag("perfume.jpg", height: '150' )%>
       </div>
       <% rev = perfume.reviews.where(user_id: current_user.id).first %>
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-8">
         <div class="description flexbox-columns">
           <div class="review" data-perfume-id='<%= perfume.id %>' data-review-id='<%= rev.nil? ? "nil" : rev.id %>'>
             <div class="star" data-grade-id='1' class='note-<%= current_user_review(perfume).try(:grade1) %>'>
               <div class="flex-item grade1">
-                Grade 1:
+                Tenue:
               </div>
               <fieldset class="rating flex-item">
                 <input type="radio" id="perf<%= perfume.id %>-grade1-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 5  %>" for="perf<%= perfume.id %>-grade1-star5" title="Awesome - 5 stars"></label>
@@ -47,7 +48,7 @@
 
             <div class="star" data-grade-id='2' class='note<%= current_user_review(perfume).try(:grade2) %>'>
               <div class="flex-item grade2">
-              Grade 2:
+              Note de tête:
               </div>
               <fieldset class="rating">
               <input type="radio" id="perf<%= perfume.id %>-grade2-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2  && rev.grade2 >= 5  %>" for="perf<%= perfume.id %>-grade2-star5" title="Awesome - 5 stars"></label>
@@ -59,7 +60,7 @@
             </fieldset> |
 
             <div class="star" data-grade-id='3' class='note-<%= current_user_review(perfume).try(:grade3) %>'>
-              <div class="flex-item">Grade 3:
+              <div class="flex-item">Note de coeur:
               </div>
               <fieldset class="rating">
               <input type="radio" id="perf<%= perfume.id %>-grade3-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 5  %>" for="perf<%= perfume.id %>-grade3-star5" title="Awesome - 5 stars"></label>
@@ -75,14 +76,23 @@
           </div>
         </div>
       </div>
-      <div class="kit col-xs-12 col-sm-3">
-        <% if rev.nil? || rev.grade3.nil? %>
-          <div class="kit-status"><i class="fa fa-square-o"></i>
+      <div class="kit col-xs-12 col-sm-2">
+        <% if rev.nil? || (rev.grade1 && rev.grade2 && rev.grade3).nil? %>
+          <div class="kit-status perf_to_test"><i class="fa fa-square-o"></i>
             <%= link_to "Evaluer ce parfum", account_perfume_path(id:perfume)%>
           </div>
         <% else %>
           <div class="kit-status"><i class="fa fa-check"></i>Déjà évalué</div>
         <%end%>
+          <div id="link-dashboard2"><i class="fa fa-shopping-cart"></i>
+            <%= form_tag order_items_path, class: "text-center" do %>
+                <%= hidden_field_tag 'product_id', perfume.id %>
+                <%= hidden_field_tag 'product_sku', perfume.sku %>
+                <%= hidden_field_tag 'product_type', :Perfume %>
+                <%= hidden_field_tag 'quantity', 1 %>
+                <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(perfume.price), class: "navbar-wagon-item navbar-wagon-button btn"%>
+              <% end %>
+          </div>
       </div>
     </div>
     <%end%>
