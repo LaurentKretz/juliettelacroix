@@ -21,6 +21,13 @@
 .totalcolor {
   background-color: $gray;
   color: white;
+  float: right;
+  display: flex;
+  padding: 5px 15px;
+  margin-right: 10px;
+  h4 {
+    margin-right: 10px;
+  }
 }
 
 .fa {
