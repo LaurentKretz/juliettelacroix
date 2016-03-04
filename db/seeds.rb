@@ -65,7 +65,7 @@
     name:"Autumn soul",
     description:"Summer ends, Winter starts, you are",
     introduction: "Vision moderne de l'éternelle Eau de Cologne, cette création en respecte le canevas, pour mieux la sublimer. Le trio néroli / fleur d'oranger / bergamote, plein de tendresse, évoque immédiatement l'enfance. On sourit, forcément. La note est verte, très naturelle, un peu amère, avec une vraie dimension florale. Le musc fond sur la peau et intrigue... A la fois propre et obscène, doux et légèrement salé. Indélébile pour sa tenue, le parfum remplit la pièce et vous accompagnera toute la journée.",
-    inspiration: "Le vent tourbillonnant, qui rabat les volets, et là-bas dord la forêt comme une chevelure. Une première note vivifiante, un coeur musqué et charpenté, pour un ensemble vivifiant et facile à porter.",
+    inspiration: "Le vent tourbillonnant, qui rabat les volets, et là-bas dord la forêt comme une chevelure. Une note de tête dynamique, un coeur musqué et charpenté, pour un ensemble vivifiant et facile à porter.",
     note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
     note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
     sku: "autumn_soul_75ml",
