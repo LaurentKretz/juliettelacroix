@@ -6,9 +6,22 @@
   }
   .review {
     flex: 0 0 auto;
+    color: #C9C9C9;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .grade1{
+      color:#242424;
+      margin-right:10px;
+    }
+    .grade2{
+      color:#242424;
+      margin-right:10px;
+    }
+    .grade3{
+      color:#242424;
+      margin-right:10px;
+    }
     .star {
       display: flex;
       align-items: center;
@@ -21,41 +34,34 @@
 }
 
 .btn-dash {
-  background-color: $gold;
+  background-color: $gray;
   color: white;
   margin: 10px 8px;
   border-radius: 4px;
+
+  width: 180px;
+  height: 35px;
+  transition: all 0.2s ease-in;
 }
 
 .btn-dash:hover {
   background-color: $gray-lighter;
-}
-
-#assess {
-  background-color: $gray;
-  border-radius: 4px;
-  padding-right: 5px;
-  margin-left: 8px;
-  color: white;
-  text-decoration: none;
-}
-
-#assess:hover {
   color: $gold;
-  background-color: $gray-lighter;
 }
 
 #purchase {
+  padding-top: 7px;
  font-size: 16px;
- margin-right: 17px;
  background-color: $gold;
- padding-left: 9px;
+ transition: all 0.2s ease-out;
 }
 
-#purchase:hover {
- background-color: $gray-lighter;
- color: $gold;
+#purchase:hover{
+  background-color: $gray-lighter;
+  color: $gold;
 }
+
+
 
 .text-dashboard {
   display: flex;
@@ -72,8 +78,9 @@
 
 #title-bar {
   border-bottom: 1px solid $gold;
-  box-shadow: 1px 1px 1px $gray-light;
+  // box-shadow: 1px 1px 1px $gray-light;
   color: $gold;
+  padding-bottom: 10px;
 }
 
 #link-dashboard1 {
@@ -95,10 +102,12 @@ margin-top: 20px;
   margin-bottom: 30px;
   font-family: Parisienne;
   font-size: 20px;
+  color:#757575;
 
   h3 {
     font-family: Parisienne;
     font-size: 28px !important;
+    color:#242424
   }
 }
 

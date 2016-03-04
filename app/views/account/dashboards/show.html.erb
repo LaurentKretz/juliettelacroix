@@ -24,7 +24,9 @@
     </div>
 </div>
     <% @perfumes.each do |perfume| %>
-      <h3 class="col-xs-12" id="title-bar"><%= perfume.name %></h3>
+      <%= link_to account_perfume_path(id:perfume) do  %>
+        <h3 class="col-xs-12" id="title-bar"><%= perfume.name %></h3>
+      <%end%>
       <div class="perfume-card">
         <div class="image col-xs-12 col-sm-2">
           <div class="perfume-picture">
@@ -63,7 +65,7 @@
               </fieldset> |
 
               <div class="star" data-grade-id='3' class='note-<%= current_user_review(perfume).try(:grade3) %>'>
-                <div class="flex-item">Note de coeur
+                <div class="flex-item grade3">Note de coeur
                 </div>
                 <fieldset class="rating">
                 <input type="radio" id="perf<%= perfume.id %>-grade3-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 5  %>" for="perf<%= perfume.id %>-grade3-star5" title="Awesome - 5 stars"></label>
@@ -97,18 +99,18 @@
         <div class="kit col-xs-12 col-sm-2">
           <%# if rev.nil? || (rev.grade1 && rev.grade2 && rev.grade3).nil? %>
             <div id="dashboard-buttons">
-              <div class="btn" id="assess">
-                <%= link_to "Découvrir ce parfum", account_perfume_path(id:perfume),  :id => "assess"%>
+              <div class="" id="discover">
+                <%= link_to "Découvrir ce parfum", account_perfume_path(id:perfume),  :id => "assess", :class => "btn btn-dash"%>
               </div>
             <%# else %>
             <%# end%>
-              <div class="btn btn-dash" id="buy">
+              <div id="buy">
                 <%= form_tag order_items_path  do %>
                     <%= hidden_field_tag 'product_id', perfume.id %>
                     <%= hidden_field_tag 'product_sku', perfume.sku %>
                     <%= hidden_field_tag 'product_type', :Perfume %>
                     <%= hidden_field_tag 'quantity', 1 %>
-                    <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(perfume.price), :id => "purchase"%>
+                    <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(perfume.price), :id => "purchase", :class => "btn btn-dash"%>
                   <% end %>
               </div>
             </div>
