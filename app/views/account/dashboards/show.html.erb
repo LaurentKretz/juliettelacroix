@@ -96,19 +96,21 @@
         </div>
         <div class="kit col-xs-12 col-sm-2">
           <%# if rev.nil? || (rev.grade1 && rev.grade2 && rev.grade3).nil? %>
-            <div class="btn" id="assess">
-              <%= link_to "Découvrir ce parfum", account_perfume_path(id:perfume),  :id => "assess"%>
-            </div>
-          <%# else %>
-          <%# end%>
-            <div class="btn btn-dash" >
-              <%= form_tag order_items_path  do %>
-                  <%= hidden_field_tag 'product_id', perfume.id %>
-                  <%= hidden_field_tag 'product_sku', perfume.sku %>
-                  <%= hidden_field_tag 'product_type', :Perfume %>
-                  <%= hidden_field_tag 'quantity', 1 %>
-                  <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(perfume.price), :id => "purchase"%>
-                <% end %>
+            <div id="dashboard-buttons">
+              <div class="btn" id="assess">
+                <%= link_to "Découvrir ce parfum", account_perfume_path(id:perfume),  :id => "assess"%>
+              </div>
+            <%# else %>
+            <%# end%>
+              <div class="btn btn-dash" id="buy">
+                <%= form_tag order_items_path  do %>
+                    <%= hidden_field_tag 'product_id', perfume.id %>
+                    <%= hidden_field_tag 'product_sku', perfume.sku %>
+                    <%= hidden_field_tag 'product_type', :Perfume %>
+                    <%= hidden_field_tag 'quantity', 1 %>
+                    <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(perfume.price), :id => "purchase"%>
+                  <% end %>
+              </div>
             </div>
         </div>
       </div>
@@ -116,4 +118,4 @@
   </div>
 </div>
 
-<div class="small-padded"></div>
+<div class="padded"></div>
