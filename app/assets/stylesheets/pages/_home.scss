@@ -130,9 +130,10 @@ background-size: cover !important;
 .hptitle h3 {
   font-size: 40px;
   font-weight: bold;
-  text-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+  // text-shadow: 1px 2px rgba(0, 0, 0, 0.2);
   color: $gray;
   margin-bottom: 35px;
+  font-family: Parisienne;
 }
 
 .padded {
