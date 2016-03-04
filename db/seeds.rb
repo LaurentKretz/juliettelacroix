@@ -21,7 +21,7 @@
     name:"Winter Love",
     description:"Best flagrance for winter",
     introduction: "Vision moderne de l'éternelle Eau de Cologne, cette création en respecte le canevas, pour mieux la sublimer. Le trio néroli / fleur d'oranger / bergamote, plein de tendresse, évoque immédiatement l'enfance. On sourit, forcément. La note est verte, très naturelle, un peu amère, avec une vraie dimension florale. Le musc fond sur la peau et intrigue... A la fois propre et obscène, doux et légèrement salé. Indélébile pour sa tenue, le parfum remplit la pièce et vous accompagnera toute la journée.",
-    inspiration: "Dans le jardin qui brille, où tu t’aimes de vivre, où tu ris, coeur d’enfant ! Où tu vas demander à quelque jeune fille, son bouquet frais comme elle et qu'elle te tend. Un parfum d'hiver, aux notes douces et au coeur soyeux, comme une grande soirée d'hiver au coin du feu",
+    inspiration: "Dans le jardin qui brille, où tu t’aimes de vivre, où tu ris, coeur d’enfant ! Où tu vas demander à quelque jeune fille, son bouquet frais comme elle et qu'elle te tend. Un parfum d'hiver, aux notes douces et au coeur soyeux, comme une grande soirée d'hiver au coin du feu.",
     note1: "Une composition texturée, entre acidulation fruitée et rondeur musquée.",
     note2: "La note s'arrondit et se pose avec grâce. Des reflets vanillés, balsamiques et légèrement cacaotés comblent et apaisent. Le sillage et la tenue sont fantastiques.",
     sku: "winter_love_75ml",
