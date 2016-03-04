@@ -47,16 +47,18 @@
       <div class="flexbox"><i class="fa fa-smile-o small-right-margin"> </i>Satisfait(e) ou remboursé(e)
       </div>
     </div>
-    <div class="totalcolor">
-      <div class="totalcolor col-xs-12 col-sm-2">
-        <h4>Total à payer</h4>
+    <div class='col-xs-12 col-sm-6'>
+      <div class="totalcolor">
+        <div>
+          <h4>Total à payer</h4>
+        </div>
+        <div><h4 class="text-left"><%= humanized_money_with_symbol(@order.amount) %></h4></div>
       </div>
-      <div class="totalcolor col-xs-1"><h4 class="text-left"><%= humanized_money_with_symbol(@order.amount) %></h4></div>
     </div>
   </div>
   <div class="row">
     <div class = "col-xs-12 col-sm-offset-1 col-sm-8">
-      <h4>Confirmer votre addresse de livraison</h4>
+      <h4>Confirmer votre adresse de livraison</h4>
 
       <div class="frame_address">
         <ul class="list-unstyled">

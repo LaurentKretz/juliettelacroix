@@ -62,11 +62,11 @@ fr:
   account:
     dashboards:
       show:
-        hello: "Bienvenue %{name} dans votre espace personnel"
+        hello: "Bienvenue %{name} dans votre espace personnel!"
         method: "La méthode de Juliette pour essayer les parfums"
         sample_test: "Vos derniers échantillons à tester"
         all_my_kits: "Mes tests dans les autres gammes"
-        introduction: "Vous allez bientôt recevoir votre box d'essences. Avant tout, regardez la video de Juliette expliquant comment les tester"
+        introduction: "Vous allez bientôt recevoir votre box d'essences. Avant tout, regardez la video de Juliette expliquant comment les tester."
         review_comment: "Décrivez vos sensations"
   checkout:
     addresses:
