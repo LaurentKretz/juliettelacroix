@@ -20,6 +20,10 @@
   }
 }
 
+.video {
+  height: 250px;
+}
+
 .btn-dash {
   background-color: $gold;
   color: white;
@@ -30,6 +34,16 @@
 .btn-dash:hover {
   background-color: $gray-lighter;
 }
+
+.benefits h3 {
+  margin-top: 55px;
+  margin-bottom: 35px;
+}
+
+.paragraph {
+    padding-right: 25px;
+    text-align: justify;
+  }
 
 #assess {
   background-color: $gray;
