@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .grade1{
       color:#242424;
       margin-right:10px;
@@ -29,6 +30,28 @@
       .flex-item {
         flex: 0 0 auto;
       }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .review {
+    display: flex;
+    flex-flow: column;
+    justify-content: left !important;
+    color: white !important;
+
+    .grade1{
+      color:#242424;
+      margin-right:10px;
+    }
+    .grade2{
+      color:#242424;
+      margin-right:10px;
+    }
+    .grade3{
+      color:#242424;
+      margin-right:10px;
     }
   }
 }
