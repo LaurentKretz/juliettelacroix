@@ -93,8 +93,16 @@ margin-top: 20px;
 }
 .abstract {
   margin-bottom: 30px;
-  border: 1px dotted $gold;
+  font-family: Parisienne;
+  font-size: 20px;
+
+  h3 {
+    font-family: Parisienne;
+    font-size: 28px;
+  }
 }
+
+
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 fieldset, label { margin: 0; padding: 0; }
