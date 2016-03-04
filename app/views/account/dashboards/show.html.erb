@@ -25,91 +25,94 @@
 </div>
     <% @perfumes.each do |perfume| %>
       <h3 class="col-xs-12" id="title-bar"><%= perfume.name %></h3>
-    <div class="perfume-card">
-      <div class="image col-xs-12 col-sm-2">
-        <%= link_to image_tag(perfume.picture_url, height: '150' ), account_perfume_path(id:perfume) %>
-      </div>
-      <% rev = perfume.reviews.where(user_id: current_user.id).first %>
-      <div class="col-xs-12 col-sm-8">
-        <div class="description flexbox-columns">
-          <div class="review" data-perfume-id='<%= perfume.id %>' data-review-id='<%= rev.nil? ? "nil" : rev.id %>'>
-            <div class="star" data-grade-id='1' class='note-<%= current_user_review(perfume).try(:grade1) %>'>
-              <div class="flex-item grade1">
-                Tenue
-              </div>
-              <fieldset class="rating flex-item">
-                <input type="radio" id="perf<%= perfume.id %>-grade1-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 5  %>" for="perf<%= perfume.id %>-grade1-star5" title="Awesome - 5 stars"></label>
-                <input type="radio" id="perf<%= perfume.id %>-grade1-star4" name="rating" value="4" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 4  %>" for="perf<%= perfume.id %>-grade1-star4" title="Pretty good - 4 stars"></label>
-                <input type="radio" id="perf<%= perfume.id %>-grade1-star3" name="rating" value="3" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 3  %>" for="perf<%= perfume.id %>-grade1-star3" title="Meh - 3 stars"></label>
-                <input type="radio" id="perf<%= perfume.id %>-grade1-star2" name="rating" value="2" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 2  %>" for="perf<%= perfume.id %>-grade1-star2" title="Kinda bad - 2 stars"></label>
-                <input type="radio" id="perf<%= perfume.id %>-grade1-star1" name="rating" value="1" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 1  %>" for="perf<%= perfume.id %>-grade1-star1" title="Sucks big time - 1 star" ></label>
-              </fieldset>
-            </div> |
+      <div class="perfume-card">
+        <div class="image col-xs-12 col-sm-2">
+          <div class="perfume-picture">
+          <div class="very-small-padded"></div>
+          <%= link_to image_tag(perfume.picture_url, height: '150' ), account_perfume_path(id:perfume) %>
+          </div>
+        </div>
+        <% rev = perfume.reviews.where(user_id: current_user.id).first %>
+        <div class="col-xs-12 col-sm-8">
+          <div class="description flexbox-columns">
+            <div class="review" data-perfume-id='<%= perfume.id %>' data-review-id='<%= rev.nil? ? "nil" : rev.id %>'>
+              <div class="star" data-grade-id='1' class='note-<%= current_user_review(perfume).try(:grade1) %>'>
+                <div class="flex-item grade1">
+                  Tenue
+                </div>
+                <fieldset class="rating flex-item">
+                  <input type="radio" id="perf<%= perfume.id %>-grade1-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 5  %>" for="perf<%= perfume.id %>-grade1-star5" title="Awesome - 5 stars"></label>
+                  <input type="radio" id="perf<%= perfume.id %>-grade1-star4" name="rating" value="4" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 4  %>" for="perf<%= perfume.id %>-grade1-star4" title="Pretty good - 4 stars"></label>
+                  <input type="radio" id="perf<%= perfume.id %>-grade1-star3" name="rating" value="3" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 3  %>" for="perf<%= perfume.id %>-grade1-star3" title="Meh - 3 stars"></label>
+                  <input type="radio" id="perf<%= perfume.id %>-grade1-star2" name="rating" value="2" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 2  %>" for="perf<%= perfume.id %>-grade1-star2" title="Kinda bad - 2 stars"></label>
+                  <input type="radio" id="perf<%= perfume.id %>-grade1-star1" name="rating" value="1" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade1 && rev.grade1 >= 1  %>" for="perf<%= perfume.id %>-grade1-star1" title="Sucks big time - 1 star" ></label>
+                </fieldset>
+              </div> |
 
-            <div class="star" data-grade-id='2' class='note<%= current_user_review(perfume).try(:grade2) %>'>
-              <div class="flex-item grade2">
-              Note de tête
-              </div>
-              <fieldset class="rating">
-              <input type="radio" id="perf<%= perfume.id %>-grade2-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2  && rev.grade2 >= 5  %>" for="perf<%= perfume.id %>-grade2-star5" title="Awesome - 5 stars"></label>
-              <input type="radio" id="perf<%= perfume.id %>-grade2-star4" name="rating" value="4" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2 && rev.grade2 >= 4  %>" for="perf<%= perfume.id %>-grade2-star4" title="Pretty good - 4 stars"></label>
-              <input type="radio" id="perf<%= perfume.id %>-grade2-star3" name="rating" value="3" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2 && rev.grade2 >= 3  %>" for="perf<%= perfume.id %>-grade2-star3" title="Meh - 3 stars"></label>
-              <input type="radio" id="perf<%= perfume.id %>-grade2-star2" name="rating" value="2" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2 && rev.grade2 >= 2  %>" for="perf<%= perfume.id %>-grade2-star2" title="Kinda bad - 2 stars"></label>
-              <input type="radio" id="perf<%= perfume.id %>-grade2-star1" name="rating" value="1" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2 && rev.grade2 >= 1  %>" for="perf<%= perfume.id %>-grade2-star1" title="Sucks big time - 1 star" ></label>
-              </div>
-            </fieldset> |
+              <div class="star" data-grade-id='2' class='note<%= current_user_review(perfume).try(:grade2) %>'>
+                <div class="flex-item grade2">
+                Note de tête
+                </div>
+                <fieldset class="rating">
+                <input type="radio" id="perf<%= perfume.id %>-grade2-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2  && rev.grade2 >= 5  %>" for="perf<%= perfume.id %>-grade2-star5" title="Awesome - 5 stars"></label>
+                <input type="radio" id="perf<%= perfume.id %>-grade2-star4" name="rating" value="4" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2 && rev.grade2 >= 4  %>" for="perf<%= perfume.id %>-grade2-star4" title="Pretty good - 4 stars"></label>
+                <input type="radio" id="perf<%= perfume.id %>-grade2-star3" name="rating" value="3" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2 && rev.grade2 >= 3  %>" for="perf<%= perfume.id %>-grade2-star3" title="Meh - 3 stars"></label>
+                <input type="radio" id="perf<%= perfume.id %>-grade2-star2" name="rating" value="2" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2 && rev.grade2 >= 2  %>" for="perf<%= perfume.id %>-grade2-star2" title="Kinda bad - 2 stars"></label>
+                <input type="radio" id="perf<%= perfume.id %>-grade2-star1" name="rating" value="1" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade2 && rev.grade2 >= 1  %>" for="perf<%= perfume.id %>-grade2-star1" title="Sucks big time - 1 star" ></label>
+                </div>
+              </fieldset> |
 
-            <div class="star" data-grade-id='3' class='note-<%= current_user_review(perfume).try(:grade3) %>'>
-              <div class="flex-item">Note de coeur
+              <div class="star" data-grade-id='3' class='note-<%= current_user_review(perfume).try(:grade3) %>'>
+                <div class="flex-item">Note de coeur
+                </div>
+                <fieldset class="rating">
+                <input type="radio" id="perf<%= perfume.id %>-grade3-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 5  %>" for="perf<%= perfume.id %>-grade3-star5" title="Awesome - 5 stars"></label>
+                <input type="radio" id="perf<%= perfume.id %>-grade3-star4" name="rating" value="4" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 4  %>" for="perf<%= perfume.id %>-grade3-star4" title="Pretty good - 4 stars"></label>
+                <input type="radio" id="perf<%= perfume.id %>-grade3-star3" name="rating" value="3" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 3  %>" for="perf<%= perfume.id %>-grade3-star3" title="Meh - 3 stars"></label>
+                <input type="radio" id="perf<%= perfume.id %>-grade3-star2" name="rating" value="2" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 2  %>" for="perf<%= perfume.id %>-grade3-star2" title="Kinda bad - 2 stars"></label>
+                <input type="radio" id="perf<%= perfume.id %>-grade3-star1" name="rating" value="1" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 1  %>" for="perf<%= perfume.id %>-grade3-star1" title="Sucks big time - 1 star" ></label>
+                </fieldset>
               </div>
-              <fieldset class="rating">
-              <input type="radio" id="perf<%= perfume.id %>-grade3-star5" name="rating" value="5" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 5  %>" for="perf<%= perfume.id %>-grade3-star5" title="Awesome - 5 stars"></label>
-              <input type="radio" id="perf<%= perfume.id %>-grade3-star4" name="rating" value="4" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 4  %>" for="perf<%= perfume.id %>-grade3-star4" title="Pretty good - 4 stars"></label>
-              <input type="radio" id="perf<%= perfume.id %>-grade3-star3" name="rating" value="3" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 3  %>" for="perf<%= perfume.id %>-grade3-star3" title="Meh - 3 stars"></label>
-              <input type="radio" id="perf<%= perfume.id %>-grade3-star2" name="rating" value="2" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 2  %>" for="perf<%= perfume.id %>-grade3-star2" title="Kinda bad - 2 stars"></label>
-              <input type="radio" id="perf<%= perfume.id %>-grade3-star1" name="rating" value="1" data-perfume-id='<%= perfume.id %>' /><label class = "full <%= 'starred' if rev && rev.grade3 && rev.grade3 >= 1  %>" for="perf<%= perfume.id %>-grade3-star1" title="Sucks big time - 1 star" ></label>
-              </fieldset>
             </div>
-          </div>
 
-          <h3>Le mot de Juliette</h3>
-          <div class="abstract">
-            <%=perfume.inspiration%>
-          </div>
-         <!--  <div> -->
-<!--             <%= t(".review_comment") %> -->
-<!--           </div> -->
-<!--           <div id="comment"> -->
-<!--           <%= rev.comment %> -->
-<!--           </div> -->
-          <!-- <div class="abstract" data-perfume-id='<%= perfume.id %>' data-review-id='<%= rev.nil? ? "nil" : rev.id %>'>
+            <h3>Le mot de Juliette</h3>
+            <div class="abstract">
+              <%=perfume.inspiration%>
+            </div>
+           <!--  <div> -->
+  <!--             <%= t(".review_comment") %> -->
+  <!--           </div> -->
+  <!--           <div id="comment"> -->
+  <!--           <%= rev.comment %> -->
+  <!--           </div> -->
+            <!-- <div class="abstract" data-perfume-id='<%= perfume.id %>' data-review-id='<%= rev.nil? ? "nil" : rev.id %>'>
 
-          <%#=  form_tag(account_perfume_review_path(perfume_id: perfume.id, id:rev.id, review_id: rev.id), method: :put, id: "comment_form", remote: true) do %>
-            <%#= text_area_tag 'comment_input', rev.comment %>
-          <%# end %>
-          <h5>Appuyer sur shift et enter pour insérer votre commentaire</h5>
-          </div> -->
+            <%#=  form_tag(account_perfume_review_path(perfume_id: perfume.id, id:rev.id, review_id: rev.id), method: :put, id: "comment_form", remote: true) do %>
+              <%#= text_area_tag 'comment_input', rev.comment %>
+            <%# end %>
+            <h5>Appuyer sur shift et enter pour insérer votre commentaire</h5>
+            </div> -->
+          </div>
+        </div>
+        <div class="kit col-xs-12 col-sm-2">
+          <%# if rev.nil? || (rev.grade1 && rev.grade2 && rev.grade3).nil? %>
+            <div class="btn" id="assess">
+              <%= link_to "Découvrir ce parfum", account_perfume_path(id:perfume),  :id => "assess"%>
+            </div>
+          <%# else %>
+          <%# end%>
+            <div class="btn btn-dash" >
+              <%= form_tag order_items_path  do %>
+                  <%= hidden_field_tag 'product_id', perfume.id %>
+                  <%= hidden_field_tag 'product_sku', perfume.sku %>
+                  <%= hidden_field_tag 'product_type', :Perfume %>
+                  <%= hidden_field_tag 'quantity', 1 %>
+                  <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(perfume.price), :id => "purchase"%>
+                <% end %>
+            </div>
         </div>
       </div>
-      <div class="kit col-xs-12 col-sm-2">
-        <%# if rev.nil? || (rev.grade1 && rev.grade2 && rev.grade3).nil? %>
-          <div class="btn" id="assess">
-            <%= link_to "Découvrir ce parfum", account_perfume_path(id:perfume),  :id => "assess"%>
-          </div>
-        <%# else %>
-        <%# end%>
-          <div class="btn btn-dash" >
-            <%= form_tag order_items_path  do %>
-                <%= hidden_field_tag 'product_id', perfume.id %>
-                <%= hidden_field_tag 'product_sku', perfume.sku %>
-                <%= hidden_field_tag 'product_type', :Perfume %>
-                <%= hidden_field_tag 'quantity', 1 %>
-                <%= submit_tag t(".top_call_to_action", default: "Acheter pour ")+ humanized_money_with_symbol(perfume.price), :id => "purchase"%>
-              <% end %>
-          </div>
-      </div>
-    </div>
-    <%end%>
+      <%end%>
   </div>
 </div>
 
